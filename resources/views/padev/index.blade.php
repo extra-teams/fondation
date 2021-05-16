@@ -58,7 +58,6 @@
 
         <div class="bg-text">
           <h1>PADEV est une initiative de la fondation 225</h1>
-         
         </div>
         {{-- <div class="text-center titre">
             <h1 class="pt-5 tt">PADEV est une initiative de la fondation 225</h1>

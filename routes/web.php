@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('accueil');
-Route::get('/inscription', 'PadevController@index')->name('padev.index');
+Route::get('/padev', 'PadevController@index')->name('padev.index');
 Route::get('/padev-inscription', 'PadevController@get_inscription')->name('padev.page_inscription');
 
 // route login et register

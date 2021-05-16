@@ -10,30 +10,85 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.customSelect/0.5.1/jquery.customSelect.min.js"></script>
 @endsection
 @section('content')
-      
-  
-        <form action='' class='form'>
-            <p class='field required'>
-              <label class='label required' for='name'>Full name</label>
-              <input class='text-input' id='name' name='name' required type='text' value='Use Tab'>
-            </p>
+  <div class="container-fluid  mb-5">
+    <div class="bg " {{--style="background-image: url({{asset('images/padev/bg.jpg')}});"--}}>
+        <div class="bg-image"></div>
+        <div class="bg-text">
+          <h1>INSCRIPTION PADEV</h1>
+        </div>
+    </div>
+    <br><br><br>
+    <form action='' class='form'>
             <p class='field required half'>
-              <label class='label' for='email'>E-mail</label>
-              <input class='text-input' id='email' name='email' required type='email'>
+              <label class='label' for='nom'>Nom</label>
+              <input class='text-input' id='nom' name='nom' required type='nom'>
             </p>
             <p class='field half'>
-              <label class='label' for='phone'>Phone</label>
-              <input class='text-input' id='phone' name='phone' type='phone'>
+              <label class='label' for='phone'>Prenoms</label>
+              <input class='text-input' id='prenom' name='prenom' type='prenom'>
+            </p>
+            <p class='field'>
+              <label class='label' for='select'>Pays</label>
+              <select class='select' id='select'>
+                <option selected value=''></option>
+                <option value='ceo'>ivoire ci</option>
+                <option value='front-end'>Ghana</option>
+                <option value='back-end'>Beninr</option>
+              </select>
             </p>
             <p class='field half required error'>
-              <label class='label' for='login'>Login</label>
+              <label class='label' for='login'>Adresse</label>
               <input class='text-input' id='login' name='login' required type='text' value='mican'>
             </p>
             <p class='field half required'>
-              <label class='label' for='password'>Password</label>
+              <label class='label' for='password'>Telephone (avec l'indicatif)</label>
               <input class='text-input' id='password' name='password' required type='password'>
             </p>
-            <div class='field'>
+            
+            <p class='field half required'>
+              <label class='label' for='email'>Email</label>
+              <input class='text-input' id='email' name='email' required type='email'>
+            </p>
+            <p class='field half required'>
+              <label class='label' for='site'>Site Web</label>
+              <input class='text-input' id='site' name='site' placeholder="fondation225.org" required type='text'>
+            </p>
+            <p class='field half'>
+              <label class='label' for='select'>Secteur d'activité</label>
+              <select class='select' id='select'>
+                <option selected value=''></option>
+                <option value='ceo'>technologie</option>
+                <option value='front-end'>finance</option>
+              </select>
+            </p>
+            <p class='field half'>
+              <label class='label required' for='name'>Nom de l'entreprise</label>
+              <input class='text-input' id='name' name='name' required type='text' value='Use Tab'>
+            </p>
+
+            <p class='field half'>
+              <label class='label required' for='name'>Profession</label>
+              <input class='text-input' id='name' name='name' required type='text' >
+            </p>
+            <p class='field half'>
+              <label class='label required' for='name'>Titre</label>
+              <input class='text-input' id='name' name='name' required type='text'>
+            </p>
+            <p class='field half'>
+              <label class='label required' for='name'>Nombre de representation en afrique</label>
+              <input class='text-input' id='name' name='name' required type='text' >
+            </p>
+            <p class='field half'>
+              <label class='label required' for='name'>NOMbre D'EMPLOYES AFRICAIN</label>
+              <input class='text-input' id='name' name='name' required type='text'>
+            </p>
+            <p class='field half'>
+              <label class='label required' for='name'>Nombre d'employé Africain
+               
+              </label>
+              <input class='text-input' id='name' name='name' required type='text'>
+            </p>
+            {{-- <div class='field'>
               <label class='label'>Sport?</label>
               <ul class='checkboxes'>
                 <li class='checkbox'>
@@ -94,24 +149,21 @@
                   <label class='option-label' for='option-7'>Knockout</label>
                 </li>
               </ul>
-            </div>
+            </div> --}}
             <p class='field'>
-              <label class='label' for='about'>About</label>
-              <textarea class='textarea' cols='50' id='about' name='about' rows='4'></textarea>
+              <label class='label' for='about'>IMPACT DE VOS ACTIVITES SUR LE DEVELOPPEMENT</label>
+              <textarea class='textarea' cols='50' id='about' name='about' rows='3'></textarea>
             </p>
+            <p class='field'>
+              <label class='label' for='about'>PALMARES DE VOTRE ENTREPRISE</label>
+              <textarea class='textarea' cols='50' id='about' name='about' rows='2'></textarea>
+            </p>
+            
             <p class='field half'>
-              <label class='label' for='select'>Position</label>
-              <select class='select' id='select'>
-                <option selected value=''></option>
-                <option value='ceo'>CEO</option>
-                <option value='front-end'>Front-end developer</option>
-                <option value='back-end'>Back-end developer</option>
-              </select>
+              <input class='button' type='submit' value='Envoyer'>
             </p>
-            <p class='field half'>
-              <input class='button' type='submit' value='Send'>
-            </p>
-          </form>
+    </form>
+  </div>
           
     
 

@@ -1,10 +1,43 @@
-html {
-    -webkit-font-smoothing: antialiased;
-}
-
 body {
     background-color: #fff;
     font-family: "Titillium Web", sans-serif;
+}
+
+.bg {
+    height: 10vh;
+    background-size: cover;
+}
+
+.bg-image {
+    /* The image used */
+    /* Add the blur effect */
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    /* Full height */
+    /* height: 100%; */
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Position text in the middle of the page/image */
+
+.bg-text {
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 22%;
+    /* left: 50%;
+    transform: translate(-50%, -50%); */
+    z-index: 2;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
 }
 
 @media screen and (min-width: 40em) {
@@ -211,11 +244,11 @@ body {
 .form {
     border: none;
     margin: 0 auto;
-    position: relative;
+    width: 50%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .form .field {
@@ -296,4 +329,10 @@ body {
     transform-style: preserve-3d;
     will-change: top, left, width;
     transform-origin: 0 0;
+}
+
+@media screen and (max-width: 800px) {
+    .form {
+        width: 100%;
+    }
 }

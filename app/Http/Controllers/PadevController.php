@@ -38,7 +38,7 @@ class PadevController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

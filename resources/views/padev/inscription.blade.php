@@ -18,14 +18,14 @@
         </div>
     </div>
     <br><br><br>
-    <form action='' class='form'>
+    <form action='{{route('padev.traitement')}}' class='form'>
             <p class='field required half'>
               <label class='label' for='nom'>Nom</label>
               <input class='text-input' id='nom' name='nom' required type='nom'>
             </p>
-            <p class='field half'>
+            <p class='field half required'>
               <label class='label' for='phone'>Prenoms</label>
-              <input class='text-input' id='prenom' name='prenom' type='prenom'>
+              <input class='text-input' id='prenom' name='prenom' required type='prenom'>
             </p>
             <p class='field'>
               <label class='label' for='select'>Pays</label>

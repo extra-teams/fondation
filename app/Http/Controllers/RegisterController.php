@@ -45,7 +45,7 @@ class RegisterController extends Controller
         }
 
         /* vars */
-        $nom = trim($request->get('nom'));
+        $nom = trim($request->nom);
         $prenom = trim($request->get('prenom'));
         $email = trim($request->get('email'));
         $password = $request->get('password');

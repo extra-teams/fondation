@@ -87,10 +87,10 @@
                     <li><a href="{{url('/produits?categorie=yes&'.$sous->code.'=on')}}">{{$sous->nom}}</a></li>
                 @endforeach--}}
 
-                <li><a href="#hjh" style="font-size:17px">Accueil</a></li>
-                <li><a href="#hjh" style="font-size:17px">Boutique</a></li>
+                <li><a href="{{route('accueil')}}" style="font-size:17px">Accueil</a></li>
+                <li><a href="{{url('produits')}}" style="font-size:17px">Boutique</a></li>
                 <li><a href="{{route('padev.index')}}" style="font-size:17px">Padev</a></li>
-                <li><a href="#" style="font-size:17px">Contactez nous</a></li>
+                <li><a href="{{route('contact.index')}}" style="font-size:17px">Contactez nous</a></li>
                 
                     
                 </div>

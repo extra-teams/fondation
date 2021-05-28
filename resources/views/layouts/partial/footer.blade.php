@@ -1,7 +1,7 @@
 <div class="container-fluid footer">
     <div class="row">
         <div class="col-lg-3 col-12">
-            <h6 class="text-uppercase">Aide & Information</h6>
+            <h6 class="text-uppercase">Contacts</h6>
             <ul class="list-unstyled">
                 <li><a href="{{url('/contact')}}">contacts</a></li>
                 <li><a href="{{route('politiqueretour')}}">politique de retour</a></li>

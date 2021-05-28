@@ -1,6 +1,87 @@
 @extends('layouts.app')
 @section('title','yebay')
 @section('content')
+<style>
+.testimonial .pic:before,
+.testimonial .pic:after{
+    content: "";
+    width: 130px;
+    height: 150px;
+    background: #fabe14;
+    position: absolute;
+    z-index: -1;
+}
+.testimonial .pic:before{
+    top: 0;
+    right: -20px;
+}
+.testimonial .pic:after{
+    bottom: 0;
+    left: -20px;
+}
+.testimonial .description:before,
+.testimonial .description:after{
+    font-family: "Font Awesome 5 Free"; font-weight: 900;
+    font-size: 17px;
+    color: #fabe14;
+    position: relative;
+}
+.testimonial .description:before{
+    content: "\f10d";
+    margin-right: 5px;
+    top: 0;
+    left: 0;
+}
+.testimonial .description:after{
+    content: "\f10e";
+    margin-left: 5px;
+    position: relative;
+    bottom: 0;
+    right: 0;
+}     
+img.zoom {
+    width: 100%;
+    height: 200px;
+    border-radius:5px;
+    object-fit:cover;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+}
+.transition {
+    -webkit-transform: scale(1.2); 
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+@media only screen and (max-width: 990px){
+    .testimonial{
+        text-align: center;
+    }
+    .testimonial .pic{
+        width: 200px;
+        margin: 0 auto;
+        float: none;
+    }
+    .testimonial .pic:before,
+    .testimonial .pic:after{
+        width: 80px;
+        height: 100px;
+    }
+    .testimonial .testimonial-content{
+        width: 100%;
+        float: none;
+    }
+    .testimonial .title{
+        padding: 15px 0 0 0;
+    }
+    .testimonial .post{
+        padding: 0;
+        margin-bottom: 10px;
+    }
+}
+</style>
     <!-- caoursel -->
     <div id="slide" class="carousel slide" data-ride="carousel" data-interval="3000">
         <div class="carousel-inner">
@@ -47,40 +128,178 @@
     <!-- 10 produitrs -->
     <div class="container-fluid">
         <div class="text-center">
+            <h2 class="text-uppercase font-weight-light mt-5 mb-3">Qui Sommes Nous ?</h2>
+        </div>
+        <div class="container">
+            <div>
+                <img src="{{asset('images/fondation.jpeg')}}" class="float-left mr-3 mb-3" alt="" style="width: 400px;height: 140px">
+                <p>
+                    La Fondation 225 est une Organisation Non Gouvernementale à but humanitaire 
+                    fondée le 21 NOVEMBRE 2012 à Ouagadougou sous le récépissé N°001724/MATDS/SG/DGLPAP/DAOSOC 
+                    du 31 DECEMBRE 2012. Elle est le fruit de l’initiative d’hommes et de femmes originaires de 
+                    différents pays d’Afrique de l’ouest, principalement de la Côte d’Ivoire et du Burkina Faso. 
+                    La Fondation 225 a pour objet d’accélérer l’intégration ouest-africaine en œuvrant à la 
+                    traduire en une réalité concrète dans les politiques des Etats et dans le vécu des populations, 
+                    en amenant celles-ci à mieux se l’approprier
+                </p>
+            </div>
+        </div>   
+    </div>
+    <div class="container-fluid">
+        <div class="text-center">
+            <h2 class="text-uppercase font-weight-light mt-5 mb-3">Nos Domaines d'Intervention</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-4 border-dark">
+                <div class="card p-3 mb-2" style="border-radius: 10px;">
+                    <div class="text-center">
+                        <div class="align-items-center">
+                            <div class="icon d-flex align-items-center justify-content-center" style="margin: auto;padding: 50px;width: 50px;height: 50px;background-color: #fabe14;border-radius: 50px;font-size: 39px;"> <i class="fa fa-heart"></i> </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p>
+                            Dans le domaine de la santé nous voulons appuyer les politiques gouvernementales 
+                            en matière de création de centres de santé et d’accès des populations aux soins.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 border-dark">
+                <div class="card p-3 mb-2" style="border-radius: 10px;">
+                    <div class="text-center">
+                        <div class="align-items-center">
+                            <div class="icon d-flex align-items-center justify-content-center" style="margin: auto;padding: 50px;width: 50px;height: 50px;background-color: #fabe14;border-radius: 50px;font-size: 39px;"> <i class="fa fa-book"></i> </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p>
+                            Dans le domaine de la scolarité nous intervenons par la promotion de la scolarisation 
+                            gratuite et obligatoire pour garçons et filles, l’alphabétisation, la création 
+                            d’infrastructures additionnelles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 border-dark">
+                <div class="card p-3 mb-2" style="border-radius: 10px;">
+                    <div class="text-center">
+                        <div class="align-items-center">
+                            <div class="icon d-flex align-items-center justify-content-center" style="margin: auto;padding: 50px;width: 50px;height: 50px;background-color: #fabe14;border-radius: 50px;font-size: 39px;"> <i class="fa fa-tree"></i> </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p>
+                            Pour l'environnement nous agissons par la protection des forêts et de la faune, la lutte 
+                            contre l’avancée du sahel par le reboisement, contre la pollution atmosphérique, des 
+                            eaux et du cadre de vie.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 border-dark">
+                <div class="card p-3 mb-2" style="border-radius: 10px;">
+                    <div class="text-center">
+                        <div class="align-items-center">
+                            <div class="icon d-flex align-items-center justify-content-center" style="margin: auto;padding: 50px;width: 50px;height: 50px;background-color: #fabe14;border-radius: 50px;font-size: 39px;"> <i class="fa fa-user-secret"></i> </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p>
+                            Nous luttons contre l’immigration clandestine et la fuite des cerveaux vers les pays 
+                            du nord, une aventure pleine de risque.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 border-dark">
+                <div class="card p-3 mb-2" style="border-radius: 10px;">
+                    <div class="text-center">
+                        <div class="align-items-center">
+                            <div class="icon d-flex align-items-center justify-content-center" style="margin: auto;padding: 50px;width: 50px;height: 50px;background-color: #fabe14;border-radius: 50px;font-size: 39px;"> <i class="fa fa-trophy"></i> </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p>
+                            Nous encourageons la promotion  du travail, du mérite et de l’excellence comme nouveau 
+                            socle de l’édifice social africain.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="text-center">
+            <h2 class="text-uppercase font-weight-light mt-5 mb-3">Nos Actions Caritatives</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="margin-bottom: 30px;">
+                <a href="{{asset('images/fondation.jpeg')}}" class="fancybox" rel="ligthbox">
+                    <img  src="{{asset('images/fondation.jpeg')}}" class="zoom img-fluid" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="margin-bottom: 30px;">
+                <a href="https://images.pexels.com/photos/38238/maldives-ile-beach-sun-38238.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"  class="fancybox" rel="ligthbox">
+                    <img  src="https://images.pexels.com/photos/38238/maldives-ile-beach-sun-38238.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="zoom img-fluid"  alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="margin-bottom: 30px;">
+                <a href="https://images.pexels.com/photos/158827/field-corn-air-frisch-158827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="fancybox" rel="ligthbox">
+                    <img  src="https://images.pexels.com/photos/158827/field-corn-air-frisch-158827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="zoom img-fluid "  alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="margin-bottom: 30px;">
+                <a href="https://images.pexels.com/photos/302804/pexels-photo-302804.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="fancybox" rel="ligthbox">
+                    <img  src="https://images.pexels.com/photos/302804/pexels-photo-302804.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="zoom img-fluid "  alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="margin-bottom: 30px;">
+                <a href="https://images.pexels.com/photos/1038914/pexels-photo-1038914.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
+                    <img  src="https://images.pexels.com/photos/1038914/pexels-photo-1038914.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="zoom img-fluid "  alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="margin-bottom: 30px;">
+                <a href="https://images.pexels.com/photos/414645/pexels-photo-414645.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
+                    <img  src="https://images.pexels.com/photos/414645/pexels-photo-414645.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="zoom img-fluid "  alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a href="https://images.pexels.com/photos/56005/fiji-beach-sand-palm-trees-56005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="fancybox" rel="ligthbox">
+                    <img  src="https://images.pexels.com/photos/56005/fiji-beach-sand-palm-trees-56005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="zoom img-fluid "  alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a href="https://images.pexels.com/photos/1038002/pexels-photo-1038002.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="fancybox" rel="ligthbox">
+                    <img  src="https://images.pexels.com/photos/1038002/pexels-photo-1038002.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="zoom img-fluid "  alt="">
+                </a>
+            </div>    
+       </div>
+    </div>
+    <div class="container-fluid">
+        <div class="text-center">
             <h2 class="text-uppercase font-weight-light mt-5 mb-3">MOT DU PRESIDENT</h2>
         </div>
-        <div>
-                <img src="{{asset('images/president.jpg')}}" class="float-left mr-3" style="width:420px;heigth:auto"> 
-                <p>
-                    La question du développement de l’Afrique se pose plus que jamais avec acuité au moment
-                    où l’on entame la deuxième décennie du troisième millénaire. À ce stade de la marche
-                    historique de l’humanité, notre continent continue comme par le passé de pointer à la
-                    dernière place des peuples. Il demeure toujours le terrain d’expression par excellence des
-                    guerres civiles (désormais compliquées par le djihadisme), des violences politiques, des
-                    épidémies avec la résurgence du virus d’Ebola, des famines, de l’analphabétisme, etc.
-                    Certes depuis quelques années maintenant, les institutions internationales, notamment le
-                    FMI, annoncent une situation en constante amélioration en Afrique avec un taux de
-                    croissance global au-dessus de 5%. C’est un bel indicateur. Mais notre joie en est-elle pour
-                    autant parfaite ?
-                    Ce taux de croissance économique élevé a beau donner du baume au moral, il reste que
-                    dans la pratique, il ne se traduit toujours pas en un essor économique et social pour les
-                    populations : le niveau de vie toujours dérisoire et la pauvreté omniprésence demeurent
-                    encore la chose la mieux partagée dans la quasi-totalité des pays africains. La croissance ne
-                    reste appréciable qu’au niveau macroéconomique, quand les sempiternels maux qui ont
-                    toujours fait la mauvaise réputation de l’Afrique demeurent ! La terrible épidémie du virus
-                    d’Ebola qui frappe plusieurs pays de la sous-région ouest-africaine qui sont incapables de la
-                    vaincre, nous a brutalement rappelé toute la précarité de la situation globale de notre
-                    continent!
-                    Cette triste réalité, qu’étaient en train de nous voiler tous ces discours et projections sur la
-                    croissance économique, doit aujourd’hui plus qu’hier décider chaque Africain à une prise de
-                    conscience autour de la question du développement de nos pays : chacun de nous, en tant
-                    qu’individu, doit se l’approprier et non plus la laisser aux seules mains de nos décideurs
-                    politiques.
-                    Bien à vous, sœurs et frères Africains.
-                    KOFFI KOUADIO/Mr
-                    Président exécutif de la
-                    Fondation 225
-                </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="testimonial">
+                        <div class="pic float-left position-relative" style="width: 22%;padding: 20px 0;margin: 0 6% 0 2%;z-index: 1;">
+                            <img src="{{asset('images/equipe/president.jpg')}}" style="width: 100%;height: auto;border: 3px solid #fabe14;" alt="">
+                        </div>
+                        <div class="testimonial-content" style="width: 70%;float: right;">
+                            <h3 class="title d-block m-0 text-uppercase" style="font-size: 18px;font-weight: 600;color: #000;padding-top: 65px;padding-left: 15px;">M. KOFFI KOUADIO</h3>
+                            <span class="post d-block text-capitalize" style="font-size: 14px;font-weight: 400;line-height: 27px;color: #000;margin-bottom: 25px;padding-left: 15px;">Président Exécutif<br>Commissaire Général du prix PADEV</span>
+                            <p class="description position-relative m-0" style="font-size: 16px;color: #000;padding: 0 15px;">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dolor nibh, semper at pretium vitae, tincidunt non risus. Aenean mattis sit amet ex nec venenatis. Pellentesque tempus pellentesque efficitur. Nulla commodo bibendum quam, at imperdiet orci congue non. Maecenas interdum.
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam illum velit ratione enim a repellendus sequi aspernatur ullam quaerat voluptatum eveniet hic harum, dolore fugit vel magnam amet nihil. Cupiditate.
+                            </p>
+                        </div>
+                    </div>  
+                </div>
+            </div>
         </div>  
     </div>
         
@@ -135,7 +354,7 @@
             <!-- Grid column -->
             <div class="col-md-4 mb-md-5 mb-5">
                 <div class="mx-auto">
-                    <img src="{{asset('images/president.jpg')}}" style="width: 250px;height: 250px" class="rounded z-depth-1-half" alt="Sample avatar">
+                    <img src="{{asset('images/equipe/president.jpg')}}" style="width: 250px;height: 250px" class="rounded z-depth-1-half" alt="Sample avatar">
                 </div>
                 <h4 class="font-weight-bold dark-grey-text my-2">M. KOFFI KOUADIO</h4>
                 <h6 class="grey-text mb-3"><strong>Président Exécutif<br>Commissaire Général du prix PADEV</strong></h6>
@@ -144,7 +363,7 @@
             <!-- Grid column -->
             <div class="col-md-4 mb-md-5 mb-5">
                 <div class="avatar mx-auto">
-                    <img src="{{asset('images/chargerdesprojets.jpg')}}" style="width: 250px;height: auto" class="rounded z-depth-1-half" alt="Sample avatar">
+                    <img src="{{asset('images/equipe/chargerdesprojets.jpg')}}" style="width: 250px;height: auto" class="rounded z-depth-1-half" alt="Sample avatar">
                 </div>
                 <h4 class="font-weight-bold dark-grey-text my-2">M. OUEDRAOGO OUSMANE</h4>
                 <h6 class="grey-text mb-3"><strong>Chargé des Projets</strong></h6>
@@ -153,7 +372,7 @@
             <!-- Grid column -->
             <div class="col-md-4 mb-md-5 mb-5">
                 <div class="avatar mx-auto">
-                    <img src="{{asset('images/secretaire.jpg')}}" style="width: 250px;height: auto" class="rounded z-depth-1-half" alt="Sample avatar">
+                    <img src="{{asset('images/equipe/secretaire.jpg')}}" style="width: 250px;height: auto" class="rounded z-depth-1-half" alt="Sample avatar">
                 </div>
                 <h4 class="font-weight-bold dark-grey-text my-2">M. KOFFI KONAN CLAUDE</h4>
                 <h6 class="grey-text mb-3"><strong>Secrétaire Général</strong></h6>
@@ -164,7 +383,7 @@
             <!-- Grid column -->
             <div class="col-md-6 mb-md-5">
                 <div class="mx-auto">
-                    <img src="{{asset('images/tresorier.jpg')}}" style="width: 250px;height: 250px" class="rounded z-depth-1-half" alt="Sample avatar">
+                    <img src="{{asset('images/equipe/tresorier.jpg')}}" style="width: 250px;height: 250px" class="rounded z-depth-1-half" alt="Sample avatar">
                 </div>
                 <h4 class="font-weight-bold dark-grey-text my-2">CONGO RAKIATOU</h4>
                 <h6 class="grey-text mb-3"><strong>Trésorière</strong></h6>
@@ -173,13 +392,27 @@
             <!-- Grid column -->
             <div class="col-md-6 mb-md-5">
                 <div class="avatar mx-auto">
-                    <img src="{{asset('images/comissaire.jpeg')}}" style="width: 250px;height: auto" class="rounded z-depth-1-half" alt="Sample avatar">
+                    <img src="{{asset('images/equipe/comissaire.jpeg')}}" style="width: 250px;height: auto" class="rounded z-depth-1-half" alt="Sample avatar">
                 </div>
                 <h4 class="font-weight-bold dark-grey-text my-2">M. Jérémie ARBE SAWADOGO</h4>
                 <h6 class="grey-text mb-3"><strong>Commissaire général des activités de développement.</strong></h6>
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function(){
+            $(".fancybox").fancybox({
+                openEffect: "none",
+                closeEffect: "none"
+            });
+            $(".zoom").hover(function(){
+		        $(this).addClass('transition');
+	        }, function(){
+                $(this).removeClass('transition');
+	        });
+        });
+    </script>
 
 
 @endsection

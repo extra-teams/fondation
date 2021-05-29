@@ -19,6 +19,28 @@
     bottom: 0;
     left: -20px;
 }
+.wprock-img-zoom-hover .wprock-img-zoom {
+    overflow: hidden;
+    position: relative; 
+}
+.wprock-img-zoom-hover .wprock-img-zoom img {
+    max-width: 100%;
+    -moz-transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+}
+.wprock-img-zoom-hover .wprock-img-zoom * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.wprock-img-zoom-hover:hover .wprock-img-zoom img {
+    -moz-transform: scale(1.06);
+    -webkit-transform: scale(1.06);
+    transform: scale(1.06);
+}
 .testimonial .description:before,
 .testimonial .description:after{
     font-family: "Font Awesome 5 Free"; font-weight: 900;
@@ -49,12 +71,7 @@ img.zoom {
     -o-transition: all .3s ease-in-out;
     -ms-transition: all .3s ease-in-out;
 }
-.transition {
-    -webkit-transform: scale(1.2); 
-    -moz-transform: scale(1.2);
-    -o-transform: scale(1.2);
-    transform: scale(1.2);
-}
+
 @media only screen and (max-width: 990px){
     .testimonial{
         text-align: center;
@@ -236,45 +253,33 @@ img.zoom {
             <h2 class="text-uppercase font-weight-light mt-5 mb-3">Nos Actions Caritatives</h2>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="margin-bottom: 30px;">
-                <a href="{{asset('images/fondation.jpeg')}}" class="fancybox" rel="ligthbox">
-                    <img  src="{{asset('images/fondation.jpeg')}}" class="zoom img-fluid" alt="">
-                </a>
+            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover" style="margin-bottom: 30px;">
+                <div class="wprock-img-zoom">
+                    <a href="{{asset('images/caritative/caritative4.jpg')}}" class="fancybox" rel="ligthbox">
+                        <img  src="{{asset('images/caritative/caritative4.jpg')}}" class="zoom img-fluid" alt="">
+                    </a>
+                </div>  
             </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="margin-bottom: 30px;">
-                <a href="https://images.pexels.com/photos/38238/maldives-ile-beach-sun-38238.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"  class="fancybox" rel="ligthbox">
-                    <img  src="https://images.pexels.com/photos/38238/maldives-ile-beach-sun-38238.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="zoom img-fluid"  alt="">
-                </a>
+            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover" style="margin-bottom: 30px;">
+                <div class="wprock-img-zoom">
+                    <a href="{{asset('images/caritative/caritative1.jpeg')}}" class="fancybox" rel="ligthbox">
+                        <img  src="{{asset('images/caritative/caritative1.jpeg')}}" class="zoom img-fluid" alt="">
+                    </a>
+                </div>  
             </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="margin-bottom: 30px;">
-                <a href="https://images.pexels.com/photos/158827/field-corn-air-frisch-158827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="fancybox" rel="ligthbox">
-                    <img  src="https://images.pexels.com/photos/158827/field-corn-air-frisch-158827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="zoom img-fluid "  alt="">
-                </a>
+            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover" style="margin-bottom: 30px;">
+                <div class="wprock-img-zoom">
+                    <a href="{{asset('images/caritative/caritative2.jpeg')}}" class="fancybox" rel="ligthbox">
+                        <img  src="{{asset('images/caritative/caritative2.jpeg')}}" class="zoom img-fluid" alt="">
+                    </a>
+                </div>  
             </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="margin-bottom: 30px;">
-                <a href="https://images.pexels.com/photos/302804/pexels-photo-302804.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="fancybox" rel="ligthbox">
-                    <img  src="https://images.pexels.com/photos/302804/pexels-photo-302804.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="zoom img-fluid "  alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="margin-bottom: 30px;">
-                <a href="https://images.pexels.com/photos/1038914/pexels-photo-1038914.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
-                    <img  src="https://images.pexels.com/photos/1038914/pexels-photo-1038914.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="zoom img-fluid "  alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="margin-bottom: 30px;">
-                <a href="https://images.pexels.com/photos/414645/pexels-photo-414645.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
-                    <img  src="https://images.pexels.com/photos/414645/pexels-photo-414645.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="zoom img-fluid "  alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="https://images.pexels.com/photos/56005/fiji-beach-sand-palm-trees-56005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="fancybox" rel="ligthbox">
-                    <img  src="https://images.pexels.com/photos/56005/fiji-beach-sand-palm-trees-56005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="zoom img-fluid "  alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="https://images.pexels.com/photos/1038002/pexels-photo-1038002.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="fancybox" rel="ligthbox">
-                    <img  src="https://images.pexels.com/photos/1038002/pexels-photo-1038002.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="zoom img-fluid "  alt="">
-                </a>
+            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover" style="margin-bottom: 30px;">
+                <div class="wprock-img-zoom">
+                    <a href="{{asset('images/caritative/caritative3.jpeg')}}" class="fancybox" rel="ligthbox">
+                        <img  src="{{asset('images/caritative/caritative3.jpeg')}}" class="zoom img-fluid" alt="">
+                    </a>
+                </div>  
             </div>    
        </div>
     </div>
@@ -399,20 +404,6 @@ img.zoom {
             </div>
         </div>
     </div>
-
-    <script>
-        $(document).ready(function(){
-            $(".fancybox").fancybox({
-                openEffect: "none",
-                closeEffect: "none"
-            });
-            $(".zoom").hover(function(){
-		        $(this).addClass('transition');
-	        }, function(){
-                $(this).removeClass('transition');
-	        });
-        });
-    </script>
 
 
 @endsection

@@ -102,15 +102,6 @@
 .card__content {
   padding: 1.6rem;
 }
-
-.card__button {
-  margin: 1.6rem 0;
-  text-align: center;
-  padding: 0.8rem 1.6rem;
-  background: none;
-  border-radius: 2px;
-  font-weight: bold;
-}
 .card--featured {
   grid-row: auto/span 3;
   grid-column: auto/span 2;
@@ -118,8 +109,6 @@
 .padding-large--l {
   padding: 1.6rem;
 }
-
-
 .card-v {
   --rlist: var(--c) 0 3px, transparent 0 7px;
   --dim: 100% 50% no-repeat;
@@ -143,20 +132,10 @@
   --ang-0: -120deg;
   --ang-1: 120deg;
 }
-
 .card-v:nth-child(1) {
   --c: #e0aa0a;
   --nlist: #fcef34, #dead1f;
 }
-
-
-.v {
-  --dim: 50% no-repeat;
-  --ang: 0deg;
-  --pos-1: 100%;
-}
-
-
 @media (max-width: 413px) {
   .card {
     min-height: 12.8rem;
@@ -291,16 +270,6 @@
 </div>
 
 <div class="container mt-5">
-  {{-- <div class="inscription ">
-    <div class="row">
-      <div class="col-6">
-        <img src="{{asset('images/padev/inscription-padev.jpeg')}}" height="100" alt="">
-      </div>
-      <div class="col-6">
-        <a href=""><button class="btn btn-warning w-100">INSCRIPTION</button></a>
-      </div>
-    </div>
-  </div> --}}
   <div class='card-v card--featured'>
     <div class='card__side-by-side--m'>
       <div class='card__image'>
@@ -311,7 +280,7 @@
           <h2>INSCRIPTION PADEV 2021 KIGALI</h2>
           <p>Prenez part a la 16e edition du PADEV<br>Qui se tiendra a Kigali</p>
           <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-          <a href="{{route('padev.page_inscription')}}"><div class='card__button bg-light'>Inscrivez vous</div></a>
+          <a href="{{route('padev.page_inscription')}}"><div class='card__button bg-light text-center' style="margin: 1.6rem 0;padding: 0.8rem 1.6rem;background: none;border-radius: 2px;font-weight: bold;">Inscrivez vous</div></a>
         </div>
       </div>
     </div>

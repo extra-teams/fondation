@@ -19,6 +19,10 @@ Route::get('/padev', 'PadevController@index')->name('padev.index');
 Route::get('/padev-inscription', 'PadevController@get_inscription')->name('padev.page_inscription');
 Route::post('/traitement-inscription', 'PadevController@store')->name('padev.traitement');
 
+Route::get('/contactez-nous', 'ContactController@index')->name('contact.index');
+Route::get('/padev-confirmation/{noms}', 'PadevController@confirmation')->name("padev.confirmation");
+
+
 
 // route login et register
 Route::get('/register', 'RegisterController@index')->name('register.index');

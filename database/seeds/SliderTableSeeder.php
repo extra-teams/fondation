@@ -20,7 +20,7 @@ class SliderTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 2,
-                'nom' => 'images/sliders/db94d54df363f6fe5c1bc692010fc238.jpg',
+                'nom' => 'images/sliders/719ba370afc0b268265366bc7014285c.jpg',
                 'texte' => NULL,
                 'url' => NULL,
                 'deleted_at' => NULL,
@@ -30,23 +30,14 @@ class SliderTableSeeder extends Seeder
             1 => 
             array (
                 'id' => 5,
-                'nom' => 'images/sliders/6b855c1bc0772421bc9bc0350bfa7806.jpg',
+                'nom' => 'images/sliders/c38cd3e9dedb8933fa100f17594f41d5.jpg',
                 'texte' => NULL,
                 'url' => NULL,
                 'deleted_at' => NULL,
                 'created_at' => '2020-11-28 09:13:31',
                 'updated_at' => '2020-11-28 23:56:34',
             ),
-            2 => 
-            array (
-                'id' => 11,
-                'nom' => 'images/sliders/d7636a8c18383a2ff3a6deda6d3fb3e4.jpg',
-                'texte' => NULL,
-                'url' => NULL,
-                'deleted_at' => NULL,
-                'created_at' => '2020-11-28 11:33:45',
-                'updated_at' => '2020-11-28 22:56:31',
-            ),
+           
         ));
         
         

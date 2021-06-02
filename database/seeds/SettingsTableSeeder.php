@@ -23,7 +23,7 @@ class SettingsTableSeeder extends Seeder
                 'key' => 'facebook_page',
                 'name' => 'page facebook',
                 'description' => 'lien de la page facebook',
-                'value' => 'https://m.facebook.com/Yebayci-119138899938134/',
+                'value' => '#',
                 'field' => '{"name":"value","label":"Value","type":"email"}',
                 'active' => 1,
                 'created_at' => NULL,

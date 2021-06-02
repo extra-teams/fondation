@@ -32,13 +32,13 @@ class DatabaseSeeder extends Seeder
         // $this->call(ProduitHasTailleTableSeeder::class);
         $this->call(AdressesTableSeeder::class);
         $this->call(CommandesTableSeeder::class);
-        $this->call(DetailcommandesTableSeeder::class);
+        // $this->call(DetailcommandesTableSeeder::class);
         $this->call(SettingsTableSeeder::class);
         $this->call(BonReductionsTableSeeder::class);
         $this->call(FailedJobsTableSeeder::class);
         $this->call(MigrationsTableSeeder::class);
         $this->call(PasswordResetsTableSeeder::class);
         $this->call(SliderTableSeeder::class);
-        $this->call(WishlistsTableSeeder::class);
+        // $this->call(WishlistsTableSeeder::class);
     }
 }

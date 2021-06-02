@@ -124,7 +124,7 @@
                                         <tbody>
                                         <tr>
                                             <td style="width:100px;"><img height="auto"
-                                                                          src="{{asset('https://yebay.ci/images/logo.jpeg')}}"
+                                                                          src="{{asset('https://fondation225.org/wp-content/uploads/2021/02/cropped-cropped-cropped-WhatsApp-Image-2020-02-01-at-11.31.27-1.jpeg')}}"
                                                                           style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
                                                                           width="100"></td>
                                         </tr>
@@ -135,7 +135,7 @@
                             <tr>
                                 <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                     <div style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;line-height:24px;text-align:left;color:#637381;">
-                                        Bonjour {{$fullname ?? ''}} , <br>
+                                        Bonjour Mr/Mme {{$fullname ?? ''}} , <br>
                                         {!! $contenu !!}
                                     </div>
                                 </td>
@@ -221,10 +221,10 @@
                                             <td align="center"
                                                 style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                                 <div style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;line-height:16px;text-align:center;color:#445566;">
-                                                    Côte d'ivoire , Abidjan
+                                                    Côte d'ivoire , Abidjan <br>
                                                     téléphone : <strong>+225 {{$liens[4]->value}}</strong>
-                                                    <br> Site Web : http://www.yebay.ci<br> &copy;
-                                                    yebay.ci , All Rights Reserved.
+                                                    <br> Site Web : http://www.fondation225.org<br> &copy;
+                                                    fondation225 , All Rights Reserved.
                                                 </div>
                                             </td>
                                         </tr>

@@ -311,7 +311,7 @@
         <option value='ceo'>technologie</option>
         <option value='front-end'>finance</option>
       </select>
-    </p>
+    </p>gjj
     <p class='field half required'>
       <label class='label required' for='name'>Nom de l'entreprise</label>
       <input class='text-input' id='name' name='nom_entreprise' required type='text'>

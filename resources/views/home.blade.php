@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','yebay')
+@section('title','Fondation 225')
 @section('content')
 <style>
 .testimonial .pic:before,

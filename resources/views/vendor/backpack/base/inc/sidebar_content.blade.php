@@ -12,14 +12,14 @@
 
 <li class="nav-title">Gestion des produits</li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('categories') }}'><i class="las la-list"></i> Categories</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('souscategories') }}'><i class="las la-list"></i> Sous categories</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('tailleproduits') }}'><i class="las la-crop"></i> Taille des produits</a></li>
+{{-- <li class='nav-item'><a class='nav-link' href='{{ backpack_url('souscategories') }}'><i class="las la-list"></i> Sous categories</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('tailleproduits') }}'><i class="las la-crop"></i> Taille des produits</a></li> --}}
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('produits') }}'><i class="lab la-product-hunt"></i> Produits</a></li>
 
 
 <li class="nav-title">Paramètres de base</li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('marques') }}'><i class="las la-registered"></i> Marques</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('couleurs') }}'><i class='nav-icon la la-palette'></i> Couleurs</a></li>
+{{-- <li class='nav-item'><a class='nav-link' href='{{ backpack_url('marques') }}'><i class="las la-registered"></i> Marques</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('couleurs') }}'><i class='nav-icon la la-palette'></i> Couleurs</a></li> --}}
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('villes') }}'><i class="las la-city"></i> Villes</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('communes') }}'><i class="las la-city"></i> Communes</a></li>
 

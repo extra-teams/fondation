@@ -24,7 +24,7 @@ return [
     // ----
 
     // Project name. Shown in the window title.
-    'project_name' => 'YEBAY',
+    'project_name' => 'FONDATION 225',
 
     // When clicking on the admin panel's top-left logo/name,
     // where should the user be redirected?
@@ -71,7 +71,7 @@ return [
     // ------
 
     // Menu logo. You can replace this with an <img> tag if you have a logo.
-    'project_logo'   => '<b>YE</b>BAY',
+    'project_logo'   => '<b>FONDATION</b>225',
 
     // Show / hide breadcrumbs on admin panel pages.
     'breadcrumbs' => true,

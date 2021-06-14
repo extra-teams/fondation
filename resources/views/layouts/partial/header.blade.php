@@ -29,7 +29,7 @@
             <!-- logo -->
             <div class="logo justify-content-center col-7">
                 <a href="#">
-                    <span class="order-0 order-lg-1 d-lg-none d-sm-none" id="open-menu"><i class="fas fa-bars"></i></span>
+                    <span class="order-0 order-lg-1 d-lg-none" id="open-menu"><i class="fas fa-bars"></i></span>
                     <img src="{{asset('images/fondation.jpeg')}}" onclick="window.location.href='/'"
                          class="img-fluid order-1 order-lg-0" alt="">
                 </a>

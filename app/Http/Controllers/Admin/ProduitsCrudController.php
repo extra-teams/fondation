@@ -70,15 +70,6 @@ class ProduitsCrudController extends CrudController
             'model' => "App\Models\Categories",
         ]);
 
-        $this->crud->addColumn([
-            'name' => 'code_souscategorie',
-            'type' => 'select',
-            'label' => "sous Categorie",
-            'entity' => 'souscategories',
-            'attribute' => 'nom',
-            'model' => "App\Models\Souscategories",
-        ]);
-
         $this->crud->addColumn(
             [
                 'name' => 'prix_vente',
@@ -126,28 +117,6 @@ class ProduitsCrudController extends CrudController
             ]
         );
 
-
-        $this->crud->addField(
-            [
-                'label' => "sous catégorie du produit",
-                'type' => "select2_from_ajax",
-                'name' => 'code_souscategorie',
-                'entity' => 'sousCategories',
-                'multiple' => 'false',
-                'attribute' => 'nom',
-                'data_source' => url("api/categories"),
-                'pivot' => false,
-                // OPTIONAL
-                'model' => "App\Models\Souscategories", // foreign key model
-                'placeholder' => "Selectionner une sous catégorie",
-                'minimum_input_length' => 0,
-                'dependencies' => ['code_categorie'],
-                'include_all_form_fields' => true,
-                'wrapperAttributes' => [
-                    'class' => 'form-group col-md-6'
-                ],
-            ]
-        );
         $this->crud->addField([
             'name' => 'code_marq',
             'type' => 'select2',
@@ -253,7 +222,6 @@ class ProduitsCrudController extends CrudController
                 'type' => 'text',
                 'label' => 'prix d\'achat',
                 'default' => '2000',
-                'type'=>'hidden',
                 'wrapperAttributes' => [
                     'class' => 'form-group col-md-6'
                 ],
@@ -278,12 +246,12 @@ class ProduitsCrudController extends CrudController
         ]);
 
 
-        $mtn=request()->input('prix_vente');
-        $prix_achat=intval($mtn)*0.2 + $mtn;
-        $prix_vente=intval($mtn)+1500;
-        
-        \DB::table('produits')->where('code',request()->input('code'))->first() ? "" : request()->merge(array('prix_vente'=>$prix_vente));
-        request()->merge(array('prix_achat'=>$prix_achat));
+        $mtn = request()->input('prix_vente');
+        $prix_achat = intval($mtn) * 0.2 + $mtn;
+        $prix_vente = intval($mtn) + 1500;
+
+        \DB::table('produits')->where('code', request()->input('code'))->first() ? "" : request()->merge(array('prix_vente' => $prix_vente));
+        request()->merge(array('prix_achat' => $prix_achat));
     }
 
     /**
@@ -323,15 +291,6 @@ class ProduitsCrudController extends CrudController
             'entity' => 'categories',
             'attribute' => 'nom',
             'model' => "App\Models\Categories",
-        ]);
-
-        $this->crud->addColumn([
-            'name' => 'code_souscategorie',
-            'type' => 'select',
-            'label' => "sous Categorie",
-            'entity' => 'souscategories',
-            'attribute' => 'nom',
-            'model' => "App\Models\Souscategories",
         ]);
 
         $this->crud->addColumn(

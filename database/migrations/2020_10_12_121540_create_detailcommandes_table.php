@@ -17,22 +17,16 @@ class CreateDetailcommandesTable extends Migration
             $table->bigIncrements('id')->unsigned();
             $table->unsignedBigInteger('id_commande');
             $table->string('code_prod');
-            $table->string('code_couleur');
-            $table->string('code_taille');
             $table->integer('quantite')->default(0);
-            $table->integer('prix_vente')->default(0);
-            $table->integer('prix_achat')->default(0);
+            $table->float('prix_vente')->default(0);
+            $table->float('prix_achat')->default(0);
             $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('id_commande')
-            ->references('id')->on('commandes')->onDelete('cascade');
+                ->references('id')->on('commandes')->onDelete('cascade');
             $table->foreign('code_prod')
                 ->references('code')->on('produits')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('code_couleur')
-                ->references('code')->on('couleurs')->onDelete('cascade');
-            $table->foreign('code_taille')
-                ->references('code')->on('tailleproduits')->onDelete('cascade');
         });
     }
 

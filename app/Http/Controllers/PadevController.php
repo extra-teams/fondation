@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendEmailJob;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class PadevController extends Controller
@@ -11,32 +11,24 @@ class PadevController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
         return view('padev.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    public function get_inscription()
     {
-        //
-    }
-
-
-    public function get_inscription(){
         return view('padev.inscription');
     }
+
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -68,12 +60,12 @@ class PadevController extends Controller
         $palmares = trim($request->palmares);
         $statut = trim($request->statut);
 
-        \DB::table("padev")->insert(["nom"=>$nom,"prenoms"=>$prenom,"pays"=>$pays,"adresse"=>$adresse,
-        "telephone"=>$telephone,"email"=>$email,"site"=>$site,"secteur"=>$secteur,"nom_entreprise"=>$entreprise,
-        "profession"=>$profession,"titre"=>$titre,"nbre_representation"=>$nbre_representation,"nbre_employe"=>$nbre_employe,
-        "nbre_participant"=>$nbre_participant,"impact"=>$impact,"palmares"=>$palmares,"statut"=>$statut]);
+        \DB::table("padev")->insert(["nom" => $nom, "prenoms" => $prenom, "pays" => $pays, "adresse" => $adresse,
+            "telephone" => $telephone, "email" => $email, "site" => $site, "secteur" => $secteur, "nom_entreprise" => $entreprise,
+            "profession" => $profession, "titre" => $titre, "nbre_representation" => $nbre_representation, "nbre_employe" => $nbre_employe,
+            "nbre_participant" => $nbre_participant, "impact" => $impact, "palmares" => $palmares, "statut" => $statut]);
         /* envoie du mail */
-        $noms=trim($nom .' ' .$prenom);
+        $noms = trim($nom . ' ' . $prenom);
         $data = [
             'subject' => 'Demande d\'inscription au PADEV 2021',
             'from' => 'contact@fondation225.org',
@@ -122,67 +114,21 @@ class PadevController extends Controller
                 // 'nom_lien' => 'allez sur le site'
             ]
         ];
-        
+
         $details2['type_email'] = 'neworder';
         $details2['email'] = "virtus225one@gmail.com";
         $details2['data'] = $data2;
 
 
         // Mail::to($email)->send(new \App\Mail\sendMail($data));
-        dispatch(new \App\Jobs\SendEmailJob($details));
+        dispatch(new SendEmailJob($details));
         // Mail::to($email)->send(new \App\Mail\sendMail($data));
-        dispatch(new \App\Jobs\SendEmailJob($details2));
-        return redirect()->route('padev.confirmation',[$noms]);
-        // dd($request);
-
+        dispatch(new SendEmailJob($details2));
+        return redirect()->route('padev.confirmation', [$noms]);
     }
-    
+
     public function confirmation($noms)
-        {
-            return view('padev.confirm')->with(["noms"=>$noms]);
-        }
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return view('padev.confirm')->with(["noms" => $noms]);
     }
 }

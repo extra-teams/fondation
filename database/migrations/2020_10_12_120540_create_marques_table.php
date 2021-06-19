@@ -15,8 +15,8 @@ class CreateMarquesTable extends Migration
     {
         Schema::create('marques', function (Blueprint $table) {
             $table->string('code')->primary();
-            $table->string('nom');
-            $table->longText('logo');
+            $table->string('nom')->unique();
+            $table->longText('logo')->nullable();
             $table->boolean('enabled')->default(true);
             $table->softDeletes();
             $table->timestamps();

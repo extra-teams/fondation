@@ -14,14 +14,9 @@ Route::group([
     ),
     'namespace'  => 'App\Http\Controllers\Admin',
 ], function () { // custom admin routes
-    Route::crud('villes', 'VillesCrudController');
-    Route::crud('communes', 'CommunesCrudController');
     Route::crud('produits', 'ProduitsCrudController');
     Route::crud('categories', 'CategoriesCrudController');
-    Route::crud('souscategories', 'SouscategoriesCrudController');
     Route::crud('marques', 'MarquesCrudController');
-    Route::crud('tailleproduits', 'TailleproduitsCrudController');
-    Route::crud('couleurs', 'CouleursCrudController');
     Route::crud('clients', 'ClientsCrudController');
     Route::crud('bonreductions', 'BonReductionsCrudController');
     Route::get('charts/weekly-users', 'Charts\WeeklyUsersChartController@response')->name('charts.weekly-users.index');

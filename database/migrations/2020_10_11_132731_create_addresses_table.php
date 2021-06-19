@@ -16,18 +16,17 @@ class CreateAddressesTable extends Migration
         Schema::create('adresses', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->unsignedBigInteger('id_client');
-            $table->string('code_commune');
-            $table->string('description');
-            $table->string('latitude')->default(0);
-            $table->string('longitude')->default(0);
+            $table->string('code_pays')->comment('code du pays');
+            $table->string('code_ville')->comment('code de la ville');
+            $table->string('region')->comment('region ou departement');
+            $table->string('rue')->nullable()->comment('numero de la rue');
+            $table->string('code_bp')->comment('code postale');
+            $table->longText('description')->nullable()->comment('info complementaire');
             $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('id_client')
                 ->references('id')->on('clients')->onDelete('cascade');
-
-            $table->foreign('code_commune')
-                ->references('code')->on('communes')->onDelete('cascade');
         });
     }
 

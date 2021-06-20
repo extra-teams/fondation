@@ -28,6 +28,10 @@
                     <ul class="d-flex align-items-center">
                         @if (!auth()->check())
                             <li class="col">
+                                <div>
+                                    <span>fr</span>
+                                    <span>en</span>
+                                </div>
                                 <div class="dropdown">
                                     <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                                        aria-expanded="false">
@@ -45,6 +49,8 @@
                                 <div class="dropdown">
                                     <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                                        aria-expanded="false">
+                                        <span>FR</span>
+                                        <span>EN</span>
                                         <i class="fas fa-user-circle"></i>
                                         <i class="arrow"></i>
                                     </a>

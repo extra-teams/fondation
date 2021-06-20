@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('title','Fondation 225')
 @section('content')
-
     <!-- caoursel -->
     <div id="slide" class="carousel slide" data-ride="carousel" data-interval="3000">
         <div class="carousel-inner">
@@ -219,44 +218,49 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="text-center">
-            <h2 class="text-uppercase font-weight-light mt-5 mb-3">LA BOUTIQUE HUMANITAIRE</h2>
-        </div>
-        <div class="row col-lg-none ">
-            @foreach (DB::table('produits')->where('enabled',1)->where('quantite','>',0)->inRandomOrder()->take(4)->get() as $produit)
-
-                <div class="col-6 col-lg-3">
-                    <div class="card_product">
-                        @php $liens=$produit->image; $lien=json_decode($liens); $img="img.jpg";
-                            if ($lien) { foreach($lien as $i){$img=$i;break; }}  @endphp
-
-                        @if(file_exists(public_path().'/storage/'.$img))
-                            <div class="top" style="background-image: url('{{asset('storage/'.$img)}}')">
+    <!-- la partie des produits -->
+    @if(isset($produits) && count($produits)>0)
+        <div class="container">
+            <div class="text-center">
+                <h2 class="text-uppercase font-weight-light mt-5 mb-3">LA BOUTIQUE HUMANITAIRE</h2>
+            </div>
+            <div class="row col-lg-none ">
+                @foreach ($produits as $produit)
+                    <div class="col-6 col-lg-3">
+                        <div class="card_product">
+                            @php
+                                if (isset($produit)){
+                                    $image = $produit->image[0];
+                                }else{
+                                    $image="img.jpg";
+                                }
+                            @endphp
+                            @if(file_exists(public_path().'/storage/'.$image))
+                                <div class="top" style="background-image: url('{{asset('storage/'.$image)}}')">
+                                </div>
+                            @else
+                                <div class="top"
+                                     style="background-image: url('{{asset('images/articles/noavailable.png')}}')">
+                                </div>
+                            @endif
+                            <div class="bottom text-center">
+                                <span class="name d-inline-block text-truncate">{{$produit->nom}}</span>
+                                <div class="">
+                                    <span class="current-price">{{$produit->prix_vente}} FCFA</span>
+                                    <span class="old-price">{{$produit->prix_achat}} FCFA</span>
+                                </div>
+                                <a href="{{route('produits.show',$produit->code)}}">
+                                    <button class="btn">Ajouter au panier</button>
+                                </a>
                             </div>
-                        @else
-                            <div class="top"
-                                 style="background-image: url('{{asset('images/articles/noavailable.png')}}')">
-                            </div>
-                        @endif
-                        <div class="bottom text-center">
-                            <span class="name d-inline-block text-truncate"
-                                  style="max-width:100%;font-weight:bold">{{$produit->nom}}</span>
-
-                            <div class="">
-                                <span class="current-price">{{$produit->prix_vente}} FCFA</span>
-                                <span class="old-price">{{$produit->prix_achat}} FCFA</span>
-                            </div>
-                            <a href="{{route('produits.show',$produit->code)}}">
-                                <button class="btn">Ajouter au panier</button>
-                            </a>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
-    </div>
+    @endif
 
+    <!-- la partie notre equipe -->
     <div class="container">
         <div class="text-center">
             <h2 class="text-uppercase font-weight-light mt-5 mb-3">NOTRE EQUIPE</h2>

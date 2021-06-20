@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produits;
+use App\Models\Sliders;
+
 class HomeController extends Controller
 {
     /**
@@ -11,6 +14,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $Produits = Produits::where('quantite', '>', 0)->where('enabled', 1)->take(4)->get();
+        $Sliders = Sliders::all();
+        return view('home')->with([
+            'produits' => $Produits,
+            'sliders' => $Sliders
+        ]);
     }
 }

@@ -36,14 +36,25 @@
                         @foreach ($produits as $produit)
                             <div class="col-6 col-lg-3">
                                 <div class="card_product">
-                                    @php $liens=$produit->image; $lien=json_decode($liens); $img="img.jpg";
-                        if ($lien) { foreach($lien as $i){$img=$i;break;} }  @endphp
+                                    @php
+                                        if (isset($produit)){
+                                            $image = json_decode($produit->image)[0];
+                                        }else{
+                                            $image="img.jpg";
+                                        }
+                                    @endphp
+                                    @if(file_exists(public_path().'/storage/'.$image))
+                                        <div class="top" style="background-image: url('{{asset('storage/'.$image)}}')">
+                                        </div>
+                                    @else
+                                        <div class="top"
+                                             style="background-image: url('{{asset('images/articles/noavailable.png')}}')">
+                                        </div>
+                                    @endif
                                     <div class="bottom text-center">
-                                        <span class="name d-inline-block text-truncate"
-                                              style="max-width:100%;font-weight:bold">{{$produit->nom}}</span>
+                                        <span class="name d-inline-block text-truncate">{{$produit->nom}}</span>
                                         <div class="d-flex flex-column">
                                             <span class="current-price">{{$produit->prix_vente}} FCFA</span>
-                                            <span class="old-price">{{$produit->prix_achat}} FCFA</span>
                                         </div>
                                         <a href="{{route('produits.show',$produit->code)}}">
                                             <button class="btn">Ajouter au panier</button>
@@ -58,9 +69,7 @@
 
 
                 <div class="mb-4 items-center " aria-label="Pa">
-                    <!-- <li class="page-item disabled"><a class="page-link" href="#">Precedant</a></li>-->
-                {{ $produits->appends(request()->input())->links() }}
-                <!--<li class="page-item"><a class="page-link" href="#">suivant</a></li>-->
+                    {{ $produits->appends(request()->input())->links() }}
                 </div>
             </div>
         </div>
@@ -70,21 +79,7 @@
 @section('extra-js')
     <script>
         const checkbox = $(".categorie");
-
         checkbox.change(function (event) {
-            var checkbox = event.target;
-            // if (checkbox.checked) {
-            // alert(checkbox.name);
-            // } else {
-            //     alert('no');
-            // }
-            // form = event.target.parentNode;
-            // alert(form);
-            // node = document.createElement("input");
-            // node.name  = "categorie";
-            // node.type  = "hidden";
-            // node.value = checkbox.name;
-            // form.appendChild(node.cloneNode());
             $('#form1').submit();
         });
     </script>

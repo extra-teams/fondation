@@ -26,5 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MigrationsTableSeeder::class);
         $this->call(PasswordResetsTableSeeder::class);
         $this->call(SliderTableSeeder::class);
+        $this->call(ProduitsTableSeeder::class);
+        $this->call(CategoriesTableSeeder::class);
     }
 }

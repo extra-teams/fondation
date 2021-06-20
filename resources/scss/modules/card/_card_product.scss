@@ -4,11 +4,17 @@
   flex-direction: column;
   height: 25rem;
   margin-bottom: 0.5rem;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   & .top {
     position: relative;
+    background-size: contain;
     background-position: center center;
-    background-size: cover;
+    background-repeat: no-repeat;
     margin-bottom: 5px;
     border: 1px solid #eeeff0;
     height: 70%;
@@ -16,7 +22,6 @@
 
   & .name {
     color: black;
-    text-transform: capitalize;
   }
 
   & .current-price {

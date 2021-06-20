@@ -10874,12 +10874,18 @@ textarea:focus {
   flex-direction: column;
   height: 25rem;
   margin-bottom: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.card_product:hover {
+  transform: scale(1.05);
 }
 
 .card_product .top {
   position: relative;
+  background-size: contain;
   background-position: center center;
-  background-size: cover;
+  background-repeat: no-repeat;
   margin-bottom: 5px;
   border: 1px solid #eeeff0;
   height: 70%;
@@ -10887,7 +10893,6 @@ textarea:focus {
 
 .card_product .name {
   color: black;
-  text-transform: capitalize;
 }
 
 .card_product .current-price {

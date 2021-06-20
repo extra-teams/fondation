@@ -29,14 +29,15 @@
         </div>
     </div>
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="text-center">
             <h2 class="text-uppercase font-weight-light mt-5 mb-3">Qui Sommes Nous ?</h2>
         </div>
-        <div class="container">
-            <div>
-                <img src="{{asset('images/fondation.jpeg')}}" class="float-left mr-3 mb-3" alt=""
-                     style="width: 400px;height: 140px">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <img src="{{asset('images/fondation.jpeg')}}" class="img-fluid mr-3 mb-3" alt="">
+            </div>
+            <div class="col-12 col-md-6">
                 <p>
                     La Fondation 225 est une Organisation Non Gouvernementale à but humanitaire
                     fondée le 21 NOVEMBRE 2012 à Ouagadougou sous le récépissé N°001724/MATDS/SG/DGLPAP/DAOSOC
@@ -49,7 +50,8 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <!-- domaine intervention -->
+    <div class="container">
         <div class="text-center">
             <h2 class="text-uppercase font-weight-light mt-5 mb-3">Nos Domaines d'Intervention</h2>
         </div>
@@ -231,12 +233,10 @@
 
                         @if(file_exists(public_path().'/storage/'.$img))
                             <div class="top" style="background-image: url('{{asset('storage/'.$img)}}')">
-
                             </div>
                         @else
                             <div class="top"
                                  style="background-image: url('{{asset('images/articles/noavailable.png')}}')">
-
                             </div>
                         @endif
                         <div class="bottom text-center">

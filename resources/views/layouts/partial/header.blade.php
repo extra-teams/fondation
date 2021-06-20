@@ -3,11 +3,10 @@
     <div class="header">
         <div class="row header-top align-items-center">
             <!-- logo -->
-            <div class="logo justify-content-start col-lg-4">
+            <div class="logo justify-content-start col-2 col-lg-4">
                 <a href="#">
                     <span class="order-0 order-lg-1 d-lg-none" id="open-menu"><i class="fas fa-bars"></i></span>
-                    <img src="{{asset('images/fondation.jpeg')}}" onclick="window.location.href='/'"
-                         class="img-fluid order-1 order-lg-0" alt="">
+                    <img src="{{asset('images/fondation.jpeg')}}" onclick="window.location.href='/'" class="img-fluid order-1 order-lg-0" alt="">
                 </a>
             </div>
             <!-- formulaire de recherche -->
@@ -24,7 +23,7 @@
                 </form>
             </div>
             <!-- panier -->
-            <div class="header-right order-2 order-lg-3 col-3 text-right mt-3">
+            <div class="header-right order-2 order-lg-3 col-3 text-right">
                 <div class="d-inline-flex">
                     <ul class="d-flex align-items-center">
                         @if (!auth()->check())

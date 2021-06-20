@@ -108,22 +108,17 @@ class ProduitController extends Controller
      */
     public function show($id)
     {
-        $couleurs = DB::table('produit_has_couleurs')->where('code_prod', $id)->get();
-        $tailles = DB::table('produit_has_taille')->where('code_prod', $id)->get();
-
         $produit = DB::table('produits')->where('code', $id)->first();
         /* si aucun produit avec ce nom */
         if (is_null($produit)) {
             return redirect('/');
         }
         $categorie = Categories::find($produit->code_categorie);
-        $souscategorie = Souscategories::find($produit->code_souscategorie);
         $lien = array(
             $categorie->nom => "produits.index",
-            $souscategorie->nom => "produits.index",
             $produit->nom => "produits.show"
         );
-        return view('produits.detail', compact('produit', 'couleurs', 'tailles', 'lien', 'categorie', 'souscategorie'));
+        return view('produits.detail', compact('produit', 'lien', 'categorie'));
     }
 
     /**

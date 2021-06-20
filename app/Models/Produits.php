@@ -32,7 +32,7 @@ class Produits extends Model
     protected $primaryKey = 'code';
     // public $timestamps = false;
     protected $guarded = ['code'];
-    protected $fillable = ['code','description','code_categorie','code_marq', 'nom', 'image', 'prix_achat', 'prix_vente', 'quantite', 'vues', 'enabled','owner_id'];
+    protected $fillable = ['code','description','code_categorie', 'nom', 'image', 'prix_achat', 'prix_vente', 'quantite', 'vues', 'enabled','owner_id'];
     // protected $hidden = [];
     // protected $dates = [];
     protected $keyType='string';
@@ -64,11 +64,6 @@ class Produits extends Model
     public function categories()
     {
         return $this->belongsTo('App\Models\Categories','code_categorie','code');
-    }
-
-    public function marques()
-    {
-        return $this->belongsTo('App\Models\Marques','code_marq','code');
     }
 
 

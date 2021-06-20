@@ -8,7 +8,7 @@ a {
   }
 }
 
-input {
+input, textarea {
   &:focus {
     outline: none;
     box-shadow: none;
@@ -16,6 +16,8 @@ input {
 }
 
 .btn {
+  border-radius: 0;
+
   &:focus {
     outline: none;
     box-shadow: none;

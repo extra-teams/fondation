@@ -16,7 +16,6 @@ Route::group([
 ], function () { // custom admin routes
     Route::crud('produits', 'ProduitsCrudController');
     Route::crud('categories', 'CategoriesCrudController');
-    Route::crud('marques', 'MarquesCrudController');
     Route::crud('clients', 'ClientsCrudController');
     Route::crud('bonreductions', 'BonReductionsCrudController');
     Route::get('charts/weekly-users', 'Charts\WeeklyUsersChartController@response')->name('charts.weekly-users.index');

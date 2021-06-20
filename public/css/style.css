@@ -10447,6 +10447,7 @@ fieldset:disabled .btn {
 body {
   overflow-x: hidden;
   font-family: "Inter", sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 .wrapper {
@@ -10463,9 +10464,14 @@ a:hover {
   color: #fbefb3;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
   box-shadow: none;
+}
+
+.btn {
+  border-radius: 0;
 }
 
 .btn:focus {
@@ -10478,7 +10484,7 @@ input:focus {
 /* header */
 
 .header {
-  height: 9rem;
+  height: 8.5rem;
 }
 
 .header .header-top {
@@ -10566,7 +10572,7 @@ input:focus {
   display: flex;
   align-items: stretch;
   transition: opacity 0.4s;
-  border-bottom: 5rem solid #d6b40c;
+  border-bottom: 4px solid #d6b40c;
 }
 
 .header .header-bottom ul li:hover {
@@ -10867,7 +10873,7 @@ input:focus {
   display: flex;
   flex-direction: column;
   height: 25rem;
-  margin-bottom: 3rem;
+  margin-bottom: 0.5rem;
 }
 
 .card_product .top {
@@ -11050,7 +11056,7 @@ input:focus {
 
 .order-summary .order-col .order-total {
   font-size: 24px;
-  color: #D10024;
+  color: #d6b40c;
 }
 
 .cart {
@@ -11304,7 +11310,7 @@ form .form-body .btn-register:hover {
 }
 
 #product-imgs .product-preview.slick-current {
-  border-color: #D10024;
+  border-color: #d6b40c;
 }
 
 #product-imgs .slick-prev:before {
@@ -11344,20 +11350,19 @@ form .form-body .btn-register:hover {
   position: relative;
   border: 2px solid transparent;
   height: 40px;
-  width: 100%;
+  width: 50%;
   padding: 0 30px;
-  background-color: #ef233c;
+  background-color: #d6b40c;
   color: #FFF;
   text-transform: uppercase;
-  font-weight: 700;
   border-radius: 0;
   transition: 0.2s all;
 }
 
 .product-details .add-to-cart-btn:hover {
   background-color: #FFF;
-  color: #D10024;
-  border-color: #D10024;
+  color: #d6b40c;
+  border-color: #d6b40c;
   padding: 0 30px 0 50px;
 }
 
@@ -11373,7 +11378,7 @@ form .form-body .btn-register:hover {
   width: 40px;
   height: 40px;
   line-height: 38px;
-  color: #D10024;
+  color: #d6b40c;
   opacity: 0;
   visibility: hidden;
 }
@@ -11538,6 +11543,7 @@ img.zoom {
 /* footer */
 
 .footer {
+  font-size: 0.8125rem;
   margin-top: 1rem;
   background-color: #eee;
   overflow-x: hidden;
@@ -11552,7 +11558,6 @@ img.zoom {
   line-height: 30px;
   letter-spacing: 0.4px;
   font-size: 0.875rem;
-  color: #666;
 }
 
 .footer a:first-letter {

@@ -117,19 +117,6 @@ class ProduitsCrudController extends CrudController
             ]
         );
 
-        $this->crud->addField([
-            'name' => 'code_marq',
-            'type' => 'select2',
-            'label' => "Marque du produit",
-            'entity' => 'marques',
-            'attribute' => 'nom',
-            'model' => "App\Models\Marques", // foreign key model
-            //'pivot' => true,
-            'wrapperAttributes' => [
-                'class' => 'form-group col-md-6 '
-            ],
-        ]);
-
 
         $this->crud->addField(
             [
@@ -168,38 +155,6 @@ class ProduitsCrudController extends CrudController
                 'name' => 'owner_id',
                 'type' => 'hidden',
                 'value' => backpack_user()->id
-            ]
-        );
-
-        $this->crud->addField(
-            [
-                'label' => 'Couleur',
-                'type' => 'select2_multiple',
-                'name' => 'couleurs',
-                // optional
-                'entity' => 'couleurs',
-                'model' => "App\Models\Couleurs", // foreign key model
-                'attribute' => 'nom',
-                'pivot' => true,
-                'wrapperAttributes' => [
-                    'class' => 'form-group col-md-6'
-                ],
-            ]
-        );
-
-        $this->crud->addField(
-            [
-                'label' => 'Taille',
-                'type' => 'select2_multiple',
-                'name' => 'tailles',
-                // optional
-                'entity' => 'tailles',
-                'model' => "App\Models\Tailleproduits", // foreign key model
-                'attribute' => 'nom',
-                'pivot' => true,
-                'wrapperAttributes' => [
-                    'class' => 'form-group col-md-6'
-                ],
             ]
         );
 

@@ -16,13 +16,11 @@
 
                 <div class="row">
                     <main class="col-sm-9">
-
                         <div class="card">
-                            <table class="table table-hover shopping-cart-wrap">
+                            <table class="table  shopping-cart-wrap">
                                 <thead class="text-muted">
                                 <tr>
                                     <th scope="col" width="2"></th>
-
                                     <th scope="col" width="100">IMAGE</th>
                                     <th scope="col" width="150">PRODUIT</th>
                                     <th scope="col" width="150">PRIX</th>
@@ -157,11 +155,10 @@
         </section>
         <section class="section-content d-block d-lg-none bg padding-y border-top">
             <div class="container" style=" margin-top:50px;">
-                <a href="{{route('client.index')}}" style="color:#000;font-size:18px"><span><i
-                                class="fa fa-arrow-left float-left mt-2"></i></span></a>
+                <a href="{{route('client.index')}}" style="color:#000;font-size:18px"><span><i class="fa fa-arrow-left float-left mt-2"></i></span></a>
 
-                <center><p class="h5" style="color: #888;font-weight:bold;">VOTRE PANIER ( {{Cart::count()}} )</p>
-                </center>
+                <p class="h5 text-center" style="color: #888;font-weight:bold;">VOTRE PANIER ( {{Cart::count()}} )</p>
+
                 <br>
 
                 <main class="col-sm-9">

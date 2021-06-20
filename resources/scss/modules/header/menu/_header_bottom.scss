@@ -9,7 +9,7 @@
       display: flex;
       align-items: stretch;
       transition: opacity .4s;
-      border-bottom: 5rem solid $color-orange;
+      border-bottom: 4px solid $color-orange;
 
       &:hover {
         border-bottom-color: white;

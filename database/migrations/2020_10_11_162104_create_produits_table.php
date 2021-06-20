@@ -22,7 +22,6 @@ class CreateProduitsTable extends Migration
             $table->integer('quantite');
             $table->longText('description')->nullable();
             $table->string('code_categorie');
-            $table->string('code_marq');
             $table->integer('vues')->default(0);
             $table->boolean('enabled');
             $table->integer('owner_id')->comment('celui qui à ajouter le produit dans la bd')->nullable();

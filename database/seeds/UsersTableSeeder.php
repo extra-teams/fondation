@@ -20,8 +20,8 @@ class UsersTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'name' => 'yebay',
-                'email' => 'admin@yebay.ci',
+                'name' => 'fondation225',
+                'email' => 'admin@fondation225.ci',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$0.6d4DYEWSEWizCFASrb/uWHHEiNL43Xqr36pv9YnA2EQgtqIXJbG',
                 'remember_token' => 'KQ1duRFdO6vDm0uGGsbgJ1YtJTGUCa7lOb5Vi7KXZrSA4zMfVyeIM893KN0J',

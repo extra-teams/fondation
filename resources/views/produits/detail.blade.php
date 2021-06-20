@@ -152,7 +152,7 @@
                     <h6 mb-2>INFORMATIONS ARTICLE</h6>
                     <div>
                         {!!$produit->description!!}
-                        <p> <span style="color:red">NB:</span> pour ce decembre vos articles yebay en provenance de paris, nécessite une avance de 20% et un délais de livraison allant jusqu'à 2 semaine .</p>
+                        <p> <span style="color:red">NB:</span> pour ce decembre vos articles fondation225 en provenance de paris, nécessite une avance de 20% et un délais de livraison allant jusqu'à 2 semaine .</p>
                     </div>
                 </ul>
             </div>

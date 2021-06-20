@@ -70,14 +70,14 @@ class RegisterController extends Controller
         if ($saved) {
             /* envoie du mail */
             $data = [
-                'subject' => 'Inscription sur yebay.ci',
-                'from' => 'contact@yebay.ci',
-                'from_name' => 'yebay.ci',
+                'subject' => 'Inscription sur fondation225.ci',
+                'from' => 'contact@fondation225.ci',
+                'from_name' => 'fondation225.ci',
                 'template' => 'mail.blank',
                 'info' => [
                     'fullname' => $nom . ' ' . $prenom,
-                    'contenu' => 'Bonjour , <br> vous venez de créer un compte sur www.yebay.ci , vous pouvez vous connectez dès maintenant avec vos identifiants .',
-                    'lien' => 'http://www.yebay.ci/',
+                    'contenu' => 'Bonjour , <br> vous venez de créer un compte sur www.fondation225.ci , vous pouvez vous connectez dès maintenant avec vos identifiants .',
+                    'lien' => 'http://www.fondation225.ci/',
                     'nom_lien' => 'se connecter'
                 ]
             ];

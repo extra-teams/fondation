@@ -33,11 +33,11 @@ return [
     'google' => [
         'client_id' => '526535296851-37arsuhc8h3vfiakkve5i0j3idejs9fl.apps.googleusercontent.com',
         'client_secret' => 'LecXkfPe2IR83PsHUFvgI8b2',
-        'redirect' => 'https://yebay.ci/auth/google/callback',
+        'redirect' => 'https://fondation225.ci/auth/google/callback',
     ],
     'facebook' => [
         'client_id' => '1010517612792405',
         'client_secret' => 'd1b5deecd73a32623b14d10f138c519b',
-        'redirect' => 'http://yebay.ci/facebook/callback',
+        'redirect' => 'http://fondation225.ci/facebook/callback',
       ], 
 ];

@@ -4,9 +4,9 @@
     {{-- meta --}}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="YEBAY.CI"/>
+    <meta name="author" content="fondation225.CI"/>
     <meta name="description"
-          content="YEBAY | Découvrez votre nouveau site de e-commerce"/>
+          content="fondation225 | Découvrez votre nouveau site de e-commerce"/>
     <meta name="keywords" content="telephonie,tablettes,accessoires,montres,tv,audio,"/>
     <meta name="robots" content="INDEX,FOLLOW"/>
 

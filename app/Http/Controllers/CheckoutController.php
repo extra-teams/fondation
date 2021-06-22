@@ -6,7 +6,6 @@ use App\Models\Adresse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Produits;
-use App\Models\Commande;
 
 class CheckoutController extends Controller
 {
@@ -41,7 +40,6 @@ class CheckoutController extends Controller
                 session()->flash('type', 'success');
                 return back();
             }
-
         }
 
         /* vars */
@@ -77,7 +75,7 @@ class CheckoutController extends Controller
                 $code_taille = $taille ? $taille->code : "S/M";
                 \DB::table('detailcommandes')->insert(array('id_commande' => $id_c, 'code_prod' => $produit->model->code, 'code_couleur' => $code_couleur, 'code_taille' => $code_taille, 'quantite' => $produit->qty, 'prix_vente' => $produit->model->prix_vente, 'prix_achat' => $produit->model->prix_achat));
             }
-            
+
             /* envoie du mail */
             $data = [
                 'subject' => 'Nouvelle Commande sur yebay.ci',
@@ -94,11 +92,11 @@ class CheckoutController extends Controller
                     'nom_lien' => 'se connecter'
                 ]
             ];
-            
+
             $details['type_email'] = 'neworder';
             $details['email'] = "contact@yebay.ci";
             $details['data'] = $data;
-  
+
             dispatch(new \App\Jobs\SendEmailJob($details));
 
             /* modifier le stock */
@@ -132,49 +130,5 @@ class CheckoutController extends Controller
     public function confirmation()
     {
         return view('checkout.confirmation');
-    }
-
-    /**
-     * Display the specified resource.
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

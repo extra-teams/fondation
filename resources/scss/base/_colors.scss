@@ -6,10 +6,16 @@ $color-green-dark: #4daf77;
 $color-blue-white: #f9f8ff;
 $color-blue: #dce1ff;
 
+$color-orange: #d6b40c;
 $color-red: #ff1515;
 $color-black: #777777;
 $color-grey: #d4d4d4;
 $color-pink: #0d6efd;
+
+
+.bg-orange {
+  background-color: $color-orange;
+}
 
 .bg-blue {
   background: $color-blue;

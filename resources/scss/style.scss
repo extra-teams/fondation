@@ -1,32 +1,17 @@
-/*
- * Author: @KEVIN
- *
- */
-
-@import "base/bootstrap";
-
-/* Site settings */
-@import "base/colors";
-@import "site-settings";
-
-/* Base */
-@import "base/base";
+/* base */
+@import "base/index";
 
 /* Modules */
 /* header */
-@import "modules/header/text_top";
-@import "modules/header/header";
-@import "modules/header/carousel";
-/* sidebar mobile */
-@import "modules/header/sidebar/sidebar_mobile";
+@import "modules/header/index";
 
-/* baniiere */
+/* baniere */
 @import "modules/banner/banner_first";
 /* breadcrumb */
 @import "modules/breadcrumb";
 
 /* cards */
-@import "modules/product/card";
+@import "modules/card/index";
 
 @import "modules/checkout";
 @import "modules/cart";
@@ -39,6 +24,12 @@
 
 /* account */
 @import "modules/account/index";
+
+/* text */
+@import "modules/text/textimonial";
+
+/* home */
+@import "modules/home/index";
 
 /* footer */
 @import "modules/footer/footer";

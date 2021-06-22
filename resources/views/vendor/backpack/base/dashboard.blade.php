@@ -8,7 +8,6 @@
 
     $productCount = App\Models\Produits::count();
     $userCount = App\Clients::count();
-    $marqueCount = App\Models\Marques::count();
     $lastProduits = App\Models\Produits::orderBy('created_at', 'DESC')->first();
 
      // notice we use Widget::add() to add widgets to a certain group
@@ -22,15 +21,7 @@
             ->description('Clients inscrits.')
             ->progress(100*(int)$userCount/1000),
         // alternatively, to use widgets as content, we can use the same add() method,
-        // but we need to use onlyHere() or remove() at the end
-        Widget::add()
-            ->type('progress')
-            ->class('card border-0 text-white bg-success')
-            ->progressClass('progress-bar')
-            ->value($marqueCount)
-            ->description('Marques.')
-            ->progress(100*(int)$marqueCount/1000)
-            ->onlyHere(),
+
         // both Widget::make() and Widget::add() accept an array as a parameter
         // if you prefer defining your widgets as arrays
         Widget::make([

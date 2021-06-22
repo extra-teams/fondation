@@ -33,11 +33,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="prenom">Prénom</label>
-                                <input value="{{$client->prenom}}" required type="text" maxlength="50" id="prenom" name="prenom">
+                                <input value="{{$client->prenom}}" required type="text" maxlength="50" id="prenom"
+                                       name="prenom">
                             </div>
                             <div class="form-group">
                                 <label for="tel">téléphone</label>
-                                <input value="{{$client->telephone}}" required maxlength="12" type="text" id="tel" name="tel">
+                                <input value="{{$client->telephone}}" required maxlength="20" type="text" id="tel"
+                                       name="tel">
                             </div>
                         </div>
                         <!-- /Billing Details -->
@@ -48,12 +50,18 @@
                                 <h3 class="title">Adresse de Livraison</h3>
                             </div>
                             <div class="form-group">
-
+                                <label for="commune">Pays</label>
+                                <select name="commune" id="pays">
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="commune">Ville</label>
+                                <select name="commune" id="ville">
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="commune">Commune</label>
                                 <select name="commune" id="commune">
-                                    @foreach (DB::table('communes')->get() as $commune)
-                                        <option value="{{$commune->nom}}">{{$commune->nom}}</option>
-                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group">

@@ -31,9 +31,7 @@ class ProduitsRequest extends FormRequest
             'prix_vente' => 'required|numeric',
             'prix_achat' => 'required|numeric',
             'quantite' => 'required|numeric',
-            'description' => 'required',
-            'couleurs' => 'required',
-            'tailles' => 'required'
+            'description' => 'required'
         ];
     }
 

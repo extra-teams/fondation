@@ -11,7 +11,7 @@ class CommandeDetail extends Model
 
     protected $table = 'detailcommandes';
     protected $guarded = ['id'];
-    protected $fillable = ['id', 'code_prod', 'code_couleur', 'code_taille', 'quantite', 'prix_vente','prix_achat'];
+    protected $fillable = ['id', 'code_prod', 'quantite', 'prix_vente', 'prix_achat'];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     /*
@@ -19,17 +19,8 @@ class CommandeDetail extends Model
    | RELATIONS
    |--------------------------------------------------------------------------
    */
-    public function couleur()
+    public function produits()
     {
-        return $this->belongsTo('App\Models\Couleurs','code_couleur','code');
-    }
-
-    public function taille()
-    {
-        return $this->belongsTo('App\Models\Tailleproduits','code_taille','code');
-    }
-
-    public function produits(){
-        return $this->belongsTo('App\Models\Produits','code_prod','code');
+        return $this->belongsTo('App\Models\Produits', 'code_prod', 'code');
     }
 }

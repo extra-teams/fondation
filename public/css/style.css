@@ -10492,28 +10492,17 @@ textarea:focus {
 /* header */
 
 .header {
-  height: 8.5rem;
+  height: 8rem;
 }
 
 .header .header-top {
   padding: 0 1rem;
-  /* header top left */
   /* header top center */
   /* header top right */
 }
 
 .header .header-top .logo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header .header-top .logo img {
-  max-width: 13rem;
-}
-
-.header .header-top .logo i {
-  font-size: 1.5rem;
+  width: 10rem;
 }
 
 .header .header-top .search input {
@@ -10609,26 +10598,7 @@ textarea:focus {
 
 @media (min-width: 320px) and (max-width: 767px) {
   .header {
-    padding: 0 10px 10px 10px;
-    max-height: 10rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    /* bloc logo et menu hamburger */
-  }
-
-  .header .logo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* logo de yebay */
-    /* icon hamburger */
-  }
-
-  .header .logo img {
-    max-width: 13rem;
-  }
-
-  .header .logo i {
-    font-size: 2rem;
+    max-height: 5rem;
   }
 
   .header .search input {
@@ -11649,6 +11619,10 @@ img.zoom {
 
 /* home */
 
+p {
+  font-family: Roboto, Sans-Serif, serif;
+}
+
 /* contact */
 
 #contact {
@@ -11690,25 +11664,28 @@ img.zoom {
 
 /* footer */
 
-.footer {
+footer {
   font-size: 0.8125rem;
   margin-top: 1rem;
-  background-color: #eee;
   overflow-x: hidden;
+  /* newsletter */
 }
 
-.footer .row {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+footer #newsletter input {
+  padding: 10px 10px;
+  flex: 1 1 auto;
+  border: 1px solid #d6b40c;
 }
 
-.footer a {
-  line-height: 30px;
-  letter-spacing: 0.4px;
-  font-size: 0.875rem;
+footer #newsletter .input-group-append {
+  border: 1px solid #d6b40c;
+  background-color: #d6b40c;
 }
 
-.footer a:first-letter {
-  text-transform: uppercase;
+footer #newsletter .input-group-append .input-group-text {
+  border-radius: 0;
+  color: white;
+  border: 1px solid #d6b40c;
+  background-color: #d6b40c;
 }
 

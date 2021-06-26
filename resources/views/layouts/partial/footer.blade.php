@@ -54,12 +54,12 @@
                 <div class="col-lg-3" id="smartling-nav-footer-social">
                     <span itemscope="" itemtype="https://schema.org/Organization">
                         <link itemprop="url" href="https://www.zendesk.com" />
-                        <a itemprop="sameAs" href="//www.twitter.com/zendesk" style="margin: auto;padding: 10px;width: 10px;height: 10px;background-color: #fabe14;border-radius: 50px;font-size: 25px;"><i class="fa fa-twitter" style="color: black;"></i></a>
-                        <a itemprop="sameAs" href="//www.facebook.com/zendesk" class="notranslate icon-facebook"></a>
-                        <a itemprop="sameAs" href="//www.linkedin.com/company/zendesk" class="notranslate icon-linkedin"></a>
-                        <a itemprop="sameAs" href="//www.youtube.com/zendesk" class="fas fa-youtube" rel="publisher"></a>
-                        <a itemprop="sameAs" href="//instagram.com/zendesk/" class="notranslate icon-instagram"></a>
-                        <a itemprop="sameAs" href="//www.snapchat.com/add/zendesk" class="notranslate icon-snapchat"></a>
+                        <a itemprop="sameAs" href="//www.twitter.com/zendesk" style="margin: auto;padding: 10px;background-color: #fabe14;border-radius: 50px;color: black;"><i class="fa fa-twitter"></i></a>
+                        <a itemprop="sameAs" href="//www.facebook.com/zendesk" class="notranslate icon-facebook" style="margin: auto;padding: 10px;background-color: #fabe14;border-radius: 50px;color: black;"><i class="fa fa-twitter"></i></a>
+                        <a itemprop="sameAs" href="//www.linkedin.com/company/zendesk" class="notranslate icon-linkedin"><i class="fa fa-facebook"></i></a>
+                        <a itemprop="sameAs" href="//www.youtube.com/zendesk" class="fas fa-youtube" rel="publisher"><i class="fa fa-twitter"></i></a>
+                        <a itemprop="sameAs" href="//instagram.com/zendesk/" class="notranslate icon-instagram"><i class="fa fa-twitter"></i></a>
+                        <a itemprop="sameAs" href="//www.snapchat.com/add/zendesk" class="notranslate icon-snapchat"><i class="fa fa-twitter"></i></a>
                     </span>
                 </div>
             </div>

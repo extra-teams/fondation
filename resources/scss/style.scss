@@ -28,8 +28,16 @@
 /* text */
 @import "modules/text/textimonial";
 
+/* common */
+@import "modules/common/index";
+
+/**
+  pages
+ */
 /* home */
 @import "modules/home/index";
+/* contact */
+@import "modules/contact/index";
 
 /* footer */
 @import "modules/footer/footer";

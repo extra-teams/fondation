@@ -25077,3 +25077,23 @@ ewfondation\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle
 #46 /home/paranoid73/Public/fondation/fondation/server.php(21): require_once('/home/paranoid7...')
 #47 {main}
 "} 
+[2021-06-26 21:09:15] local.ERROR: Cannot redeclare getPrice() (previously declared in C:\laragon\www\fondation\app\Helpers.php:4) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare getPrice() (previously declared in C:\\laragon\\www\\fondation\\app\\Helpers.php:4) at C:\\laragon\\www\\fondation\\app\\Helpers.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2021-06-26 21:10:13] local.ERROR: Cannot redeclare getPrice() (previously declared in C:\laragon\www\fondation\app\Helpers.php:4) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare getPrice() (previously declared in C:\\laragon\\www\\fondation\\app\\Helpers.php:4) at C:\\laragon\\www\\fondation\\app\\Helpers.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2021-06-26 21:11:13] local.ERROR: Cannot redeclare getPrice() (previously declared in C:\laragon\www\fondation\app\Helpers.php:4) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare getPrice() (previously declared in C:\\laragon\\www\\fondation\\app\\Helpers.php:4) at C:\\laragon\\www\\fondation\\app\\Helpers.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2021-06-26 21:12:13] local.ERROR: Cannot redeclare getPrice() (previously declared in C:\laragon\www\fondation\app\Helpers.php:4) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare getPrice() (previously declared in C:\\laragon\\www\\fondation\\app\\Helpers.php:4) at C:\\laragon\\www\\fondation\\app\\Helpers.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2021-06-26 21:13:13] local.ERROR: Cannot redeclare getPrice() (previously declared in C:\laragon\www\fondation\app\Helpers.php:4) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare getPrice() (previously declared in C:\\laragon\\www\\fondation\\app\\Helpers.php:4) at C:\\laragon\\www\\fondation\\app\\Helpers.php:4)
+[stacktrace]
+#0 {main}
+"} 

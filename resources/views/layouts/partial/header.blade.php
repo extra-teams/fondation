@@ -2,15 +2,16 @@
     <!-- header -->
     <div class="header">
         <div class="row header-top align-items-center">
+            <!-- icon -->
+            <span class="col-1 order-0  d-lg-none" id="open-menu">
+                <i class="fas fa-bars"></i>
+            </span>
             <!-- logo -->
-            <div class="logo justify-content-start col-2 col-lg-4">
-                <a href="#">
-                    <span class="order-0 order-lg-1 d-lg-none" id="open-menu"><i class="fas fa-bars"></i></span>
-                    <img src="{{asset('images/fondation.jpeg')}}" onclick="window.location.href='/'" class="img-fluid order-1 order-lg-0" alt="">
-                </a>
-            </div>
+            <a class="col-4 col-lg-4 order-1 order-lg-0 " href="{{url('/')}}">
+                <img src="{{asset('images/fondation.jpeg')}}" class="logo" alt="fondation225 logo">
+            </a>
             <!-- formulaire de recherche -->
-            <div class="col-lg-5 d-none d-lg-block">
+            <div class="col-lg-5 order-lg-1 d-none d-lg-block">
                 <form action="{{route('produits.recherche')}}" class="search">
                     <div class="input-group">
                         <input name="q" value="{{request()->q ?? ''}}" type="text" placeholder="rechercher un article">
@@ -23,15 +24,17 @@
                 </form>
             </div>
             <!-- panier -->
-            <div class="header-right order-2 order-lg-3 col-3 text-right">
+            <div class="col-4 col-md-3 order-2 header-right  order-lg-3  text-right">
                 <div class="d-inline-flex">
                     <ul class="d-flex align-items-center">
+                        <li class="col">
+                            <div class="d-flex">
+                                <a href="{{url('locale/fr')}}" class="mr-2">FR</a>
+                                <a href="{{url('locale/en')}}">EN</a>
+                            </div>
+                        </li>
                         @if (!auth()->check())
                             <li class="col">
-                                {{-- <div>
-                                    <span>fr</span>
-                                    <span>en</span>
-                                </div> --}}
                                 <div class="dropdown">
                                     <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                                        aria-expanded="false">
@@ -39,8 +42,10 @@
                                         <i class="arrow"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="{{route('login.index')}}">se connecter</a>
-                                        <a class="dropdown-item" href="{{url('/register')}}">créer un compte</a>
+                                        <a class="dropdown-item"
+                                           href="{{route('login.index')}}">{{__("header.sign_in")}}</a>
+                                        <a class="dropdown-item"
+                                           href="{{url('/register')}}">{{__("header.sign_up")}}</a>
                                     </div>
                                 </div>
                             </li>
@@ -77,12 +82,12 @@
 
         <div class="row header-bottom d-none d-lg-block mt-4">
             <ul class="list-unstyled">
-                <li><a href="{{route('accueil')}}">Accueil</a></li>
-                <li><a href="{{route('accueil')}}">mot du president</a></li>
-                <li><a href="{{route('accueil')}}">Actualites</a></li>
-                <li><a href="{{url('produits')}}">Boutique</a></li>
+                <li><a href="{{route('accueil')}}">{{__("header.home")}}</a></li>
+                <li><a href="{{route('accueil')}}">{{__("header.president_word")}}</a></li>
+                <li><a href="{{route('accueil')}}">{{__("header.news")}}</a></li>
+                <li><a href="{{url('produits')}}">{{__("header.shop")}}</a></li>
                 <li><a href="{{route('padev.index')}}">Padev</a></li>
-                <li><a href="{{route('contact.index')}}">Contactez nous</a></li>
+                <li><a href="{{route('contact.index')}}">{{__("header.contact_us")}}</a></li>
             </ul>
         </div>
     </div>

@@ -28,10 +28,10 @@
                     <ul class="d-flex align-items-center">
                         @if (!auth()->check())
                             <li class="col">
-                                <div>
+                                {{-- <div>
                                     <span>fr</span>
                                     <span>en</span>
-                                </div>
+                                </div> --}}
                                 <div class="dropdown">
                                     <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                                        aria-expanded="false">

@@ -1,0 +1,11 @@
+.styled_title {
+  position: relative;
+  &::after {
+    content: " ";
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    display: table-cell;
+    padding: 9px 0 0 2px;
+    width: 82px;
+  }
+}

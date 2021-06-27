@@ -1,5 +1,5 @@
 .header {
-  height: 8.5rem;
+  height: 8rem;
 
   @import "header_top";
   @import "header_bottom";
@@ -12,27 +12,9 @@
 
 @media (min-width: 320px) and (max-width: 767px) {
   .header {
-    padding: 0 10px 10px 10px;
-    max-height: 10rem;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
-    /* bloc logo et menu hamburger */
-    & .logo {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      /* logo de yebay */
-      & img {
-        max-width: 13rem;
-      }
-
-      /* icon hamburger */
-      & i {
-        font-size: 2rem;
-      }
-    }
+    max-height: 5rem;
 
     & .search {
-
       & input {
         border-radius: 0;
         box-shadow: 0 4px 11px rgba(0, 0, 0, .2);

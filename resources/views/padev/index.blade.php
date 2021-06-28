@@ -249,6 +249,41 @@
 
         </div>
 
+        @php
+$padev = false;
+    $p = DB::table('gestion_padev')->where('ouvert','1')->first();
+    if($p) $padev = true;
+@endphp
+
+        <div class="container mt-5">
+            @if($p)
+            <div class='card-v card--featured'>
+                <div class='card__side-by-side--m'>
+                    <div class='card__image'>
+                        <img src={{asset('images/padev/inscription-padev.jpeg')}}>
+                    </div>
+                    <div class='card__content padding-large--l'>
+                        <div class="item">
+                            <h2>{{$p->libelle}}</h2>
+                            <p>{!!$p->description!!}</p>
+                            <a href="{{route('padev.page_inscription')}}">
+                                <div class='card__button bg-light text-center'
+                                     style="margin: 1.6rem 0;padding: 0.8rem 1.6rem;background: none;border-radius: 2px;font-weight: bold;">
+                                    Inscrivez vous
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @else
+            <div>
+                <br><br><br>
+                <center><h2>LES INSCRIPTIONS AU PADEV SONT FERMEES</h2></center>
+            </div>
+            @endif
+        </div>
+ 
         <div class="container mt-5">
             <div class='card-v card--featured'>
                 <div class='card__side-by-side--m'>
@@ -280,30 +315,7 @@
 
         </div>
 
-        <div class="container mt-5">
-            <div class='card-v card--featured'>
-                <div class='card__side-by-side--m'>
-                    <div class='card__image'>
-                        <img src={{asset('images/padev/inscription-padev.jpeg')}}>
-                    </div>
-                    <div class='card__content padding-large--l'>
-                        <div class="item">
-                            <h2>INSCRIPTION PADEV 2021 KIGALI</h2>
-                            <p>Prenez part a la 16e edition du PADEV<br>Qui se tiendra a Kigali</p>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                                himenaeos.</p>
-                            <a href="{{route('padev.page_inscription')}}">
-                                <div class='card__button bg-light text-center'
-                                     style="margin: 1.6rem 0;padding: 0.8rem 1.6rem;background: none;border-radius: 2px;font-weight: bold;">
-                                    Inscrivez vous
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    {{-- <div class="d-block d-lg-none bg-col-m">
+        {{-- <div class="d-block d-lg-none bg-col-m">
       <div class="column">
         <div class="col-5" style="">
           <h3>Culture</h3>

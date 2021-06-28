@@ -10,6 +10,10 @@
     <li class='nav-item'><a class='nav-link' href='{{ backpack_url('/v/#/partenaire/commandes') }}'><i class="nav-icon la la-first-order"></i>&nbsp; commandes</a></li>
 @endif
 
+<li class="nav-title">Padev</li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('padev') }}'><i class='nav-icon la la-question'></i> Inscrits</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('padev-admin') }}'><i class='nav-icon la la-question'></i> Evénement</a></li>
+
 
 <li class="nav-title">Gestion des produits</li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('categories') }}'><i class="las la-list"></i> Categories</a></li>

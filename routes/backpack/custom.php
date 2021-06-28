@@ -33,4 +33,6 @@ Route::group([
     Route::get('/partenaire/commande', 'API\CommandePController@show');
 
 
+    Route::crud('padev', 'PadevCrudController');
+    Route::crud('padev-admin', 'PadevAdminCrudController');
 }); // this should be the absolute last line of this file

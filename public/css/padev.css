@@ -46,7 +46,7 @@ body {
     }
 }
 
-.form .button,
+/* .form .button,
 .form .message,
 .customSelect,
 .form .select,
@@ -237,9 +237,7 @@ body {
 }
 
 
-/* body {
-    padding: 2em;
-} */
+
 
 .form {
     border: none;
@@ -248,7 +246,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
 }
 
 .form .field {
@@ -335,4 +333,4 @@ body {
     .form {
         width: 100%;
     }
-}
+} */

@@ -6,19 +6,296 @@
 @endsection
 @section('extra-js')
 <script src="{{asset('js/padev.js')}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.customSelect/0.5.1/jquery.customSelect.min.js"></script>
 @endsection
 @section('content')
-<div class="container-fluid  mb-5">
+<style>
+  .body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .container1{
+    width: 330px;
+    text-align: center;
+    padding: 10px 30px 10px 30px;
+    border: solid 1px black;
+  }
+  .container1 h1{
+    font-size: 35px;
+    font-weight: 500px;
+    margin: 0 0 30px 0;
+  }
+  .container1 .form-outer{
+    width: 100%;
+    overflow: hidden;
+  }
+  .form-outer form{
+    display: flex;
+    width: 400%;
+  }
+  .form-outer form .page{
+    width: 25%;
+    transition: margin-left 0.3s ease-in-out;
+  }
+  .form-outer form .page .title{
+    text-align: left;
+    font-size: 25px;
+    font-weight: 400px;
+  }
+  form .page .field .label{
+    top: -30px;
+    font-weight: 500;
+    position: absolute;
+  }
+  .form-outer form .page .field{
+    height: 45px;
+    width: 330px;
+    margin: 45px 0;
+    display: flex;
+    position: relative;
+  }
+  .form-outer form .page .field input{
+    height: 100%;
+    width: 80%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 18px;
+    padding-left: 15px;
+  }
+  form .page .field select{
+    width: 100%;
+    padding-left: 10px;
+    font-size: 17px;
+    font-weight: 500;
+  }
+  form .page .field button{
+    width: 80%;
+    height: calc(100% + 5px);
+    border: none;
+    background: #D6B40C;
+    margin-top: -20px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.5s ease;
+  }
+  form .page .btns button{
+    margin-top: -20px!important;
+  }
+  form .page .btns button.prev{
+    margin-right: 10px;
+    font-size: 17px;
+  }
+  form .page .btns button.next{
+    margin-right: 70px;
+  }
+  form .page .btns button.submit{
+    margin-right: 70px;
+  }
+  .container1 .progresse-bar{
+    display: flex;
+    margin: 40px 0;
+    user-select: none;
+  }
+  .container1 .progresse-bar .step{
+    text-align: center;
+    width: 100%;
+    position: relative;
+  }
+  /* .container1 .progresse-bar .step p{
+    font-weight: 500;
+    font-size: 18px;
+    color: #D6B40C;
+    margin-bottom: 8px;
+  } */
+  .progresse-bar .step .bullet{
+  height: 25px;
+  width: 25px;
+  border: 2px solid #D6B40C;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+  }
+  .progreses-bar .step .bullet.active{
+    border-color: #D6B40C;
+    background: #D6B40C;
+  }
+  .progresse-bar .step .bullet span{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .progresse-bar .step .bullet.active span{
+    display: none;
+  }
+  .progresse-bar .step .bullet:before,
+  .progresse-bar .step .bullet:after{
+    position: absolute;
+    content: '';
+    bottom: 9px;
+    right: -62px;
+    height: 3px;
+    width: 56px;
+    background: #D6B40C;
+  }
+  .progresse-bar .step .bullet.active:after{
+    background: #D6B40C;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 0.3s linear forwards;
+  }
+  @keyframes animate {
+    100%{
+      transform: scaleX(1);
+    }
+  }
+  .progresse-bar .step:last-child .bullet:before,
+  .progresse-bar .step:last-child .bullet:after{
+    display: none;
+  }
+  .progresse-bar .step p.active{
+    color: #D6B40C;
+    transition: 0.2s linear;
+  }
+  .progresse-bar .step .check{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    font-size: 15px;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+  .progresse-bar .step .check.active{
+    display: block;
+    color: #D6B40C;
+  }
+</style>
+<div class="container-fluid ">
   <div class="bg " {{--style="background-image: url({{asset('images/padev/bg.jpg')}});"--}}>
     <div class="bg-image"></div>
     <div class="bg-text">
       <h1>INSCRIPTION PADEV</h1>
     </div>
   </div>
+</div>
   <br><br><br>
-  <form action='{{route('padev.traitement')}}' method="POST" class='form'>
+  <div class="container-fluid body">
+    <div class="container1">
+     
+      <div class="progresse-bar">
+        <div class="step">
+           {{-- <p>
+              Name
+           </p> --}}
+           <div class="bullet">
+              <span>1</span>
+           </div>
+           <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+           {{-- <p>
+              Contact
+           </p> --}}
+           <div class="bullet">
+              <span>2</span>
+           </div>
+           <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+           {{-- <p>
+              Submit
+           </p> --}}
+           <div class="bullet">
+              <span>4</span>
+           </div>
+           <div class="check fas fa-check"></div>
+        </div>
+      </div>
+      <div class="form-outer">
+        <form action="#">
+          <div class="page slidepage">
+            <div class="title">Basic Info</div>
+            <div class="field">
+              <div class="label">Name</div>
+              <input type="text" name="" id="">
+            </div>
+            <div class="field">
+              <div class="label">Name</div>
+              <input type="text" name="" id="">
+            </div>
+            <div class="field nextBtn">
+              <button>Next</button>
+            </div>
+          </div>
+          <div class="page">
+            <div class="title">Autre Info</div>
+            <div class="field">
+              <div class="label">Name</div>
+              <input type="text" name="" id="">
+            </div>
+            <div class="field">
+              <div class="label">Name</div>
+              <input type="text" name="" id="">
+            </div>
+            <div class="field btns">
+              <button class="prev-1 prev">Previous</button>
+              <button class="next-1 next">Next</button>
+            </div>
+          </div>
+          <div class="page">
+            <div class="title">Option Info</div>
+            <div class="field">
+              <div class="label">Name</div>
+              <input type="text" name="" id="">
+            </div>
+            <div class="field">
+              <div class="label">Name</div>
+              <input type="text" name="" id="">
+            </div>
+            <div class="field btns">
+              <button class="prev-2 prev">Previous</button>
+              <button class="submit">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+  <script>
+    const slidePage = document.querySelector(".slidepage");
+    const firtNextBtn = document.querySelector(".nextBtn");
+    const firtPrevBtn = document.querySelector(".prev-1");
+    const secNextBtn = document.querySelector(".next-1");
+    const secPrevBtn = document.querySelector(".prev-2");
+    const FiniBtn = document.querySelector(".submit");
+    
+
+    firtNextBtn.addEventListener("click", function(){
+      slidePage.style.marginLeft = "-25%";
+    })
+    secNextBtn.addEventListener("click", function(){
+      slidePage.style.marginLeft = "-50%";
+    })
+
+    firtPrevBtn.addEventListener("click", function(){
+      slidePage.style.marginLeft = "0%";
+    })
+    secPrevBtn.addEventListener("click", function(){
+      slidePage.style.marginLeft = "-25%";
+    })
+  </script>
+
+  {{-- <form action='{{route('padev.traitement')}}' method="POST" class='form'>
     @csrf
     <p class='field required half'>
       <label class='label' for='nom'>Nom</label>
@@ -291,7 +568,7 @@
       <input class='text-input' id='tel' name='telephone' required>
     </p>
     <p class='field half required '>
-      {{-- <p class='field half required error'> --}}
+      
       <label class='label' for='login'>Adresse</label>
       <input class='text-input' id='login' name='adresse' required type='text'>
     </p>
@@ -338,68 +615,7 @@
       <label class='label required' for='name'>Nombre de representation en afrique</label>
       <input class='text-input' id='name' name='nbre_representation' required type='number'>
     </p> 
-    {{-- <div class='field'>
-              <label class='label'>Sport?</label>
-              <ul class='checkboxes'>
-                <li class='checkbox'>
-                  <input class='checkbox-input' id='choice-0' name='choice' type='checkbox' value='0'>
-                  <label class='checkbox-label' for='choice-0'>Football</label>
-                </li>
-                <li class='checkbox'>
-                  <input class='checkbox-input' id='choice-1' name='choice' type='checkbox' value='1'>
-                  <label class='checkbox-label' for='choice-1'>Basketball</label>
-                </li>
-                <li class='checkbox'>
-                  <input class='checkbox-input' id='choice-2' name='choice' type='checkbox' value='2'>
-                  <label class='checkbox-label' for='choice-2'>Volleyball</label>
-                </li>
-                <li class='checkbox'>
-                  <input class='checkbox-input' id='choice-3' name='choice' type='checkbox' value='3'>
-                  <label class='checkbox-label' for='choice-3'>Golf</label>
-                </li>
-                <li class='checkbox'>
-                  <input class='checkbox-input' id='choice-4' name='choice' type='checkbox' value='4'>
-                  <label class='checkbox-label' for='choice-4'>Swimming</label>
-                </li>
-              </ul>
-            </div>
-            <div class='field'>
-              <label class='label'>Favourite JS framework</label>
-              <ul class='options'>
-                <li class='option'>
-                  <input class='option-input' id='option-0' name='option' type='radio' value='0'>
-                  <label class='option-label' for='option-0'>React</label>
-                </li>
-                <li class='option'>
-                  <input class='option-input' id='option-1' name='option' type='radio' value='1'>
-                  <label class='option-label' for='option-1'>Vue</label>
-                </li>
-                <li class='option'>
-                  <input class='option-input' id='option-2' name='option' type='radio' value='2'>
-                  <label class='option-label' for='option-2'>Angular</label>
-                </li>
-                <li class='option'>
-                  <input class='option-input' id='option-3' name='option' type='radio' value='3'>
-                  <label class='option-label' for='option-3'>Riot</label>
-                </li>
-                <li class='option'>
-                  <input class='option-input' id='option-4' name='option' type='radio' value='4'>
-                  <label class='option-label' for='option-4'>Polymer</label>
-                </li>
-                <li class='option'>
-                  <input class='option-input' id='option-5' name='option' type='radio' value='5'>
-                  <label class='option-label' for='option-5'>Ember</label>
-                </li>
-                <li class='option'>
-                  <input class='option-input' id='option-6' name='option' type='radio' value='6'>
-                  <label class='option-label' for='option-6'>Meteor</label>
-                </li>
-                <li class='option'>
-                  <input class='option-input' id='option-7' name='option' type='radio' value='7'>
-                  <label class='option-label' for='option-7'>Knockout</label>
-                </li>
-              </ul>
-            </div>  --}}
+    
             <p class='field'>
               <label class='label required' for='impact'>IMPACT DE VOS ACTIVITES SUR LE DEVELOPPEMENT</label>
               <textarea class='textarea' cols='50' id='impact' name='impact' rows='3' required></textarea>
@@ -421,17 +637,13 @@
                 </li>
                
                
-                {{-- <li class='checkbox'>
-                  <input class='checkbox-input' id='choice-2' name='choice' type='checkbox' value='2'>
-                  <label class='checkbox-label' for='choice-2'>Recevoir les conditions de <br>participation</label>
-                </li> --}}
+                
               </ul>
             </div>
             <p class='field half'>
               <input class='button' type='submit' value='Envoyer'>
             </p>
-    </form>
-  </div>
+    </form> --}}
           
     
 

@@ -5,16 +5,16 @@
             <div class="row">
                 <div class="col-12 col-md-4">
                     <div class="newsletter-text">
-                        <h4 class="text-center">Rejoignez-nous</h4>
-                        <p class="text-center">Inscrivez-vous à notre newsletter.</p>
+                        <h4 class="text-center">{{__("footer.rejoindre")}}</h4>
+                        <p class="text-center">{{__("footer.inscrire")}}</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-5">
                     <form id="newsletter" method="post" class="w-100">
                         <div class="input-group">
-                            <input type="text" autocomplete="email" placeholder="votre adresse e-mail" maxlength="100">
+                            <input type="text" autocomplete="email" placeholder="{{__("footer.votre_email")}}" maxlength="100">
                             <div class="input-group-append">
-                                <span class="input-group-text">S'abonner</span>
+                                <span class="input-group-text">{{__("footer.abonner")}}</span>
                             </div>
                         </div>
                         <div>
@@ -22,8 +22,7 @@
                                 <input type="checkbox" class="js-opt-in-checkbox js-field"
                                        id="optinToMarketing" name="optinToMarketing" checked=""
                                        value="TRUE"/>
-                                Envoyez-moi aussi de temps en temps des e-mails au sujet des produits et
-                                services de la fondation225.
+                                       {{__("footer.envoyer")}}
                             </label>
                         </div>
                     </form>

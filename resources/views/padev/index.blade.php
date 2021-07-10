@@ -245,6 +245,22 @@
                         </div>
                     </div>
                 </div>
+                <div class="column">
+                    <div class="col-5">
+                        <div class="mr-5">
+                            <h3>Culture</h3>
+                        </div>
+                        <div class="bg-i">
+                            <img src="{{asset('images/padev/culture.jpeg')}}" width="200px" alt="">
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <h3>Développement</h3>
+                        <div class="bg-i">
+                            <img src="{{asset('images/padev/developpement.png')}}" width="200px" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>

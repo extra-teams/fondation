@@ -9,7 +9,7 @@
             <div class="header">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="styled_title text-white">Nos contacts</h2>
+                        <h2 class="styled_title text-white">{{__('contactez.nos_contact')}}</h2>
                     </div>
                 </div>
             </div>
@@ -20,12 +20,10 @@
             <div class="col-12 col-lg-6 align-self-center mt-5 mt-lg-0">
                 <div class="pl-3 text-left">
                     <h3 class="styled_title">
-                        En ligne
+                        {{__('contactez.en_ligne')}}
                     </h3>
                     <p class="font-roboto-condensed">
-                        Vous souhaitez signaler une panne, vous pouvez nous faire part de votre motif de réclamation
-                        directement en prenant contact avec un conseiller en nous envoyant un mail
-                        à l'adresse mail suivante :
+                        {{__('contactez.en_ligne_desc')}}
                     </p>
                     <a href="mailto:contact@bms.ci" class="btn bg-orange">
                         <i class="fa fa-share"></i>
@@ -37,10 +35,10 @@
             <div class="col-12 col-lg-6 align-self-center mt-5 mt-lg-0">
                 <div class="pl-3 text-left">
                     <h3 class="styled_title">
-                        Réseaux sociaux
+                        {{__('contactez.reseau')}}
                     </h3>
                     <p class="font-roboto-condensed">
-                        Posez vos questions via un de nos réseaux sociaux ci-dessous.
+                        {{__('contactez.reseau_desc')}}
                     </p>
                     <a href="#" class="btn bg-facebook text-white">
                         <i class="fab fa-facebook"></i>
@@ -61,10 +59,10 @@
                 <div class="pl-3 text-left">
                     <h3 class="styled_title">
                         <i class="fa fa-phone"></i>
-                        Par téléphone
+                        {{__('contactez.telephone')}}
                     </h3>
                     <p class="font-roboto-condensed">
-                        Nous restons joignable les jours ouvrables de 08h00 à 15h00.
+                        {{__('contactez.telephone_desc')}}
                     </p>
 
                     <a href="#" class="btn bg-orange">
@@ -76,10 +74,10 @@
             <div class="col-12 col-lg-6 align-self-center mt-5 mt-lg-0">
                 <div class="pl-3 text-left">
                     <h3 class="styled_title">
-                        Bureaux Fondation 225
+                        {{__('contactez.bureau')}}
                     </h3>
                     <p class="font-roboto-condensed">
-                        Du lundi au vendredi de 08h à 15h30, <br> Le samedi de 09h à 12h uniquement dans nos locaux à
+                        {{__('contactez.bureau_desc1')}}, <br>{{__('contactez.bureau_desc2')}}
                         <strong>Ouagadougou (Burkina Faso)</strong>
                     </p>
                 </div>

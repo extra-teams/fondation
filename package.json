@@ -19,6 +19,7 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "@splidejs/splide": "^2.4.21",
         "element-ui": "^2.14.1",
         "moment": "^2.29.1",
         "sweetalert": "^2.1.2",

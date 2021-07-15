@@ -18,7 +18,9 @@
 @import "modules/table_responsive";
 
 /* form */
-@import "modules/form/form";
+@import "modules/form/index";
+
+/* product */
 @import "modules/product/product_filter";
 @import "modules/product/single";
 
@@ -38,6 +40,9 @@
 @import "modules/home/index";
 /* contact */
 @import "modules/contact/index";
+
+/* pandev */
+@import "modules/pandev/index";
 
 /* footer */
 @import "modules/footer/footer";

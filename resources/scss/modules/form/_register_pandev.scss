@@ -1,0 +1,13 @@
+#register-pandev {
+  & .register-pandev-lef {
+    background-color: $color-black;
+  }
+
+  & form {
+    & input {
+      padding: 8px;
+      border: 1px solid rgba(0, 0, 0,.1);
+      width: 100%;
+    }
+  }
+}

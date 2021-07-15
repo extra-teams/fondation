@@ -1,43 +1,29 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    {{-- meta --}}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="YEBAY.CI"/>
-    <meta name="description"
-          content="YEBAY | Découvrez votre nouveau site de e-commerce"/>
-    <meta name="keywords" content="telephonie,tablettes,accessoires,montres,tv,audio,"/>
+    <meta name="author" content="Fondation 225 Team"/>
+    <meta name="description" content="Fondation 225 | "/>
+    <meta name="keywords" content="fondation225,civ,event,padev"/>
     <meta name="robots" content="INDEX,FOLLOW"/>
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>@yield('title')</title>
-
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('images/favicon/apple-touch-icon2.jpeg')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('images/favicon/favicon2-32x32.jpeg')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon/favicon2-32x32.jpeg')}}">
     <link rel="manifest" href="{{asset('images/favicon/site.webmanifest')}}">
-    <!-- Scripts -->
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
-
     <!-- Styles -->
+    <link rel="stylesheet" href="{{ asset('/library/splide/css/splide.min.css')}}">
     <link rel="stylesheet" href="{{mix('/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('/css/autre.css')}}">
     <link rel="stylesheet" href="{{asset('/library/fontawesome/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('library/tiny-slider/tiny-slider.css')}}">
     <link rel="stylesheet" href="{{asset('css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('css/slick-theme.css')}}">
     <link rel="stylesheet" href="{{asset('packages/noty/noty.css')}}">
-    {{-- <link rel="stylesheet" href="{{asset('packages/@digitallyhappy/backstrap/css/style.css')}}"> --}}
     <link rel="stylesheet" href="{{asset('/css/noty_theme.css')}}">
-    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"> --}}
-@yield('extra-css')
-
+    @yield('extra-css')
 </head>
 <body>
 {{-- <style>
@@ -49,6 +35,7 @@
 @yield('content')
 
 @include('layouts.partial.footer')
+<script src="{{mix("app.js")}}"></script>
 <script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
@@ -57,7 +44,6 @@
 <script src="{{asset('js/main.js')}}"></script>
 <script src="{{asset('js/slick.min.js')}}"></script>
 <script src="{{asset('library/tiny-slider/tiny-slider.js')}}"></script>
-
 {{-- Bootstrap Notifications using Prologue Alerts & PNotify JS --}}
 <script src="{{ asset('packages/noty/noty.js') }}"></script>
 

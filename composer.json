@@ -25,7 +25,7 @@
     "laravel/tinker": "^2.0",
     "orangehill/iseed": "^2.6",
     "spatie/laravel-sluggable": "^2.6",
-    "twbs/bootstrap": "5.0.0-alpha2"
+    "twbs/bootstrap": "5.0.2"
   },
   "require-dev": {
     "backpack/generators": "^3.1",

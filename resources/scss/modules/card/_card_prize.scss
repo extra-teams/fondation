@@ -1,0 +1,17 @@
+.card-prize {
+  height: 20rem;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  color: $color-orange;
+
+  & h5 {
+    font-size: 1rem;
+  }
+
+  & img {
+    height: 80%;
+    width: 100%;
+    object-fit: contain;
+  }
+}

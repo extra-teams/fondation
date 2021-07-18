@@ -6,41 +6,164 @@
             <div class="col-10">
                 <div class="mt-5">
                     <h5 class="text-center">INSCRIPTION PADEV</h5>
+                    <p class="text-center">NB : Votre inscription n'est valable qu'après le paiement des frais de
+                        participation.</p>
                 </div>
-                <form class="row mt-2">
-                    <div class="col-md-6 mt-2">
-                        <label for="inputFirstname" class="form-label">Nom</label>
-                        <input type="email" id="inputFirstname" maxlength="255" required>
+                <!-- formulaire -->
+                <form action="{{route("padev.page_inscription")}}" method="post">
+                @csrf
+                <!-- step 1 -->
+                    <div id="step1" class="row mt-2">
+                        <div class="col-md-4 mt-2">
+                            <label for="inputFirstname" class="form-label">Nom</label>
+                            <input type="text" name="nom" id="inputFirstname" maxlength="255" required>
+                            @if ($errors->has('nom'))
+                                <span class="text-danger">{{ $errors->first('nom') }}</span>
+                            @endif
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <label for="inputLastname" class="form-label">Prenom</label>
+                            <input type="text" name="prenom" id="inputLastname" maxlength="255" required>
+                            @if ($errors->has('prenom'))
+                                <span class="text-danger">{{ $errors->first('prenom') }}</span>
+                            @endif
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <label for="inputCountry" class="form-label">Pays</label>
+                            <select id="inputCountry" name="pays" class="form-select">
+                                <?php foreach($countries as $country): ?>
+                                <option value="<?= $country->name['official']; ?>"><?= $country->name['official']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <label for="inputAdresse" class="form-label">Adresse</label>
+                            <input type="text" name="adresse" id="inputAdresse" maxlength="20" required>
+                            @if ($errors->has('adresse'))
+                                <span class="text-danger">{{ $errors->first('adresse') }}</span>
+                            @endif
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <label for="inputTel" class="form-label">Téléphone</label>
+                            <input type="text" name="tel" id="inputTel" maxlength="255" required>
+                            @if ($errors->has('tel'))
+                                <span class="text-danger">{{ $errors->first('tel) }}</span>
+                            @endif
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <label for="inputNomEntreprise" class="form-label">NOM DE L'ENTREPRISE </label>
+                            <input type="text" name="entreprise" id="inputNomEntreprise" maxlength="20" required>
+                            @if ($errors->has('entreprise'))
+                                <span class="text-danger">{{ $errors->first('entreprise') }}</span>
+                            @endif
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <label for="inputProfession" class="form-label">Profession</label>
+                            <input type="text" name="profession" id="inputProfession" maxlength="255" required>
+                            @if ($errors->has('profession'))
+                                <span class="text-danger">{{ $errors->first('profession') }}</span>
+                            @endif
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <label for="inputTitre" class="form-label">Titre</label>
+                            <input type="text" name="titre" id="inputTitre" maxlength="20" required>
+                            @if ($errors->has('titre'))
+                                <span class="text-danger">{{ $errors->first('titre') }}</span>
+                            @endif
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <label for="inputSecteurActivite" class="form-label">Secteur D'activite</label>
+                            <input type="text" name="secteur" id="inputSecteurActivite" maxlength="255" required>
+                            @if ($errors->has('secteur'))
+                                <span class="text-danger">{{ $errors->first('secteur') }}</span>
+                            @endif
+                        </div>
+                        <div class="col-12 mt-5">
+                            <button type="button" id="nextBtn" class="btn bg-orange text-white text-uppercase">
+                                Suivant
+                            </button>
+                        </div>
                     </div>
-                    <div class="col-md-6 mt-2">
-                        <label for="inputLastname" class="form-label">Prenom</label>
-                        <input type="password" id="inputLastname" maxlength="255" required>
-                    </div>
-                    <div class="col-md-6 mt-2">
-                        <label for="inputContact" class="form-label">Contact 1</label>
-                        <input type="email" id="inputContact" maxlength="20" required>
-                    </div>
-                    <div class="col-md-6 mt-2">
-                        <label for="inputContactAlt" class="form-label">Contact 2</label>
-                        <input type="password" id="inputContactAlt" maxlength="20" required>
-                    </div>
-                    <div class="col-md-6 mt-2">
-                        <label for="inputEmail" class="form-label">Email</label>
-                        <input type="email" id="inputEmail" maxlength="255" required>
-                    </div>
-                    <div class="col-md-6 mt-2">
-                        <label for="inputCountry" class="form-label">Pays</label>
-                        <select id="inputCountry" class="form-select">
-                            <option selected>Choose...</option>
-                            <option>...</option>
-                        </select>
-                    </div>
-                    <div class="col-12 col-lg-3 mt-5">
-                        <button type="submit" class="btn bg-orange text-white text-uppercase">S'inscrire</button>
+                    <!-- step 2 -->
+                    <div id="step2" class="row mt-2" style="display: none">
+                        <div class="col-md-4 mt-2">
+                            <label for="inputNbreParticipant" class="form-label">NOMBRE DE PARTICIPANT </label>
+                            <input type="number" name="nombreParticipant" id="inputNbreParticipant" maxlength="20" required>
+                            @if ($errors->has('nombreParticipant'))
+                                <span class="text-danger">{{ $errors->first('nombreParticipant') }}</span>
+                            @endif
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <label for="inputEmail" class="form-label">VOTRE EMAIL </label>
+                            <input type="email" name="email" id="inputEmail" maxlength="255" required>
+                            @if ($errors->has('email'))
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                            @endif
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <label for="inputSiteWeb" class="form-label">VOTRE SITE WEB </label>
+                            <input type="text" name="siteweb" id="inputSiteWeb" maxlength="20" required>
+                            @if ($errors->has('siteweb'))
+                                <span class="text-danger">{{ $errors->first('siteweb') }}</span>
+                            @endif
+                        </div>
+                        <div class="col-md-8 mt-2">
+                            <label for="inputImpact" class="form-label">IMPACT DE VOS ACTIVITES SUR LE
+                                DEVELOPPEMENT </label>
+                            <input name="impact" type="text" id="inputImpact" maxlength="20" required>
+                            @if ($errors->has('impact'))
+                                <span class="text-danger">{{ $errors->first('impact') }}</span>
+                            @endif
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <label for="inputNomEmployeAfricain" class="form-label">NOM D'EMPLOYES AFRICAIN </label>
+                            <input name="nbreEmploye" type="text" id="inputNomEmployeAfricain" maxlength="255" required>
+                            @if ($errors->has('nbreEmploye'))
+                                <span class="text-danger">{{ $errors->first('nbreEmploye') }}</span>
+                            @endif
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <label for="inputNbreRepresentation" class="form-label">NOMBRE DE REPRESENTATION EN
+                                AFRIQUE</label>
+                            <input name="nbreRepresentation" type="number" id="inputNbreRepresentation" maxlength="20"
+                                   required>
+                            @if ($errors->has('nbreRepresentation'))
+                                <span class="text-danger">{{ $errors->first('nbreRepresentation') }}</span>
+                            @endif
+                        </div>
+                        <div class="col-12 mt-2">
+                            <label for="inputPalmares" class="form-label">PALMARES DE VOTRE ENTREPRISE</label>
+                            <textarea name="palmares" class="form-control" id="inputPalmares" maxlength="20"
+                                      required></textarea>
+                            @if ($errors->has('palmares'))
+                                <span class="text-danger">{{ $errors->first('palmares') }}</span>
+                            @endif
+                        </div>
+                        <div class="col-12 mt-5">
+                            <button type="button" typeof="prevBtn" class="btn bg-orange text-white text-uppercase">
+                                Precedent
+                            </button>
+                            <button type="submit" class="btn bg-orange text-white text-uppercase">Inscription</button>
+                        </div>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
+@endsection
+
+@section("extra-js")
+    <script>
+        $(document).ready(function () {
+            $("#nextBtn").click(function () {
+                $("#step2").show();
+                $("#step1").hide();
+            });
+
+            $("#prevBtn").click(function () {
+                $("#step2").hide();
+                $("#step1").show();
+            });
+        });
+    </script>
 @endsection

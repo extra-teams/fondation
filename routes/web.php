@@ -2,16 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 // Route qui permet de connaître la langue active
 Route::get('locale', 'LocalizationController@getLang')->name('getlang');
@@ -26,8 +16,7 @@ Route::get('/padev-inscription', 'PadevController@get_inscription')->name('padev
 Route::post('/traitement-inscription', 'PadevController@store')->name('padev.traitement');
 
 Route::get('/contactez-nous', 'ContactController@index')->name('contact.index');
-Route::get('/padev-confirmation/{noms}', 'PadevController@confirmation')->name("padev.confirmation");
-
+Route::get('/padev-confirmation', 'PadevController@confirmation')->name("padev.confirmation");
 
 
 // route login et register
@@ -40,11 +29,10 @@ Route::get('auth/google', 'LoginController@redirectToGoogle');
 Route::get('auth/google/callback', 'LoginController@handleGoogleCallback');
 
 Route::get('auth/facebook', 'LoginController@redirectToFacebook');
-Route::get('facebook/callback', 'LoginController@handleFacebookCallback'); 
+Route::get('facebook/callback', 'LoginController@handleFacebookCallback');
 
 
 // route produits
-
 Route::resource('produits', 'ProduitController');
 route::get('/recherche', 'ProduitController@search')->name('produits.recherche');
 

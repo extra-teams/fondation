@@ -37,7 +37,7 @@
                 <img src="{{asset('images/fondation.jpeg')}}" class="img-fluid mr-3 mb-3" alt="">
             </div>
             <div class="col-12 col-md-6">
-                <p class="text-center text-lg-left">
+                <p>
                     La Fondation 225 est une Organisation Non Gouvernementale à but humanitaire
                     fondée le 21 NOVEMBRE 2012 à Ouagadougou sous le récépissé N°001724/MATDS/SG/DGLPAP/DAOSOC
                     du 31 DECEMBRE 2012. Elle est le fruit de l’initiative d’hommes et de femmes originaires de

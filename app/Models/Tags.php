@@ -16,10 +16,12 @@ class Tags extends Model
     */
 
     protected $table = 'tags';
-    // protected $primaryKey = 'id';
-    // public $timestamps = false;
-    protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $primaryKey = 'code';
+    public $incrementing = false;
+    protected $keyType = "string";
+    public $timestamps = false;
+    protected $guarded = ['code'];
+    protected $fillable = ["code", "nom"];
     // protected $hidden = [];
     // protected $dates = [];
 

@@ -270,7 +270,6 @@
 
 
 @section("extra-js")
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script type="module">
         var slider = tns({
             container: '.slider',

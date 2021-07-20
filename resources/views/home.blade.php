@@ -155,29 +155,30 @@
         <div class="text-center">
             <h2 class="text-uppercase font-weight-light mt-5 mb-3">Nos Actions Caritatives</h2>
         </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
+        <div class="row slider">
+            <!-- slider 1 -->
+            <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
                 <div class="wprock-img-zoom">
                     <a href="{{asset('images/caritative/caritative4.jpg')}}" class="fancybox" rel="ligthbox">
                         <img src="{{asset('images/caritative/caritative4.jpg')}}" class="zoom img-fluid" alt="">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
+            <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
                 <div class="wprock-img-zoom">
                     <a href="{{asset('images/caritative/caritative1.jpeg')}}" class="fancybox" rel="ligthbox">
                         <img src="{{asset('images/caritative/caritative1.jpeg')}}" class="zoom img-fluid" alt="">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
+            <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
                 <div class="wprock-img-zoom">
                     <a href="{{asset('images/caritative/caritative2.jpeg')}}" class="fancybox" rel="ligthbox">
                         <img src="{{asset('images/caritative/caritative2.jpeg')}}" class="zoom img-fluid" alt="">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
+            <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
                 <div class="wprock-img-zoom">
                     <a href="{{asset('images/caritative/caritative3.jpeg')}}" class="fancybox" rel="ligthbox">
                         <img src="{{asset('images/caritative/caritative3.jpeg')}}" class="zoom img-fluid" alt="">
@@ -186,43 +187,6 @@
             </div>
         </div>
     </div>
-    <!-- mot du president -->
-    <div class="container-fluid mt-5 mb-3">
-        <div class="text-center">
-            <h2 class="text-uppercase font-weight-light">MOT DU PRESIDENT</h2>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="testimonial">
-                        <div class="pic float-left position-relative"
-                             style="width: 22%;padding: 20px 0;margin: 0 6% 0 2%;z-index: 1;">
-                            <img src="{{asset('images/equipe/president.jpg')}}"
-                                 style="width: 100%;height: auto;border: 3px solid #fabe14;" alt="">
-                        </div>
-                        <div class="testimonial-content" style="width: 70%;float: right;">
-                            <h3 class="title d-block m-0 text-uppercase"
-                                style="font-size: 18px;font-weight: 600;color: #000;padding-top: 65px;padding-left: 15px;">
-                                M. KOFFI KOUADIO</h3>
-                            <span class="post d-block text-capitalize"
-                                  style="font-size: 14px;font-weight: 400;line-height: 27px;color: #000;margin-bottom: 25px;padding-left: 15px;">Président Exécutif<br>Commissaire Général du prix PADEV</span>
-                            <p class="description position-relative m-0"
-                               style="font-size: 16px;color: #000;padding: 0 15px;">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dolor nibh, semper at
-                                pretium vitae, tincidunt non risus. Aenean mattis sit amet ex nec venenatis.
-                                Pellentesque tempus pellentesque efficitur. Nulla commodo bibendum quam, at imperdiet
-                                orci congue non. Maecenas interdum.
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam illum velit ratione
-                                enim a repellendus sequi aspernatur ullam quaerat voluptatum eveniet hic harum, dolore
-                                fugit vel magnam amet nihil. Cupiditate.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- la partie des produits -->
     @if(isset($produits) && count($produits)>0)
         <div class="container">
@@ -352,6 +316,33 @@
             'titlePosition': 'inside',
             'transitionIn': 'none',
             'transitionOut': 'none'
+        });
+    </script>
+    <!-- tinyslider -->
+    <script type="module">
+        var slider = tns({
+            container: '.slider',
+            items: 4,
+            center: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoWidth: true,
+            autoplayButtonOutput: false,
+            nav: false,
+            controls: false,
+            responsive: {
+                640: {
+                    edgePadding: 20,
+                    gutter: 40,
+                    items: 1
+                },
+                700: {
+                    gutter: 30
+                },
+                900: {
+                    items: 3
+                }
+            }
         });
     </script>
 @endsection

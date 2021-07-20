@@ -7,3 +7,11 @@ body {
 .wrapper {
   margin-top: 150px;
 }
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: flex !important;
+}

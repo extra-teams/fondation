@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('title','Fondation 225')
+@section("extra-css")
+    <link rel="stylesheet" href="{{asset("library/fancybox/jquery.fancybox-1.3.4.css")}}" type="text/css"
+          media="screen"/>
+@endsection
+
 @section('content')
     <!-- caoursel -->
     <div id="slide" class="carousel slide" data-ride="carousel" data-interval="3000">
@@ -151,28 +156,28 @@
             <h2 class="text-uppercase font-weight-light mt-5 mb-3">Nos Actions Caritatives</h2>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover" style="margin-bottom: 30px;">
+            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
                 <div class="wprock-img-zoom">
                     <a href="{{asset('images/caritative/caritative4.jpg')}}" class="fancybox" rel="ligthbox">
                         <img src="{{asset('images/caritative/caritative4.jpg')}}" class="zoom img-fluid" alt="">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover" style="margin-bottom: 30px;">
+            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
                 <div class="wprock-img-zoom">
                     <a href="{{asset('images/caritative/caritative1.jpeg')}}" class="fancybox" rel="ligthbox">
                         <img src="{{asset('images/caritative/caritative1.jpeg')}}" class="zoom img-fluid" alt="">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover" style="margin-bottom: 30px;">
+            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
                 <div class="wprock-img-zoom">
                     <a href="{{asset('images/caritative/caritative2.jpeg')}}" class="fancybox" rel="ligthbox">
                         <img src="{{asset('images/caritative/caritative2.jpeg')}}" class="zoom img-fluid" alt="">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover" style="margin-bottom: 30px;">
+            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
                 <div class="wprock-img-zoom">
                     <a href="{{asset('images/caritative/caritative3.jpeg')}}" class="fancybox" rel="ligthbox">
                         <img src="{{asset('images/caritative/caritative3.jpeg')}}" class="zoom img-fluid" alt="">
@@ -340,34 +345,13 @@
 @endsection
 
 
-@section('extra-js')
-    <script type="module">
-        var slider = tns({
-            container: '.my-slider',
-            items: 3,
-            slideBy: 'page',
-            center: true,
-            autoplay: true,
-            autoplayTimeout: 2000,
-            autoWidth: true,
-            lazyload: true,
-            lazyloadSelector: '.tns-lazy',
-            autoplayButtonOutput: false,
-            nav: false,
-            controls: false,
-            responsive: {
-                640: {
-                    edgePadding: 20,
-                    gutter: 40,
-                    items: 1
-                },
-                700: {
-                    gutter: 30
-                },
-                900: {
-                    items: 3
-                }
-            }
+@section("extra-js")
+    <script type="text/javascript" src="{{asset("library/fancybox/jquery.fancybox-1.3.4.pack.js")}}"></script>
+    <script type="text/javascript">
+        $("a[rel=ligthbox]").fancybox({
+            'titlePosition': 'inside',
+            'transitionIn': 'none',
+            'transitionOut': 'none'
         });
     </script>
 @endsection

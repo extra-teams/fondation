@@ -9,64 +9,67 @@
                     <p class="text-center">NB : Votre inscription n'est valable qu'après le paiement des frais de
                         participation.</p>
                 </div>
-                <!-- formulaire -->
-                <form action="{{route("padev.page_inscription")}}" method="post">
-                @csrf
-                <!-- step 1 -->
+                <form action="{{route("padev.traitement")}}" method="post">
+                    @csrf
                     <div id="step1" class="row mt-2">
                         <div class="col-md-4 mt-2">
                             <label for="inputFirstname" class="form-label">Nom</label>
-                            <input type="text" name="nom" id="inputFirstname" maxlength="255" required>
+                            <input type="text" name="nom" id="inputFirstname" maxlength="255" required
+                                   value="{{old('nom')}}">
                             @if ($errors->has('nom'))
                                 <span class="text-danger">{{ $errors->first('nom') }}</span>
                             @endif
                         </div>
                         <div class="col-md-4 mt-2">
-                            <label for="inputLastname" class="form-label">Prenom</label>
-                            <input type="text" name="prenom" id="inputLastname" maxlength="255" required>
+                            <label for="inputLastname" class="form-label">Prenom(s)</label>
+                            <input type="text" name="prenom" id="inputLastname" maxlength="255" required  value="{{old('prenom')}}">
                             @if ($errors->has('prenom'))
                                 <span class="text-danger">{{ $errors->first('prenom') }}</span>
                             @endif
                         </div>
                         <div class="col-md-4 mt-2">
                             <label for="inputCountry" class="form-label">Pays</label>
-                            <select id="inputCountry" name="pays" class="form-select">
-                                <?php foreach($countries as $country): ?>
-                                <option value="<?= $country->name['official']; ?>"><?= $country->name['official']; ?></option>
-                                <?php endforeach; ?>
-                            </select>
+                            @if(isset($countries))
+                                <select id="inputCountry" name="pays" class="form-select">
+                                    @foreach($countries as $country)
+                                        <option value="{{$country->name['official']}}">{{$country->name['official']}}</option>
+                                    @endforeach
+                                </select>
+                            @else
+                                <input type="text" name="pays" id="inputCountry" maxlength="255" required>
+                            @endif
                         </div>
                         <div class="col-md-4 mt-2">
                             <label for="inputAdresse" class="form-label">Adresse</label>
-                            <input type="text" name="adresse" id="inputAdresse" maxlength="20" required>
+                            <input type="text" name="adresse" id="inputAdresse" maxlength="20" required  value="{{old('adresse')}}">
                             @if ($errors->has('adresse'))
                                 <span class="text-danger">{{ $errors->first('adresse') }}</span>
                             @endif
                         </div>
                         <div class="col-md-4 mt-2">
                             <label for="inputTel" class="form-label">Téléphone</label>
-                            <input type="text" name="tel" id="inputTel" maxlength="255" required>
+                            <input type="text" name="tel" id="inputTel" maxlength="255" required  value="{{old('tel')}}">
                             @if ($errors->has('tel'))
-                                <span class="text-danger">{{ $errors->first('tel) }}</span>
+                                <span class="text-danger">{{ $errors->first('tel') }}</span>
                             @endif
                         </div>
                         <div class="col-md-4 mt-2">
                             <label for="inputNomEntreprise" class="form-label">NOM DE L'ENTREPRISE </label>
-                            <input type="text" name="entreprise" id="inputNomEntreprise" maxlength="20" required>
+                            <input type="text" name="entreprise" id="inputNomEntreprise" maxlength="255" required  value="{{old('entreprise')}}">
                             @if ($errors->has('entreprise'))
                                 <span class="text-danger">{{ $errors->first('entreprise') }}</span>
                             @endif
                         </div>
                         <div class="col-md-4 mt-2">
                             <label for="inputProfession" class="form-label">Profession</label>
-                            <input type="text" name="profession" id="inputProfession" maxlength="255" required>
+                            <input type="text" name="profession" id="inputProfession" maxlength="255" required  value="{{old('profession')}}">
                             @if ($errors->has('profession'))
                                 <span class="text-danger">{{ $errors->first('profession') }}</span>
                             @endif
                         </div>
                         <div class="col-md-4 mt-2">
                             <label for="inputTitre" class="form-label">Titre</label>
-                            <input type="text" name="titre" id="inputTitre" maxlength="20" required>
+                            <input type="text" name="titre" id="inputTitre" maxlength="20" required  value="{{old('titre')}}">
                             @if ($errors->has('titre'))
                                 <span class="text-danger">{{ $errors->first('titre') }}</span>
                             @endif
@@ -88,21 +91,22 @@
                     <div id="step2" class="row mt-2" style="display: none">
                         <div class="col-md-4 mt-2">
                             <label for="inputNbreParticipant" class="form-label">NOMBRE DE PARTICIPANT </label>
-                            <input type="number" name="nombreParticipant" id="inputNbreParticipant" maxlength="20" required>
+                            <input type="number" name="nombreParticipant" id="inputNbreParticipant" maxlength="20"
+                                   required>
                             @if ($errors->has('nombreParticipant'))
                                 <span class="text-danger">{{ $errors->first('nombreParticipant') }}</span>
                             @endif
                         </div>
                         <div class="col-md-4 mt-2">
                             <label for="inputEmail" class="form-label">VOTRE EMAIL </label>
-                            <input type="email" name="email" id="inputEmail" maxlength="255" required>
+                            <input type="email" name="email" id="inputEmail" maxlength="255" required  value="{{old('email')}}">
                             @if ($errors->has('email'))
                                 <span class="text-danger">{{ $errors->first('email') }}</span>
                             @endif
                         </div>
                         <div class="col-md-4 mt-2">
                             <label for="inputSiteWeb" class="form-label">VOTRE SITE WEB </label>
-                            <input type="text" name="siteweb" id="inputSiteWeb" maxlength="20" required>
+                            <input type="text" name="siteweb" id="inputSiteWeb" maxlength="20" required  value="{{old('siteweb')}}">
                             @if ($errors->has('siteweb'))
                                 <span class="text-danger">{{ $errors->first('siteweb') }}</span>
                             @endif
@@ -110,14 +114,14 @@
                         <div class="col-md-8 mt-2">
                             <label for="inputImpact" class="form-label">IMPACT DE VOS ACTIVITES SUR LE
                                 DEVELOPPEMENT </label>
-                            <input name="impact" type="text" id="inputImpact" maxlength="20" required>
+                            <input name="impact" type="text" id="inputImpact" maxlength="20" required  value="{{old('impact')}}">
                             @if ($errors->has('impact'))
                                 <span class="text-danger">{{ $errors->first('impact') }}</span>
                             @endif
                         </div>
                         <div class="col-md-4 mt-2">
-                            <label for="inputNomEmployeAfricain" class="form-label">NOM D'EMPLOYES AFRICAIN </label>
-                            <input name="nbreEmploye" type="text" id="inputNomEmployeAfricain" maxlength="255" required>
+                            <label for="inputNomEmployeAfricain" class="form-label">NOMBRE D'EMPLOYES AFRICAIN </label>
+                            <input name="nbreEmploye" type="number" id="inputNomEmployeAfricain" required>
                             @if ($errors->has('nbreEmploye'))
                                 <span class="text-danger">{{ $errors->first('nbreEmploye') }}</span>
                             @endif
@@ -126,7 +130,7 @@
                             <label for="inputNbreRepresentation" class="form-label">NOMBRE DE REPRESENTATION EN
                                 AFRIQUE</label>
                             <input name="nbreRepresentation" type="number" id="inputNbreRepresentation" maxlength="20"
-                                   required>
+                                   required  value="{{old('nbreRepresentation')}}">
                             @if ($errors->has('nbreRepresentation'))
                                 <span class="text-danger">{{ $errors->first('nbreRepresentation') }}</span>
                             @endif
@@ -140,7 +144,7 @@
                             @endif
                         </div>
                         <div class="col-12 mt-5">
-                            <button type="button" typeof="prevBtn" class="btn bg-orange text-white text-uppercase">
+                            <button type="button" id="prevBtn" class="btn bg-orange text-white text-uppercase">
                                 Precedent
                             </button>
                             <button type="submit" class="btn bg-orange text-white text-uppercase">Inscription</button>

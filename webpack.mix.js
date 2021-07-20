@@ -25,5 +25,3 @@ mix.webpackConfig({
 mix.js('resources/assets/js/app.js', 'public/js')
     .sass('resources/scss/style.scss', 'public/css')
     .version();
-
-

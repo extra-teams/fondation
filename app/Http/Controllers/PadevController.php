@@ -58,10 +58,9 @@ class PadevController extends Controller
         ]);
 
         if ($validator->fails()) {
-            session()->flash('alerte', 'veuillez choisir votre statut');
-            session()->flash('type', 'error');
-            return redirect()->back()->withErrors($validator->errors());
+            return redirect()->back()->withErrors($validator->errors())->withInput();
         }
+
         /* vars */
         $nom = trim($request->nom);
         $prenom = trim($request->prenom);
@@ -106,8 +105,8 @@ class PadevController extends Controller
         ]);
     }
 
-    public function confirmation($noms)
+    public function confirmation()
     {
-        return view('padev.confirm')->with(["noms" => $noms]);
+        return view('padev.confirm');
     }
 }

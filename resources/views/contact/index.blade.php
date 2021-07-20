@@ -3,7 +3,7 @@
 @section('content')
     <!-- content -->
     <!-- breadcrumb -->
-    <div class="container" id="contact">
+    <div class="container-fluid g-0" id="contact">
         <div class="callcentre">
             <!-- breadcrumb -->
             <div class="header">
@@ -14,7 +14,9 @@
                 </div>
             </div>
         </div>
+    </div>
 
+    <div class="container">
         <!-- première ligne -->
         <div class="row mb-5">
             <div class="col-12 col-lg-6 align-self-center mt-5 mt-lg-0">

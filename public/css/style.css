@@ -11055,6 +11055,7 @@ ul li {
 
 .styled_title {
   position: relative;
+  font-family: "Montserrat", helvetica, sans-serif;
 }
 
 .styled_title::after {
@@ -12013,7 +12014,7 @@ form .form-body .btn-register:hover {
 }
 
 #contact .callcentre {
-  background: url("/images/banner/pain.jpg");
+  background: url("/images/pages/contact.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

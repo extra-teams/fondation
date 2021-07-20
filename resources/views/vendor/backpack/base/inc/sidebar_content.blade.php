@@ -33,3 +33,6 @@
 
 
 
+
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('articles') }}'><i class='nav-icon la la-question'></i> Articles</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('tags') }}'><i class='nav-icon la la-question'></i> Tags</a></li>

@@ -11777,23 +11777,71 @@ ul li {
 }
 
 .card-prize {
+  position: relative;
   height: 20rem;
   width: 100%;
   overflow: hidden;
-  text-align: center;
   color: #d6b40c;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px 8px 6.5px 6.5px;
+  margin-bottom: 24px;
 }
 
-.card-prize h5,
-.card-prize .h5 {
-  font-size: 1rem;
+.card-prize:hover {
+  cursor: pointer;
+}
+
+.card-prize:hover img {
+  transform: scale(1.2);
+}
+
+.card-prize .card-prize-gradient {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  background: linear-gradient(185deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.9) 80%);
 }
 
 .card-prize img {
-  height: 80%;
+  transition: transform 0.4s, visibility 0.25s ease-in;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
   width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  height: 100%;
+}
+
+.card-prize .card-prize-body {
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  z-index: 1000;
+  width: 100%;
+}
+
+.card-prize .card-prize-body h5,
+.card-prize .card-prize-body .h5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-left: 5px;
+  color: white;
+  word-wrap: break-word;
+  font-size: 1.5rem;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.card-prize .card-prize-body h5:before,
+.card-prize .card-prize-body .h5:before {
+  border-top: 5px solid #d6b40c;
+  position: absolute;
+  width: 61px;
+  content: "";
+  top: -16px;
 }
 
 .card-prizewinner {
@@ -12373,7 +12421,6 @@ p {
 }
 
 #pandev .price {
-  background-color: #252525;
   height: auto;
   overflow: hidden;
 }

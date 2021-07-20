@@ -55,8 +55,8 @@
         </div>
     </div>
     <!-- bottom -->
-    <div class="header-bottom">
-        <ul>
+    <div class="row header-bottom d-none d-lg-block">
+        <ul class="list-unstyled">
             <li><a href="{{route('accueil')}}">{{__("header.home")}}</a></li>
             <li><a href="{{route('home.motdupresident')}}">{{__("header.president_word")}}</a></li>
             <li><a href="{{route('accueil')}}">{{__("header.news")}}</a></li>

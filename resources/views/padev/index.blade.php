@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title','padev')
 @section('content')
-    <div id="pandev" class="container-fluid p-0">
+    <div id="pandev" class="container-fluid g-0">
         <!-- bg -->
         <div class="header-pandev">
             <!-- edition -->
@@ -58,7 +58,7 @@
         </div>
 
         <!-- le prix padev -->
-        <div class="container-fluid mt-5 price">
+        <div class="container price">
             <div class="row">
                 <div class="col-12">
                     <h5 class="text-center price-title">Le prix PADEV</h5>
@@ -66,38 +66,41 @@
                 </div>
             </div>
             <!-- cards -->
-            <div class="row mt-5">
+            <div class="row mt-5 justify-content-center">
                 <!-- card -->
-                <div class="col-12 col-md-3">
+                <div class="col-10 col-md-3">
                     <div class="card-prize">
+                        <div class="card-prize-gradient"></div>
                         <img src="https://fondation225.org/wp-content/uploads/2021/03/1617021099949-225x300.jpg" alt="">
-                        <h5>Prix des jeunes entrepreneurs Africains</h5>
+                        <div class="card-prize-body">
+                            <h5>Prix des jeunes entrepreneurs Africains</h5>
+                        </div>
                     </div>
                 </div>
 
                 <!-- card -->
-                <div class="col-12 col-md-3">
+                <div class="col-10 col-md-3">
                     <div class="card-prize">
+                        <div class="card-prize-gradient"></div>
                         <img src="https://fondation225.org/wp-content/uploads/2021/03/1617021099949-225x300.jpg" alt="">
-                        <h5>Prix des jeunes entrepreneurs Africains</h5>
+                        <div class="card-prize-body">
+                            <h5>Prix des jeunes entrepreneurs Africains</h5>
+                        </div>
                     </div>
                 </div>
 
                 <!-- card -->
-                <div class="col-12 col-md-3">
+                <div class="col-10 col-md-3">
                     <div class="card-prize">
+                        <div class="card-prize-gradient"></div>
                         <img src="https://fondation225.org/wp-content/uploads/2021/03/1617021099949-225x300.jpg" alt="">
-                        <h5>Prix des jeunes entrepreneurs Africains</h5>
+                        <div class="card-prize-body">
+                            <h5>Prix des jeunes entrepreneurs Africains</h5>
+                        </div>
                     </div>
                 </div>
 
-                <!-- card -->
-                <div class="col-12 col-md-3">
-                    <div class="card-prize">
-                        <img src="https://fondation225.org/wp-content/uploads/2021/03/1617021099949-225x300.jpg" alt="">
-                        <h5>Prix des jeunes entrepreneurs Africains</h5>
-                    </div>
-                </div>
+
             </div>
         </div>
 
@@ -274,11 +277,9 @@
         var slider = tns({
             container: '.slider',
             items: 4,
-            slideBy: 'page',
             center: true,
             autoplay: true,
-            autoplayTimeout: 10000,
-            autoWidth: true,
+            autoplayTimeout: 5000,
             autoplayButtonOutput: false,
             nav: false,
             controls: false,

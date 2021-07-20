@@ -2,7 +2,7 @@
 <div class="sidebar-mobile" style="display: none;">
     <span class="sidebar-close" id="close-menu"></span>
     <span class="sidebar-logo">
-        <img src="{{asset("images/fondation.jpeg")}}" alt="">
+        <img src="{{asset("images/fondation.jpeg")}}" alt="logo_fondation225">
     </span>
     <!-- premier tab -->
     <ul class="sidebar-items">

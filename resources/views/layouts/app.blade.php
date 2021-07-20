@@ -38,5 +38,6 @@
 <script src="{{asset('js/slick.min.js')}}"></script>
 <script src="{{asset('library/tiny-slider/tiny-slider.js')}}"></script>
 @yield('extra-js')
+
 </body>
 </html>

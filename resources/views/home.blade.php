@@ -1,8 +1,7 @@
 @extends('layouts.app')
 @section('title','Fondation 225')
 @section("extra-css")
-    <link rel="stylesheet" href="{{asset("library/fancybox/jquery.fancybox-1.3.4.css")}}" type="text/css"
-          media="screen"/>
+    <link rel="stylesheet" href="{{asset("library/fancybox/jquery.fancybox-1.3.4.css")}}" type="text/css" media="screen"/>
 @endsection
 
 @section('content')
@@ -35,14 +34,14 @@
 
     <div class="container">
         <div class="text-center">
-            <h2 class="text-uppercase font-weight-light mt-5 mb-3">Qui Sommes Nous ?</h2>
+            <h2 class="text-uppercase font-weight-light mt-5 mb-3 font-monterserat">Qui Sommes Nous ?</h2>
         </div>
         <div class="row">
             <div class="col-12 col-md-6">
                 <img src="{{asset('images/fondation.jpeg')}}" class="img-fluid mr-3 mb-3" alt="">
             </div>
             <div class="col-12 col-md-6">
-                <p>
+                <p class="font-weight-lighter font-monterserat">
                     La Fondation 225 est une Organisation Non Gouvernementale à but humanitaire
                     fondée le 21 NOVEMBRE 2012 à Ouagadougou sous le récépissé N°001724/MATDS/SG/DGLPAP/DAOSOC
                     du 31 DECEMBRE 2012. Elle est le fruit de l’initiative d’hommes et de femmes originaires de
@@ -57,7 +56,7 @@
     <!-- domaine intervention -->
     <div class="container">
         <div class="text-center">
-            <h2 class="text-uppercase font-weight-light mt-5 mb-3">Nos Domaines d'Intervention</h2>
+            <h2 class="text-uppercase font-weight-light mt-5 mb-3 font-monterserat">Nos Domaines d'Intervention</h2>
         </div>
         <div class="row">
             <div class="col-md-4 border-dark">
@@ -151,6 +150,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Nos Actions Caritatives -->
     <div class="container-fluid">
         <div class="text-center">
             <h2 class="text-uppercase font-weight-light mt-5 mb-3">Nos Actions Caritatives</h2>
@@ -187,11 +188,12 @@
             </div>
         </div>
     </div>
-    <!-- la partie des produits -->
+
+    <!-- LA BOUTIQUE HUMANITAIRE -->
     @if(isset($produits) && count($produits)>0)
         <div class="container">
             <div class="text-center">
-                <h2 class="text-uppercase font-weight-light mt-5 mb-3">LA BOUTIQUE HUMANITAIRE</h2>
+                <h2 class="text-uppercase font-monterserat font-weight-light mt-5 mb-3">LA BOUTIQUE HUMANITAIRE</h2>
             </div>
             <div class="row col-lg-none ">
                 @foreach ($produits as $produit)
@@ -229,10 +231,10 @@
         </div>
     @endif
 
-    <!-- la partie notre equipe -->
+    <!-- NOTRE EQUIPE -->
     <div class="container">
         <div class="text-center">
-            <h2 class="text-uppercase font-weight-light mt-5 mb-3">NOTRE EQUIPE</h2>
+            <h2 class="text-uppercase font-monterserat font-weight-light mt-5 mb-3">NOTRE EQUIPE</h2>
         </div>
         <div class="row justify-content-center">
 

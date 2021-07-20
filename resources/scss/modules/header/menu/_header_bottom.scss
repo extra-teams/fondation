@@ -1,16 +1,14 @@
 .header-bottom {
+  display: block;
   background-color: $color-orange;
-
   & ul {
     display: flex;
     justify-content: center;
-
     & li {
       display: flex;
       align-items: stretch;
       transition: opacity .4s;
       border-bottom: 4px solid $color-orange;
-
       &:hover {
         border-bottom-color: white;
       }

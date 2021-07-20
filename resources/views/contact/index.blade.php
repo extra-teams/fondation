@@ -3,7 +3,7 @@
 @section('content')
     <!-- content -->
     <!-- breadcrumb -->
-    <div class="container-fluid p-0" id="contact">
+    <div class="container" id="contact">
         <div class="callcentre">
             <!-- breadcrumb -->
             <div class="header">

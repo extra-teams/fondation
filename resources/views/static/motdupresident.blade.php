@@ -3,17 +3,18 @@
 @section('content')
     <!-- presentation -->
     <div class="container-fluid">
-        <div>
-            <h1 class="text-center">
+        <div class="mt-5">
+            <h1 class="font-monterserat text-center">
                 MOT DU PRÉSIDENT
             </h1>
         </div>
     </div>
     <!-- texte -->
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-8">
-                <p class="font-weight-lighter">
+            <div class="col-12">
+                <img style="width: 200px" src="{{asset("images/equipe/president.jpg")}}" alt="">
+                <p class="float-left font-weight-lighter font-monterserat">
                     La question du développement de l’Afrique se pose plus que jamais avec acuité au moment
                     où l’on entame la deuxième décennie du troisième millénaire. À ce stade de la marche <br>
 

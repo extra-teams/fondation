@@ -13,22 +13,11 @@
 /* cards */
 @import "modules/card/index";
 
-@import "modules/checkout";
 @import "modules/cart";
 @import "modules/table_responsive";
 
 /* form */
 @import "modules/form/index";
-
-/* product */
-@import "modules/product/product_filter";
-@import "modules/product/single";
-
-/* account */
-@import "modules/account/index";
-
-/* text */
-@import "modules/text/textimonial";
 
 /* common */
 @import "modules/common/index";
@@ -36,13 +25,7 @@
 /**
   pages
  */
-/* home */
-@import "modules/home/index";
-/* contact */
-@import "modules/contact/index";
-
-/* pandev */
-@import "modules/pandev/index";
+@import "modules/pages/index";
 
 /* footer */
 @import "modules/footer/footer";

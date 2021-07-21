@@ -1,1 +1,1 @@
-require('./bootstrap');
+window.splide = require('@splidejs/splide');

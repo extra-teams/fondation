@@ -35,4 +35,6 @@ Route::group([
 
     Route::crud('padev', 'PadevCrudController');
     Route::crud('padev-admin', 'PadevAdminCrudController');
+    Route::crud('articles', 'ArticlesCrudController');
+    Route::crud('tags', 'TagsCrudController');
 }); // this should be the absolute last line of this file

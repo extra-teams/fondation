@@ -1,5 +1,7 @@
 .header-bottom {
+  display: block;
   background-color: $color-orange;
+  margin-bottom: -20px;
 
   & ul {
     display: flex;
@@ -9,11 +11,6 @@
       display: flex;
       align-items: stretch;
       transition: opacity .4s;
-      border-bottom: 4px solid $color-orange;
-
-      &:hover {
-        border-bottom-color: white;
-      }
     }
 
     & a {
@@ -28,7 +25,11 @@
       align-items: center;
       text-transform: uppercase;
       padding: 1.1rem;
-      transition: all 0s .2s;
+      transition: all .5ms ease-in;
+
+      &:hover {
+        font-weight: bold;
+      }
     }
   }
 }

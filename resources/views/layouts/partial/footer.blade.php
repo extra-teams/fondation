@@ -12,7 +12,8 @@
                 <div class="col-12 col-md-5">
                     <form id="newsletter" method="post" class="w-100">
                         <div class="input-group">
-                            <input type="text" autocomplete="email" placeholder="{{__("footer.votre_email")}}" maxlength="100">
+                            <input type="text" autocomplete="email" placeholder="{{__("footer.votre_email")}}"
+                                   maxlength="100">
                             <div class="input-group-append">
                                 <span class="input-group-text">{{__("footer.abonner")}}</span>
                             </div>
@@ -22,7 +23,7 @@
                                 <input type="checkbox" class="js-opt-in-checkbox js-field"
                                        id="optinToMarketing" name="optinToMarketing" checked=""
                                        value="TRUE"/>
-                                       {{__("footer.envoyer")}}
+                                {{__("footer.envoyer")}}
                             </label>
                         </div>
                     </form>
@@ -40,10 +41,10 @@
             </div>
         </div>
         <div class="footer-bottom text-center">
-            <a href="/company/customers-partners/terms-of-use/">Conditions d’utilisation</a>
-            <a href="/company/customers-partners/privacy-policy/">Confidentialité</a>
-            <a href="/company/policies-procedures/cookie-policy/">Cookies</a>
-            <a href="/legal/">©fondataion225</a>
+            <a href="#">Conditions d’utilisation</a>
+            <a href="#">Confidentialité</a>
+            <a href="#">Cookies</a>
+            <a href="#">©fondataion225</a>
         </div>
     </div>
 </footer>

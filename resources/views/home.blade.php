@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('title','Fondation 225')
+@section("extra-css")
+    <link rel="stylesheet" href="{{asset("library/fancybox/jquery.fancybox-1.3.4.css")}}" type="text/css" media="screen"/>
+@endsection
+
 @section('content')
     <!-- caoursel -->
     <div id="slide" class="carousel slide" data-ride="carousel" data-interval="3000">
@@ -30,14 +34,14 @@
 
     <div class="container">
         <div class="text-center">
-            <h2 class="text-uppercase font-weight-light mt-5 mb-3">Qui Sommes Nous ?</h2>
+            <h2 class="text-uppercase font-weight-light mt-5 mb-3 font-monterserat">Qui Sommes Nous ?</h2>
         </div>
         <div class="row">
             <div class="col-12 col-md-6">
                 <img src="{{asset('images/fondation.jpeg')}}" class="img-fluid mr-3 mb-3" alt="">
             </div>
             <div class="col-12 col-md-6">
-                <p class="text-center text-lg-left">
+                <p class="font-weight-lighter font-monterserat">
                     La Fondation 225 est une Organisation Non Gouvernementale à but humanitaire
                     fondée le 21 NOVEMBRE 2012 à Ouagadougou sous le récépissé N°001724/MATDS/SG/DGLPAP/DAOSOC
                     du 31 DECEMBRE 2012. Elle est le fruit de l’initiative d’hommes et de femmes originaires de
@@ -52,7 +56,7 @@
     <!-- domaine intervention -->
     <div class="container">
         <div class="text-center">
-            <h2 class="text-uppercase font-weight-light mt-5 mb-3">Nos Domaines d'Intervention</h2>
+            <h2 class="text-uppercase font-weight-light mt-5 mb-3 font-monterserat">Nos Domaines d'Intervention</h2>
         </div>
         <div class="row">
             <div class="col-md-4 border-dark">
@@ -146,33 +150,36 @@
             </div>
         </div>
     </div>
+
+    <!-- Nos Actions Caritatives -->
     <div class="container-fluid">
         <div class="text-center">
             <h2 class="text-uppercase font-weight-light mt-5 mb-3">Nos Actions Caritatives</h2>
         </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover" style="margin-bottom: 30px;">
+        <div class="row slider">
+            <!-- slider 1 -->
+            <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
                 <div class="wprock-img-zoom">
                     <a href="{{asset('images/caritative/caritative4.jpg')}}" class="fancybox" rel="ligthbox">
                         <img src="{{asset('images/caritative/caritative4.jpg')}}" class="zoom img-fluid" alt="">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover" style="margin-bottom: 30px;">
+            <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
                 <div class="wprock-img-zoom">
                     <a href="{{asset('images/caritative/caritative1.jpeg')}}" class="fancybox" rel="ligthbox">
                         <img src="{{asset('images/caritative/caritative1.jpeg')}}" class="zoom img-fluid" alt="">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover" style="margin-bottom: 30px;">
+            <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
                 <div class="wprock-img-zoom">
                     <a href="{{asset('images/caritative/caritative2.jpeg')}}" class="fancybox" rel="ligthbox">
                         <img src="{{asset('images/caritative/caritative2.jpeg')}}" class="zoom img-fluid" alt="">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover" style="margin-bottom: 30px;">
+            <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
                 <div class="wprock-img-zoom">
                     <a href="{{asset('images/caritative/caritative3.jpeg')}}" class="fancybox" rel="ligthbox">
                         <img src="{{asset('images/caritative/caritative3.jpeg')}}" class="zoom img-fluid" alt="">
@@ -181,48 +188,12 @@
             </div>
         </div>
     </div>
-    <!-- mot du president -->
-    <div class="container-fluid mt-5 mb-3">
-        <div class="text-center">
-            <h2 class="text-uppercase font-weight-light">MOT DU PRESIDENT</h2>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="testimonial">
-                        <div class="pic float-left position-relative"
-                             style="width: 22%;padding: 20px 0;margin: 0 6% 0 2%;z-index: 1;">
-                            <img src="{{asset('images/equipe/president.jpg')}}"
-                                 style="width: 100%;height: auto;border: 3px solid #fabe14;" alt="">
-                        </div>
-                        <div class="testimonial-content" style="width: 70%;float: right;">
-                            <h3 class="title d-block m-0 text-uppercase"
-                                style="font-size: 18px;font-weight: 600;color: #000;padding-top: 65px;padding-left: 15px;">
-                                M. KOFFI KOUADIO</h3>
-                            <span class="post d-block text-capitalize"
-                                  style="font-size: 14px;font-weight: 400;line-height: 27px;color: #000;margin-bottom: 25px;padding-left: 15px;">Président Exécutif<br>Commissaire Général du prix PADEV</span>
-                            <p class="description position-relative m-0"
-                               style="font-size: 16px;color: #000;padding: 0 15px;">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dolor nibh, semper at
-                                pretium vitae, tincidunt non risus. Aenean mattis sit amet ex nec venenatis.
-                                Pellentesque tempus pellentesque efficitur. Nulla commodo bibendum quam, at imperdiet
-                                orci congue non. Maecenas interdum.
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam illum velit ratione
-                                enim a repellendus sequi aspernatur ullam quaerat voluptatum eveniet hic harum, dolore
-                                fugit vel magnam amet nihil. Cupiditate.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- la partie des produits -->
+    <!-- LA BOUTIQUE HUMANITAIRE -->
     @if(isset($produits) && count($produits)>0)
         <div class="container">
             <div class="text-center">
-                <h2 class="text-uppercase font-weight-light mt-5 mb-3">LA BOUTIQUE HUMANITAIRE</h2>
+                <h2 class="text-uppercase font-monterserat font-weight-light mt-5 mb-3">LA BOUTIQUE HUMANITAIRE</h2>
             </div>
             <div class="row col-lg-none ">
                 @foreach ($produits as $produit)
@@ -260,10 +231,10 @@
         </div>
     @endif
 
-    <!-- la partie notre equipe -->
+    <!-- NOTRE EQUIPE -->
     <div class="container">
         <div class="text-center">
-            <h2 class="text-uppercase font-weight-light mt-5 mb-3">NOTRE EQUIPE</h2>
+            <h2 class="text-uppercase font-monterserat font-weight-light mt-5 mb-3">NOTRE EQUIPE</h2>
         </div>
         <div class="row justify-content-center">
 
@@ -340,18 +311,24 @@
 @endsection
 
 
-@section('extra-js')
+@section("extra-js")
+    <script type="text/javascript" src="{{asset("library/fancybox/jquery.fancybox-1.3.4.pack.js")}}"></script>
+    <script type="text/javascript">
+        $("a[rel=ligthbox]").fancybox({
+            'titlePosition': 'inside',
+            'transitionIn': 'none',
+            'transitionOut': 'none'
+        });
+    </script>
+    <!-- tinyslider -->
     <script type="module">
         var slider = tns({
-            container: '.my-slider',
-            items: 3,
-            slideBy: 'page',
+            container: '.slider',
+            items: 4,
             center: true,
             autoplay: true,
-            autoplayTimeout: 2000,
+            autoplayTimeout: 5000,
             autoWidth: true,
-            lazyload: true,
-            lazyloadSelector: '.tns-lazy',
             autoplayButtonOutput: false,
             nav: false,
             controls: false,

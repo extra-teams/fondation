@@ -1,0 +1,52 @@
+#pandev {
+  & .about {
+    height: 30rem;
+    overflow: hidden;
+
+    & .about-img {
+      height: 25rem;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    & .about-text {
+      font-size: 1rem;
+      font-weight: 300;
+    }
+  }
+}
+
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  #pandev {
+    & .about {
+      height: 30rem;
+      overflow: hidden;
+
+      & .about-img {
+        height: 10rem;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      & .about-text {
+        font-size: 1rem;
+        font-weight: 300;
+      }
+    }
+  }
+}

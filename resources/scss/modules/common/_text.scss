@@ -1,5 +1,6 @@
 .styled_title {
   position: relative;
+  font-family: 'Montserrat', helvetica, sans-serif;
   &::after {
     content: " ";
     border-bottom-style: solid;
@@ -8,4 +9,8 @@
     padding: 9px 0 0 2px;
     width: 82px;
   }
+}
+
+.font-monterserat {
+  font-family: 'Montserrat', helvetica, sans-serif;
 }

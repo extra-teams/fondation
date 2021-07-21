@@ -21,4 +21,9 @@ class HomeController extends Controller
             'sliders' => $Sliders
         ]);
     }
+
+    public function motdupresident()
+    {
+        return view('static.motdupresident');
+    }
 }

@@ -20,7 +20,11 @@ class UsersTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
+<<<<<<< HEAD
+                'name' => 'fondation225',
+=======
                 'name' => 'fondation',
+>>>>>>> 139e293658d7cd542e6cd86fb085c6c456803bb6
                 'email' => 'admin@fondation225.ci',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$DeptA760k0qWCUEQF/5MmuTQhIm.q0zzmnNqUQB3kUZ4GJGRDxlhC',

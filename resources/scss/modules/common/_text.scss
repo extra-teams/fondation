@@ -1,6 +1,7 @@
 .styled_title {
   position: relative;
   font-family: 'Montserrat', helvetica, sans-serif;
+
   &::after {
     content: " ";
     border-bottom-style: solid;
@@ -13,4 +14,25 @@
 
 .font-monterserat {
   font-family: 'Montserrat', helvetica, sans-serif;
+}
+
+.main-title {
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: .9375rem;
+  text-align: center;
+}
+
+.main-introduction {
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: #6b6b6b;
+  text-align: center;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: .2px;
 }

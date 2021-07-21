@@ -25,6 +25,7 @@
     "laravel/tinker": "^2.0",
     "orangehill/iseed": "^2.6",
     "pragmarx/countries": "^0.7.2",
+    "spatie/laravel-cookie-consent": "^2.12",
     "spatie/laravel-sluggable": "^2.6",
     "twbs/bootstrap": "5.0.2"
   },

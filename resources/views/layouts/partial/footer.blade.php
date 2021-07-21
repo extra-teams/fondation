@@ -1,40 +1,50 @@
-<div class="container-fluid footer">
-    <div class="row">
-        <div class="col-lg-3 col-12">
-            <h6 class="text-uppercase">Contacts</h6>
-            <ul class="list-unstyled">
-                <li><a href="{{url('/contact')}}">contacts</a></li>
-                <li><a href="{{route('politiqueretour')}}">politique de retour</a></li>
-            </ul>
+<footer>
+    <div class="container mb-5">
+        <hr>
+        <div class="mb-3">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="newsletter-text">
+                        <h4 class="text-center">{{__("footer.rejoindre")}}</h4>
+                        <p class="text-center">{{__("footer.inscrire")}}</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5">
+                    <form id="newsletter" method="post" class="w-100">
+                        <div class="input-group">
+                            <input type="text" autocomplete="email" placeholder="{{__("footer.votre_email")}}"
+                                   maxlength="100">
+                            <div class="input-group-append">
+                                <span class="input-group-text">{{__("footer.abonner")}}</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-center text-lg-left mt-2">
+                                <input type="checkbox" class="js-opt-in-checkbox js-field"
+                                       id="optinToMarketing" name="optinToMarketing" checked=""
+                                       value="TRUE"/>
+                                {{__("footer.envoyer")}}
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 col-md-3 mt-2">
+                    <span>
+                        <a href="//www.twitter.com/zendesk">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="//www.facebook.com/zendesk">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
         </div>
-
-        <div class="col-lg-3 col-12">
-            <h6 class="text-uppercase">A PROPOS</h6>
-            <ul class="list-unstyled">
-                <li><a href="{{route('apropos')}}">qui sommes-nous ?</a></li>
-                <li><a href="{{route('confidentialité')}}">politique de confidentialité</a></li>
-                <li><a href="{{route('conditions')}}">conditions générales d'utilisation</a></li>
-            </ul>
+        <div class="footer-bottom text-center">
+            <a href="#">Conditions d’utilisation</a>
+            <a href="#">Confidentialité</a>
+            <a href="#">Cookies</a>
+            <a href="#">©fondataion225</a>
         </div>
-
-
-        <div class="col-lg-3 col-12">
-            <h6 class="text-uppercase">mon compte</h6>
-            <ul class="list-unstyled">
-                <li><a href="{{url('/info')}}">mes informations</a></li>
-                <li><a href="{{url('/mes-commandes')}}">mes commandes</a></li>
-            </ul>
-        </div>
-
-        <div class="col-lg-3 col-12">
-            <h6 class="text-uppercase">réseaux sociaux</h6>
-            @php $liens= DB::table('settings')->get(); @endphp
-            <ul class="list-unstyled">
-                <li><a href="{{$liens[0]->value}}">facebook</a></li>
-                <li><a href="{{$liens[1]->value}}">twitter</a></li>
-                <li><a href="{{$liens[2]->value}}">instagram</a></li>
-            </ul>
-        </div>
-
     </div>
-</div>
+</footer>

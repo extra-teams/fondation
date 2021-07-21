@@ -1,34 +1,90 @@
 @extends('layouts.app')
-@section('title','contactez-nous')
+@section('title','contactez-nous - Fondation225')
 @section('content')
-
-<div class="container-fluid">
-    <div class="container contact-form mt-5" style="width: 70%;">
-        <form method="post" class="border-0" style="padding: 12%">
-            <h3 class="text-center" style="margin-bottom: 8%;margin-top: -16%;color: #000">Contactez Nous</h3>
-           <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="text" name="nom" class="form-control mt-3" placeholder="Nom " value="" required/>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" class="form-control mt-3" placeholder="Email " value="" required/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="objet" class="form-control mt-3" placeholder="Objet " value="" required/>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" name="btnSubmit" class="btnContact mt-3 border-0 w-100" style="padding: 1.5%;border-radius: 1rem;background: #fabe14;color: #000;font-weight: 600;cursor: pointer;" value="Send Message" />
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <textarea name="msg" class="form-control mt-3" placeholder="Message " style="width: 100%; height: 150px;"></textarea>
+    <!-- content -->
+    <!-- breadcrumb -->
+    <div class="container-fluid g-0" id="contact">
+        <div class="callcentre">
+            <!-- breadcrumb -->
+            <div class="header">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="styled_title text-white">{{__('contactez.nos_contact')}}</h2>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
-</div>
 
+    <div class="container">
+        <!-- première ligne -->
+        <div class="row mb-5">
+            <div class="col-12 col-lg-6 align-self-center mt-5 mt-lg-0">
+                <div class="pl-3 text-left">
+                    <h3 class="styled_title">
+                        {{__('contactez.en_ligne')}}
+                    </h3>
+                    <p class="font-roboto-condensed">
+                        {{__('contactez.en_ligne_desc')}}
+                    </p>
+                    <a href="mailto:contact@bms.ci" class="btn bg-orange">
+                        <i class="fa fa-share"></i>
+                        contact@fondation225.ci
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6 align-self-center mt-5 mt-lg-0">
+                <div class="pl-3 text-left">
+                    <h3 class="styled_title">
+                        {{__('contactez.reseau')}}
+                    </h3>
+                    <p class="font-roboto-condensed">
+                        {{__('contactez.reseau_desc')}}
+                    </p>
+                    <a href="#" class="btn bg-facebook text-white">
+                        <i class="fab fa-facebook"></i>
+                        FACEBOOK
+                    </a>
+
+                    <a href="#" class="btn bg-twitter text-white">
+                        <i class="fab fa-twitter"></i>
+                        TWITTER
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- deuxième ligne -->
+        <div class="row">
+            <div class="col-12 col-lg-6 align-self-center mt-5 mt-lg-0">
+                <div class="pl-3 text-left">
+                    <h3 class="styled_title">
+                        <i class="fa fa-phone"></i>
+                        {{__('contactez.telephone')}}
+                    </h3>
+                    <p class="font-roboto-condensed">
+                        {{__('contactez.telephone_desc')}}
+                    </p>
+
+                    <a href="#" class="btn bg-orange">
+                        (+226) 51 54 12 12
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6 align-self-center mt-5 mt-lg-0">
+                <div class="pl-3 text-left">
+                    <h3 class="styled_title">
+                        {{__('contactez.bureau')}}
+                    </h3>
+                    <p class="font-roboto-condensed">
+                        {{__('contactez.bureau_desc1')}}, <br>{{__('contactez.bureau_desc2')}}
+                        <strong>Ouagadougou (Burkina Faso)</strong>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
 @endsection

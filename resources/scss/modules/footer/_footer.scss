@@ -1,21 +1,26 @@
-.footer {
+footer {
+  font-size: 0.8125rem;
   margin-top: 1rem;
-  background-color: #eee;
   overflow-x: hidden;
 
-  & .row {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
+  /* newsletter */
+  & #newsletter {
+    & input {
+      padding: 10px 10px;
+      flex: 1 1 auto;
+      border: 1px solid $color-orange;
+    }
 
-  & a {
-    line-height: 30px;
-    letter-spacing: .4px;
-    font-size: .875rem;
-    color: #666;
+    & .input-group-append {
+      border: 1px solid $color-orange;
+      background-color: $color-orange;
 
-    &:first-letter {
-      text-transform: uppercase;
+      & .input-group-text {
+        border-radius: 0;
+        color: white;
+        border: 1px solid $color-orange;
+        background-color: $color-orange;
+      }
     }
   }
 

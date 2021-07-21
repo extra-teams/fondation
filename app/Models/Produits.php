@@ -32,7 +32,7 @@ class Produits extends Model
     protected $primaryKey = 'code';
     // public $timestamps = false;
     protected $guarded = ['code'];
-    protected $fillable = ['code','description','code_souscategorie','code_categorie','code_marq', 'nom', 'image', 'prix_achat', 'prix_vente', 'quantite', 'vues', 'enabled','owner_id'];
+    protected $fillable = ['code','description','code_categorie', 'nom', 'image', 'prix_achat', 'prix_vente', 'quantite', 'vues', 'enabled','owner_id'];
     // protected $hidden = [];
     // protected $dates = [];
     protected $keyType='string';
@@ -65,24 +65,7 @@ class Produits extends Model
     {
         return $this->belongsTo('App\Models\Categories','code_categorie','code');
     }
-    public function sousCategories()
-    {
-        return $this->belongsTo('App\Models\Souscategories','code_souscategorie','code');
-    }
-    public function marques()
-    {
-        return $this->belongsTo('App\Models\Marques','code_marq','code');
-    }
 
-    public function tailles()
-    {
-        return $this->belongsToMany('App\Models\Tailleproduits','produit_has_taille','code_prod','code_taille');
-    }
-
-    public function couleurs()
-    {
-        return $this->belongsToMany('App\Models\Couleurs','produit_has_couleurs','code_prod','code_couleur');
-    }
 
     public function owner()
     {

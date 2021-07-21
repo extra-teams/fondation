@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Mail\sendMail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -19,7 +20,6 @@ class SendEmailJob implements ShouldQueue
      */
     public function __construct($details)
     {
-        // dd($details);
         $this->details = $details;
     }
 
@@ -30,6 +30,6 @@ class SendEmailJob implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->details['email'])->send(new \App\Mail\sendMail($this->details['data']));
+        Mail::to($this->details['email'])->send(new sendMail($this->details['data']));
     }
 }

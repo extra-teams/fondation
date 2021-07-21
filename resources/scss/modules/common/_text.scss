@@ -1,0 +1,16 @@
+.styled_title {
+  position: relative;
+  font-family: 'Montserrat', helvetica, sans-serif;
+  &::after {
+    content: " ";
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    display: table-cell;
+    padding: 9px 0 0 2px;
+    width: 82px;
+  }
+}
+
+.font-monterserat {
+  font-family: 'Montserrat', helvetica, sans-serif;
+}

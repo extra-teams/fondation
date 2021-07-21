@@ -48,10 +48,7 @@ class Categories extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-    public function souscategorie()
-    {
-        return $this->belongsToMany(CategorieHasSousCategorie::class, Souscategories::class, 'code_cat', 'code');
-    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES

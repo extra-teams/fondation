@@ -17,7 +17,6 @@ class CreateCommandesTable extends Migration
             $table->bigIncrements('id')->unsigned();
             $table->unsignedBigInteger('id_client');
             $table->unsignedBigInteger('id_adr');
-            
             $table->integer('quantite')->default(0);
             $table->string('montant');
             $table->integer('status')->default(0);

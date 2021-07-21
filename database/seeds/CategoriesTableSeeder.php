@@ -19,30 +19,23 @@ class CategoriesTableSeeder extends Seeder
         \DB::table('categories')->insert(array (
             0 => 
             array (
-                'code' => 'mode-enfant',
-                'nom' => 'Mode Enfant',
+                'code' => 'accessoires-de-bureau',
+                'nom' => 'Accessoires de bureau /',
+                'images' => NULL,
                 'enabled' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2020-11-03 15:01:19',
-                'updated_at' => '2020-11-03 15:01:19',
+                'created_at' => '2021-06-19 16:26:38',
+                'updated_at' => '2021-06-19 16:26:38',
             ),
             1 => 
             array (
-                'code' => 'mode-femme',
-                'nom' => 'Mode Femme',
+                'code' => 'armoire',
+                'nom' => 'Armoire',
+                'images' => NULL,
                 'enabled' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2020-11-03 15:00:38',
-                'updated_at' => '2020-11-03 15:00:38',
-            ),
-            2 => 
-            array (
-                'code' => 'mode-homme',
-                'nom' => 'Mode Homme',
-                'enabled' => 1,
-                'deleted_at' => NULL,
-                'created_at' => '2020-11-03 15:00:02',
-                'updated_at' => '2020-11-03 15:00:02',
+                'created_at' => '2021-06-19 16:26:04',
+                'updated_at' => '2021-06-19 16:26:10',
             ),
         ));
         

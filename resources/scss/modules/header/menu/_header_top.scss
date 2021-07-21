@@ -1,0 +1,346 @@
+.header-top {
+  padding: 1.2rem 0;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & .header-top-left {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 30%;
+    overflow: hidden;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+
+    #open-menu {
+      display: none;
+    }
+
+    & i {
+      position: relative;
+      font-size: 1.5rem;
+    }
+
+    /* logo */
+    & img {
+      height: 3rem;
+    }
+  }
+
+  & .header-top-center {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    overflow: hidden;
+
+    & input {
+      color: darken($color-orange, 10);
+      border: 2px solid $color-orange;
+      padding: 0.5rem 0 0.5rem 1rem;
+      border-radius: 2rem;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      width: 90%;
+    }
+
+    & button {
+      width: 10%;
+      border: none;
+      color: white;
+      border-top-right-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+      background-color: $color-orange;
+    }
+  }
+
+  & .header-top-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    width: 30%;
+    padding-right: 10px;
+    overflow: hidden;
+
+    & i {
+      position: relative;
+      font-size: 2rem;
+    }
+
+    & .header-top-searhmobile {
+      display: none;
+    }
+
+    & .header-top-language {
+      margin-right: 10px;
+
+      & span {
+        color: $color-black;
+
+        & a {
+          color: $color-black;
+
+          &.active {
+            color: $color-orange;
+          }
+        }
+      }
+    }
+
+    & .header-top-user {
+      margin-right: 10px;
+    }
+
+    & .header-top-carts {
+      position: relative;
+
+      & .btn-card {
+        position: relative;
+
+        & .total {
+          font-size: 12px;
+          padding: 2px;
+          text-align: center;
+          min-width: 22px;
+          min-height: 22px;
+          color: white;
+          border-radius: 50%;
+          background-color: $color-orange;
+          position: absolute;
+          top: 5px;
+          left: 23px;
+        }
+      }
+
+    }
+  }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header-top {
+    padding: 0.4rem 0;
+
+    & .header-top-left {
+      justify-content: start;
+      width: 50%;
+      padding: 0.5rem 0 0.5rem 0.5rem;
+
+      #open-menu {
+        display: flex;
+      }
+    }
+
+    & .header-top-center {
+      display: none;
+      background-color: white;
+      position: absolute;
+      padding: 0 0.4rem 0.4rem 0.4rem;
+      top: 7%;
+      left: 0;
+      width: 100%;
+      z-index: 600;
+
+      & input {
+        width: 100%;
+      }
+
+      & input, & button {
+        border-radius: 0;
+      }
+    }
+
+    & .header-top-right {
+      width: 50%;
+
+      & .header-top-searhmobile {
+        display: flex;
+        margin-right: 1rem;
+        color: $color-orange;
+        font-size: 0.8rem;
+      }
+
+      & .header-top-language {
+        display: none;
+      }
+    }
+  }
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+  .header-top {
+    padding: 0.4rem 0;
+
+    & .header-top-left {
+      justify-content: start;
+      width: 50%;
+      padding: 0.5rem 0 0.5rem 0.5rem;
+
+      #open-menu {
+        display: flex;
+      }
+    }
+
+    & .header-top-center {
+      display: none;
+      background-color: white;
+      position: absolute;
+      padding: 0 0 0.4rem 0.4rem;
+      top: 10%;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 600;
+
+      & input {
+        width: 100%;
+      }
+
+      & input, & button {
+        border-radius: 0;
+      }
+    }
+
+    & .header-top-right {
+      width: 50%;
+
+      & .header-top-searhmobile {
+        display: flex;
+        margin-right: 1rem;
+        color: $color-orange;
+        font-size: 0.8rem;
+      }
+
+      & .header-top-language {
+        display: none;
+      }
+    }
+  }
+
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .header-top {
+    padding: 0.4rem 0;
+
+    & .header-top-left {
+      justify-content: start;
+      width: 50%;
+      padding: 0.5rem 0 0.5rem 0.5rem;
+
+      #open-menu {
+        display: flex;
+      }
+    }
+
+    & .header-top-center {
+      display: none;
+      background-color: white;
+      position: absolute;
+      padding: 0 0.4rem 0.4rem 0.4rem;
+      top: 18%;
+      left: 0;
+      width: 100%;
+      z-index: 600;
+
+      & input {
+        width: 100%;
+      }
+
+      & input, & button {
+        border-radius: 0;
+      }
+    }
+
+    & .header-top-right {
+      width: 50%;
+
+      & .header-top-searhmobile {
+        display: flex;
+        margin-right: 1rem;
+        color: $color-orange;
+        font-size: 0.8rem;
+      }
+
+      & .header-top-language {
+        display: none;
+      }
+    }
+  }
+
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  .header-top {
+    padding: 0.4rem 0;
+
+    & .header-top-left {
+      width: 50%;
+      padding: 0.5rem 0 0.5rem 0.5rem;
+
+      #open-menu {
+        display: flex;
+      }
+    }
+
+    & .header-top-center {
+      display: none;
+      background-color: white;
+      position: absolute;
+      padding: 0 0.4rem 0.4rem 0.4rem;
+      top: 11%;
+      left: 0;
+      width: 100%;
+      z-index: 600;
+
+      & input {
+        width: 100%;
+      }
+
+      & input, & button {
+        border-radius: 0;
+      }
+    }
+
+    & .header-top-right {
+      width: 50%;
+
+      & .header-top-searhmobile {
+        display: flex;
+        margin-right: 1rem;
+        color: $color-orange;
+        font-size: 0.8rem;
+      }
+
+      & .header-top-language {
+        display: none;
+      }
+    }
+  }
+
+}

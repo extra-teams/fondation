@@ -20,9 +20,9 @@
             <!-- langue -->
             <div class="header-top-language">
                 <span><a href="#">LANGUE :</a></span>
-                <span><a class="active" href="#">FR</a></span>
+                <span><a class="active" href="{{url('locale/fr')}}">FR</a></span>
                 <span>/</span>
-                <span><a href="#">EN</a></span>
+                <span><a href="{{url('locale/en')}}">EN</a></span>
             </div>
             <!-- icone search bar -->
             <span class="header-top-searhmobile">

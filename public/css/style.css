@@ -11563,7 +11563,7 @@ ul li {
 .carousel .carousel-item {
   position: relative;
   height: 25rem;
-  background-position: center center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -11587,13 +11587,91 @@ ul li {
 }
 
 /*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .carousel .carousel-item {
+    height: 14rem;
+  }
+
+  .carousel .carousel-text {
+    top: 10%;
+    left: 10%;
+    width: 50%;
+  }
+
+  .carousel .carousel-text h3,
+  .carousel .carousel-text .h3 {
+    font-size: 3rem;
+  }
+
+  .carousel .carousel-text p {
+    font-size: 0.7rem;
+  }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .carousel .carousel-item {
+    height: 17rem;
+  }
+
+  .carousel .carousel-text {
+    top: 10%;
+    left: 10%;
+    width: 50%;
+  }
+
+  .carousel .carousel-text h3,
+  .carousel .carousel-text .h3 {
+    font-size: 3rem;
+  }
+
+  .carousel .carousel-text p {
+    font-size: 0.7rem;
+  }
+}
+
+/*
   ##Device = Most of the Smartphones Mobiles (Portrait) and Low Resolution Tablets, Mobiles (Landscape)
   ##Screen = B/w 320px to 767px
 */
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 481px) and (max-width: 767px) {
   .carousel .carousel-item {
-    height: 17rem;
+    height: 15rem;
+  }
+
+  .carousel .carousel-text {
+    top: 10%;
+    left: 10%;
+    width: 50%;
+  }
+
+  .carousel .carousel-text h3,
+  .carousel .carousel-text .h3 {
+    font-size: 3rem;
+  }
+
+  .carousel .carousel-text p {
+    font-size: 0.7rem;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait) and Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 320px to 767px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .carousel .carousel-item {
+    height: 10rem;
   }
 
   .carousel .carousel-text {

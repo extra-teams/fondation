@@ -59,7 +59,7 @@
             se mobilisent pour vous accompagner dans la réussite de toutes vos initiatives !</p>
         <div class="row mt-5 align-content-lg-between justify-content-around">
             <!-- card 1 -->
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="card-domaine">
                     <div class="card-domaine-header">
                         <img src="https://lanouvelletribune.info/wp-content/uploads/2017/09/medecin-docteur.jpg" alt="">
@@ -74,7 +74,7 @@
             </div>
 
             <!-- card 2 -->
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="card-domaine">
                     <div class="order-1 order-lg-0  card-domaine-body ">
                         <h3 class="main-title">L’ÉDUCATION !</h3>
@@ -92,7 +92,7 @@
 
         <div class="row  justify-content-around mt-2">
             <!-- card 1 -->
-            <div class="col-10 col-lg-4">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class=" card-domaine">
                     <div class="card-domaine-header">
                         <img src="https://www.afrik21.africa/wp-content/uploads/2019/07/shutterstock_722601193-800x400.jpg"
@@ -111,7 +111,7 @@
 
 
             <!-- card 2 -->
-            <div class="col-10 col-lg-4">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="card-domaine">
                     <div class="order-1 order-lg-0 card-domaine-body">
                         <h3 class="main-title">L’IMMIGRATION CLANDESTINE</h3>

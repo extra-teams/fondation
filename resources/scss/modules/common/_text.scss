@@ -1,7 +1,7 @@
 .styled_title {
   position: relative;
-  font-family: 'Montserrat', helvetica, sans-serif;
-
+  text-transform: uppercase;
+  letter-spacing: .2px;
   &::after {
     content: " ";
     border-bottom-style: solid;

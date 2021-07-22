@@ -11055,7 +11055,8 @@ ul li {
 
 .styled_title {
   position: relative;
-  font-family: "Montserrat", helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
 }
 
 .styled_title::after {

@@ -58,7 +58,49 @@ class ArticlesCrudController extends CrudController
     {
         CRUD::setValidation(ArticlesRequest::class);
 
-        CRUD::setFromDb(); // fields
+        $this->crud->addField(
+            [   // Browse
+                'label' => "image",
+                'name' => "cover",
+                'type' => 'image',
+                'upload' => true,
+                'crop' => true,
+                'wrapperAttributes' => [
+                    'class' => 'form-group col-md-6'
+                ],
+            ]
+        );
+        $this->crud->addField(
+            [   // Browse
+                'label' => "Titre",
+                'name' => "titre",
+                'type'  => 'text',
+                'wrapperAttributes' => [
+                    'class' => 'form-group col-md-12'
+                ],
+            ]
+        );
+        $this->crud->addField(
+            [   // Browse
+                'label' => "slug",
+                'name' => "slug",
+                'type'  => 'text',
+                'wrapperAttributes' => [
+                    'class' => 'form-group col-md-12'
+                ],
+            ]
+        );
+        $this->crud->addField(
+            [   // Browse
+                'label' => "Contenu",
+                'name' => "contenu",
+                'type'  => 'wysiwyg',
+                'wrapperAttributes' => [
+                    'class' => 'form-group col-md-12'
+                ],
+            ]
+        );
+        // CRUD::setFromDb(); // fields
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

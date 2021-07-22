@@ -9,7 +9,7 @@ use Spatie\Sluggable\SlugOptions;
 
 class Produits extends Model
 {
-    use HasSlug;
+    use HasSlug;    
 
     use CrudTrait;
 

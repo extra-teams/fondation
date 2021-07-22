@@ -47,3 +47,5 @@
 
 
 
+
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('gallery') }}'><i class='nav-icon la la-question'></i> Galleries</a></li>

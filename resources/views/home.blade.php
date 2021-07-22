@@ -54,96 +54,73 @@
 
     <!-- domaine intervention -->
     <div class="container mb-5">
-        <div class="text-center">
-            <h2 class="main-title">Nos Domaines <br> d'Intervention</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-4 border-dark">
-                <div class="card p-3 mb-2" style="border-radius: 10px;">
-                    <div class="text-center">
-                        <div class="align-items-center">
-                            <div class="icon d-flex align-items-center justify-content-center"
-                                 style="margin: auto;padding: 50px;width: 50px;height: 50px;background-color: #fabe14;border-radius: 50px;font-size: 39px;">
-                                <i class="fa fa-heart"></i></div>
-                        </div>
+        <h2 class="main-title">Nos Domaines <br> d'Intervention</h2>
+        <p class="main-introduction">Tourisme, études, congrès, implantation ou développement d’activité : nos équipes
+            se mobilisent pour vous accompagner dans la réussite de toutes vos initiatives !</p>
+        <div class="row mt-5 align-content-lg-between justify-content-around">
+            <!-- card 1 -->
+            <div class="col-12 col-lg-4">
+                <div class="card-domaine">
+                    <div class="card-domaine-header">
+                        <img src="https://lanouvelletribune.info/wp-content/uploads/2017/09/medecin-docteur.jpg" alt="">
                     </div>
-                    <div class="text-center">
-                        <p>
-                            Dans le domaine de la santé nous voulons appuyer les politiques gouvernementales
-                            en matière de création de centres de santé et d’accès des populations aux soins.
+                    <div class="card-domaine-body">
+                        <h3 class="main-title">LA SANTE</h3>
+                        <p class="main-introduction">
+                            Nous voulons appuyer les politiques gouvernementales en matière de création de centres de santé et d’accès des populations aux soins.
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 border-dark">
-                <div class="card p-3 mb-2" style="border-radius: 10px;">
-                    <div class="text-center">
-                        <div class="align-items-center">
-                            <div class="icon d-flex align-items-center justify-content-center"
-                                 style="margin: auto;padding: 50px;width: 50px;height: 50px;background-color: #fabe14;border-radius: 50px;font-size: 39px;">
-                                <i class="fa fa-book"></i></div>
-                        </div>
-                    </div>
-                    <div class="mt-4 text-center">
-                        <p>
-                            Dans le domaine de la scolarité nous intervenons par la promotion de la scolarisation
-                            gratuite et obligatoire pour garçons et filles, l’alphabétisation, la création
-                            d’infrastructures additionnelles.
+
+            <!-- card 2 -->
+            <div class="col-12 col-lg-4">
+                <div class="card-domaine">
+                    <div class="order-1 order-lg-0  card-domaine-body ">
+                        <h3 class="main-title">L’ÉDUCATION !</h3>
+                        <p class="main-introduction">
+                            Par la promotion de la scolarisation gratuite et obligatoire pour garçons et filles, l’alphabétisation, la création d’infrastructures additionnelles.
                         </p>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4 border-dark">
-                <div class="card p-3 mb-2" style="border-radius: 10px;">
-                    <div class="text-center">
-                        <div class="align-items-center">
-                            <div class="icon d-flex align-items-center justify-content-center"
-                                 style="margin: auto;padding: 50px;width: 50px;height: 50px;background-color: #fabe14;border-radius: 50px;font-size: 39px;">
-                                <i class="fa fa-tree"></i></div>
-                        </div>
-                    </div>
-                    <div class="mt-4 text-center">
-                        <p>
-                            Pour l'environnement nous agissons par la protection des forêts et de la faune, la lutte
-                            contre l’avancée du sahel par le reboisement, contre la pollution atmosphérique, des
-                            eaux et du cadre de vie.
-                        </p>
+                    <div class="order-0 order-lg-1 card-domaine-header">
+                        <img src="https://environnement-afrique.com/wp-content/uploads/2019/05/doug-linstedt-135670-unsplash-e1522102793597.jpg"
+                             alt="">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6 border-dark">
-                <div class="card p-3 mb-2" style="border-radius: 10px;">
-                    <div class="text-center">
-                        <div class="align-items-center">
-                            <div class="icon d-flex align-items-center justify-content-center"
-                                 style="margin: auto;padding: 50px;width: 50px;height: 50px;background-color: #fabe14;border-radius: 50px;font-size: 39px;">
-                                <i class="fa fa-user-secret"></i></div>
-                        </div>
+
+        <div class="row  justify-content-around mt-2">
+            <!-- card 1 -->
+            <div class="col-10 col-lg-4">
+                <div class=" card-domaine">
+                    <div class="card-domaine-header">
+                        <img src="https://www.afrik21.africa/wp-content/uploads/2019/07/shutterstock_722601193-800x400.jpg"
+                             alt="">
                     </div>
-                    <div class="mt-4 text-center">
-                        <p>
-                            Nous luttons contre l’immigration clandestine et la fuite des cerveaux vers les pays
-                            du nord, une aventure pleine de risque.
+                    <div class="card-domaine-body">
+                        <h3 class="main-title">
+                            L’ENVIRONNEMENT
+                        </h3>
+                        <p class="main-introduction">
+                            ar la protection des forêts et de la faune, la lutte contre l’avancée du sahel par le reboisement, contre la pollution atmosphérique, des eaux et du cadre de vie.
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 border-dark">
-                <div class="card p-3 mb-2" style="border-radius: 10px;">
-                    <div class="text-center">
-                        <div class="align-items-center">
-                            <div class="icon d-flex align-items-center justify-content-center"
-                                 style="margin: auto;padding: 50px;width: 50px;height: 50px;background-color: #fabe14;border-radius: 50px;font-size: 39px;">
-                                <i class="fa fa-trophy"></i></div>
-                        </div>
-                    </div>
-                    <div class="mt-4 text-center">
-                        <p>
-                            Nous encourageons la promotion du travail, du mérite et de l’excellence comme nouveau
-                            socle de l’édifice social africain.
+
+
+            <!-- card 2 -->
+            <div class="col-10 col-lg-4">
+                <div class="card-domaine">
+                    <div class="order-1 order-lg-0 card-domaine-body">
+                        <h3 class="main-title">L’IMMIGRATION CLANDESTINE</h3>
+                        <p class="main-introduction">
+                            Nous luttons contre l’immigration clandestine et la fuite des cerveaux vers les pays du nord, une aventure pleine de risque.
                         </p>
+                    </div>
+                    <div class="order-0 order-lg-1 card-domaine-header">
+                        <img src="https://www.lintelligentdabidjan.info/news/wp-content/uploads/2017/04/Aeoroport_FHB19.jpg" alt="">
                     </div>
                 </div>
             </div>

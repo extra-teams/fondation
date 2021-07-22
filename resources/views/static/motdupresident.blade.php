@@ -4,7 +4,7 @@
     <!-- presentation -->
     <div class="container-fluid">
         <div class="mt-5">
-            <h1 class="font-monterserat text-center">
+            <h1 class="main-title text-center">
                 MOT DU PRÉSIDENT
             </h1>
         </div>
@@ -13,8 +13,8 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-12">
-                <img style="width: 200px" src="{{asset("images/equipe/president.jpg")}}" alt="">
-                <p class="float-left font-weight-lighter font-monterserat">
+                <img style="height: 12rem" src="{{asset("images/equipe/president.jpg")}}" alt="">
+                <p class="main-introduction">
                     La question du développement de l’Afrique se pose plus que jamais avec acuité au moment
                     où l’on entame la deuxième décennie du troisième millénaire. À ce stade de la marche <br>
 

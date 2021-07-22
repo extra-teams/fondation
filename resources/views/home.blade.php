@@ -7,12 +7,17 @@
 
 @section('content')
     <!-- caoursel -->
-    <div id="slide" class="carousel slide mb-5" data-ride="carousel" data-interval="3000">
+    <div id="carousel" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            @foreach (DB::table('slider')->get() as $sliders)
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="{{$loop->index}}" class="active"
+                        aria-current="true" aria-label="Slide {{$loop->index}}"></button>
+            @endforeach
+        </div>
         <div class="carousel-inner">
             @foreach (DB::table('slider')->get() as $sliders)
                 @if ($loop->first)
-                    <div class="carousel-item active"
-                         style="background-image: url('{{asset($sliders->nom)}}')">
+                    <div class="carousel-item active" style="background-image: url('{{asset($sliders->nom)}}')" data-bs-interval="5000">
                         <div class="carousel-text">
                             @if(!is_null($sliders->texte))
                                 <p>{!! $sliders->texte !!}</p>
@@ -20,8 +25,7 @@
                         </div>
                     </div>
                 @else
-                    <div class="carousel-item "
-                         style="background-image: url('{{asset($sliders->nom)}}')">
+                    <div class="carousel-item " style="background-image: url('{{asset($sliders->nom)}}')" data-bs-interval="5000">
                         <div class="carousel-text">
                             @if(!is_null($sliders->texte))
                                 <p>{!! $sliders->texte !!}</p>
@@ -67,7 +71,8 @@
                     <div class="card-domaine-body">
                         <h3 class="main-title">LA SANTE</h3>
                         <p class="main-introduction">
-                            Nous voulons appuyer les politiques gouvernementales en matière de création de centres de santé et d’accès des populations aux soins.
+                            Nous voulons appuyer les politiques gouvernementales en matière de création de centres de
+                            santé et d’accès des populations aux soins.
                         </p>
                     </div>
                 </div>
@@ -79,7 +84,8 @@
                     <div class="order-1 order-lg-0  card-domaine-body ">
                         <h3 class="main-title">L’ÉDUCATION !</h3>
                         <p class="main-introduction">
-                            Par la promotion de la scolarisation gratuite et obligatoire pour garçons et filles, l’alphabétisation, la création d’infrastructures additionnelles.
+                            Par la promotion de la scolarisation gratuite et obligatoire pour garçons et filles,
+                            l’alphabétisation, la création d’infrastructures additionnelles.
                         </p>
                     </div>
                     <div class="order-0 order-lg-1 card-domaine-header">
@@ -103,7 +109,8 @@
                             L’ENVIRONNEMENT
                         </h3>
                         <p class="main-introduction">
-                            ar la protection des forêts et de la faune, la lutte contre l’avancée du sahel par le reboisement, contre la pollution atmosphérique, des eaux et du cadre de vie.
+                            ar la protection des forêts et de la faune, la lutte contre l’avancée du sahel par le
+                            reboisement, contre la pollution atmosphérique, des eaux et du cadre de vie.
                         </p>
                     </div>
                 </div>
@@ -116,11 +123,13 @@
                     <div class="order-1 order-lg-0 card-domaine-body">
                         <h3 class="main-title">L’IMMIGRATION CLANDESTINE</h3>
                         <p class="main-introduction">
-                            Nous luttons contre l’immigration clandestine et la fuite des cerveaux vers les pays du nord, une aventure pleine de risque.
+                            Nous luttons contre l’immigration clandestine et la fuite des cerveaux vers les pays du
+                            nord, une aventure pleine de risque.
                         </p>
                     </div>
                     <div class="order-0 order-lg-1 card-domaine-header">
-                        <img src="https://www.lintelligentdabidjan.info/news/wp-content/uploads/2017/04/Aeoroport_FHB19.jpg" alt="">
+                        <img src="https://www.lintelligentdabidjan.info/news/wp-content/uploads/2017/04/Aeoroport_FHB19.jpg"
+                             alt="">
                     </div>
                 </div>
             </div>
@@ -284,6 +293,9 @@
 
 
 @section("extra-js")
+    <!-- carousel -->
+
+    <!-- fancybox -->
     <script type="text/javascript" src="{{asset("library/fancybox/jquery.fancybox-1.3.4.pack.js")}}"></script>
     <script type="text/javascript">
         $("a[rel=ligthbox]").fancybox({

@@ -34,7 +34,10 @@ class Gallery extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
+    public function tags()
+    {
+        return $this->belongsToMany('App\Models\Tags','gallerie_has_tags','gallerie_id','tag_id');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

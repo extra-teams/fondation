@@ -81,6 +81,23 @@ class GalleryCrudController extends CrudController
                 ],
             ]
         );
+
+        $this->crud->addField(
+            [
+                'label' => 'Tag',
+                'type' => 'select2_multiple',
+                'name' => 'tags',
+                // optional
+                'entity' => 'tags',
+                'model' => "App\Models\Tags", // foreign key model
+                'attribute' => 'nom',
+                'pivot' => true,
+                'wrapperAttributes' => [
+                    'class' => 'form-group col-md-6'
+                ],
+            ]
+        );
+
         $this->crud->addField(
             [   // Browse
                 'label' => "image ?",
@@ -94,7 +111,7 @@ class GalleryCrudController extends CrudController
         );
         /**
          * Fields can be defined using the fluent syntax or array syntax:
-         * - CRUD::field('price')->type('number');
+         * - CRUD::field('price')->type('+');
          * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
          */
     }

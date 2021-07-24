@@ -15,7 +15,7 @@ class CreateGallerieHasTagsTable extends Migration
     {
         Schema::create('gallerie_has_tags', function (Blueprint $table) {
             $table->id();
-            $table->string("article_id");
+            $table->string("gallerie_id");
             $table->string("tag_id");
         });
     }

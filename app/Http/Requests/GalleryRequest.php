@@ -26,7 +26,7 @@ class GalleryRequest extends FormRequest
     public function rules()
     {
         return [
-            'fichier' => 'required',
+            // 'fichier' => 'required',
             'legende' => 'required|min:5|max:255'
         ];
     }

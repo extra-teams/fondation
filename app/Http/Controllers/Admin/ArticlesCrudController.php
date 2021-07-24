@@ -39,7 +39,9 @@ class ArticlesCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        // CRUD::setFromDb(); // columns
+        CRUD::column('titre')->type('text');
+        CRUD::column('contenu')->type('text');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -80,13 +82,28 @@ class ArticlesCrudController extends CrudController
                 ],
             ]
         );
+        // $this->crud->addField(
+        //     [   // Browse
+        //         'label' => "slug",
+        //         'name' => "slug",
+        //         'type'  => 'text',
+        //         'wrapperAttributes' => [
+        //             'class' => 'form-group col-md-12'
+        //         ],
+        //     ]
+        // );
         $this->crud->addField(
-            [   // Browse
-                'label' => "slug",
-                'name' => "slug",
-                'type'  => 'text',
+            [
+                'label' => 'Tag',
+                'type' => 'select2_multiple',
+                'name' => 'tags',
+                // optional
+                'entity' => 'tags',
+                'model' => "App\Models\Tags", // foreign key model
+                'attribute' => 'nom',
+                'pivot' => true,
                 'wrapperAttributes' => [
-                    'class' => 'form-group col-md-12'
+                    'class' => 'form-group col-md-6'
                 ],
             ]
         );

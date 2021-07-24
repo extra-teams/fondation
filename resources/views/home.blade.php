@@ -164,14 +164,14 @@
                 // dd($gal->fichier);
                 $tag = $gt ? $gt->tag_id : false;
             @endphp
-                @if($gal->image && $tag=='actions-caritatives')
-                @php $img = 'storage/'.$gal->fichier; @endphp
-                {{-- @dd($img) --}}
+               
+               @if($gal->image && $tag=='actions-caritatives')
+               
                 <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
                     <div class="wprock-img-zoom">
                         
-                        <a href="{{asset($img)}}" class="fancybox" rel="ligthbox">
-                            <img src="{{asset($img)}}" class="zoom img-fluid" alt="">
+                        <a href="{{asset('storage/'.$gal->fichier)}}" class="fancybox" rel="ligthbox">
+                            <img src="{{asset('storage/'.$gal->fichier)}}" class="zoom img-fluid" alt="">
                         </a>
                     </div>
                 </div>

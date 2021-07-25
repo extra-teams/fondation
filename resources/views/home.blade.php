@@ -17,7 +17,8 @@
         <div class="carousel-inner">
             @foreach (DB::table('slider')->get() as $sliders)
                 @if ($loop->first)
-                    <div class="carousel-item active" style="background-image: url('{{asset($sliders->nom)}}')" data-bs-interval="5000">
+                    <div class="carousel-item active" style="background-image: url('{{asset($sliders->nom)}}')"
+                         data-bs-interval="5000">
                         <div class="carousel-text">
                             @if(!is_null($sliders->texte))
                                 <p>{!! $sliders->texte !!}</p>
@@ -25,7 +26,8 @@
                         </div>
                     </div>
                 @else
-                    <div class="carousel-item " style="background-image: url('{{asset($sliders->nom)}}')" data-bs-interval="5000">
+                    <div class="carousel-item " style="background-image: url('{{asset($sliders->nom)}}')"
+                         data-bs-interval="5000">
                         <div class="carousel-text">
                             @if(!is_null($sliders->texte))
                                 <p>{!! $sliders->texte !!}</p>
@@ -137,56 +139,25 @@
     </div>
 
     <!-- Nos Actions Caritatives -->
-    <div class="container mb-5">
-        <div class="text-center">
-            <h2 class="main-title">Nos Actions Caritatives</h2>
-        </div>
-        <div class="row slider">
-            <!-- slider 1 -->
-            @foreach (\DB::table('galleries')->get() as $gal)
-            @php
-                $gt=\DB::table('gallerie_has_tags')->where('gallerie_id',$gal->id)->first();
-                // dd($gal->fichier);
-                $tag = $gt ? $gt->tag_id : false;
-            @endphp
-               
-               @if($gal->image && $tag=='actions-caritatives')
-               
-                <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
-                    <div class="wprock-img-zoom">
-                        
-                        <a href="{{asset('storage/'.$gal->fichier)}}" class="fancybox" rel="ligthbox">
-                            <img src="{{asset('storage/'.$gal->fichier)}}" class="zoom img-fluid" alt="">
-                        </a>
+    @if(isset($galleries) && count($galleries)>0)
+        <div class="container mb-5">
+            <div class="text-center">
+                <h2 class="main-title">Nos Actions Caritatives</h2>
+            </div>
+            <div class="row slider">
+                @foreach($galleries as $gallerie)
+                    <!-- slider 1 -->
+                        <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
+                        <div class="wprock-img-zoom">
+                            <a href="{{asset('storage/'.$gallerie->fichier)}}" class="fancybox" rel="ligthbox">
+                                <img src="{{asset('storage/'.$gallerie->fichier)}}" class="zoom img-fluid" alt="">
+                            </a>
+                        </div>
                     </div>
-                </div>
-                @endif
-            
-            
-            {{-- <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
-                <div class="wprock-img-zoom">
-                    <a href="{{asset('images/caritative/caritative1.jpeg')}}" class="fancybox" rel="ligthbox">
-                        <img src="{{asset('images/caritative/caritative1.jpeg')}}" class="zoom img-fluid" alt="">
-                    </a>
-                </div>
+                @endforeach
             </div>
-            <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
-                <div class="wprock-img-zoom">
-                    <a href="{{asset('images/caritative/caritative2.jpeg')}}" class="fancybox" rel="ligthbox">
-                        <img src="{{asset('images/caritative/caritative2.jpeg')}}" class="zoom img-fluid" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
-                <div class="wprock-img-zoom">
-                    <a href="{{asset('images/caritative/caritative3.jpeg')}}" class="fancybox" rel="ligthbox">
-                        <img src="{{asset('images/caritative/caritative3.jpeg')}}" class="zoom img-fluid" alt="">
-                    </a>
-                </div>
-            </div> --}}
-            @endforeach
         </div>
-    </div>
+    @endif
 
     <!-- LA BOUTIQUE HUMANITAIRE -->
     @if(isset($produits) && count($produits)>0)
@@ -317,6 +288,9 @@
             'transitionIn': 'none',
             'transitionOut': 'none'
         });
+
+
+
     </script>
     <!-- tinyslider -->
     <script type="module">
@@ -344,5 +318,8 @@
                 }
             }
         });
+
+
+
     </script>
 @endsection

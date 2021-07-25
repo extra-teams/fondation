@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\SendEmailJob;
+use App\Models\Articles;
+use App\Models\Gallery;
 use App\Models\Padev;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -17,7 +19,18 @@ class PadevController extends Controller
      */
     public function index()
     {
-        return view('padev.index');
+        $galleries = Gallery::whereHas('tags', function ($query) {
+            return $query->where('code', '=', 'prix-padev');
+        })->where('image', '=', 1)->limit(6)->get();
+
+        $articles = Articles::whereHas('tags', function ($query) {
+            return $query->where('code', '=', 'padev');
+        })->limit(6)->get();
+
+        return view('padev.index')->with([
+            'galleries' => $galleries,
+            'articles' => $articles
+        ]);
     }
 
 

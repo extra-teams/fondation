@@ -65,43 +65,23 @@
                     <h6 class="text-center price-sub-title">Prix Africain du mérite et de l'excellence</h6>
                 </div>
             </div>
+        @if(isset($galleries) && count($galleries)>0)
             <!-- cards -->
-            <div class="row mt-5 justify-content-center">
-                <!-- card -->
-                <div class="col-10 col-md-3">
-                    <div class="card-prize">
-                        <div class="card-prize-gradient"></div>
-                        <img src="https://fondation225.org/wp-content/uploads/2021/03/1617021099949-225x300.jpg" alt="">
-                        <div class="card-prize-body">
-                            <h5>Prix des jeunes entrepreneurs Africains</h5>
+                <div class="row mt-5 justify-content-center">
+                @foreach($galleries as $gallerie)
+                    <!-- card -->
+                        <div class="col-10 col-md-3">
+                            <div class="card-prize">
+                                <div class="card-prize-gradient"></div>
+                                <img src="{{asset('storage/'.$gallerie->fichier)}}" alt="">
+                                <div class="card-prize-body">
+                                    <h5>{{$gallerie->legende}}</h5>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-
-                <!-- card -->
-                <div class="col-10 col-md-3">
-                    <div class="card-prize">
-                        <div class="card-prize-gradient"></div>
-                        <img src="https://fondation225.org/wp-content/uploads/2021/03/1617021099949-225x300.jpg" alt="">
-                        <div class="card-prize-body">
-                            <h5>Prix des jeunes entrepreneurs Africains</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card -->
-                <div class="col-10 col-md-3">
-                    <div class="card-prize">
-                        <div class="card-prize-gradient"></div>
-                        <img src="https://fondation225.org/wp-content/uploads/2021/03/1617021099949-225x300.jpg" alt="">
-                        <div class="card-prize-body">
-                            <h5>Prix des jeunes entrepreneurs Africains</h5>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
+            @endif
         </div>
 
         <div class="container mt-5">
@@ -217,55 +197,24 @@
                 </div>
             </div>
             <div class="row slider">
-                <!-- card 1 -->
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="card-prizewinner">
-                        <img src="https://fondation225.org/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-14-at-08.56.18-1-2-600x450.jpeg"
-                             class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Le forum des lauréats
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-                <!-- card 2 -->
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="card-prizewinner">
-                        <img src="https://fondation225.org/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-14-at-08.56.18-1-2-600x450.jpeg"
-                             class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Le forum des lauréats
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-                <!-- card 3 -->
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="card-prizewinner">
-                        <img src="https://fondation225.org/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-14-at-08.56.18-1-2-600x450.jpeg"
-                             class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Le forum des lauréats
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-                <!-- card 3 -->
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="card-prizewinner">
-                        <img src="https://fondation225.org/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-14-at-08.56.18-1-2-600x450.jpeg"
-                             class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Le forum des lauréats
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-
+            @if(isset($articles) && count($articles)>0)
+                @foreach($articles as $article)
+                    <!-- card 1 -->
+                        <a href="{{$article->slug}}">
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="card-prizewinner">
+                                    <img src="{{asset('storage/'.$gallerie->cover)}}"
+                                         class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            {{$article->titre}}
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>

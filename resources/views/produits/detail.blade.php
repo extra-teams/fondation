@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <!-- breadcrumb-->
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -53,18 +53,17 @@
                 </div>
             </div>
             <!-- /Product main img -->
-
             <!-- Product details -->
             <div class="col-12 col-md-7">
                 <div class="product-details">
-                    <h2 class="product-name mt-5 mt-md-0">{{$produit->nom}}</h2>
-                    <div>
-                        <h4 class="product-price">{{ number_format(($produit->prix_vente),0, '.', '.') }} FCFA</h4>
-                    </div>
-                    <form id="form" action="{{ route('cart.store') }}" method="POST" style="border:none">
+                    <form id="form" action="{{ route('cart.store') }}" method="POST">
                         @csrf
                         <div class="row">
-                            <div class="col-6 col-md-6">
+                            <h2 class="product-name mt-5 mt-md-0">{{$produit->nom}}</h2>
+                            <h4 class="product-price">{{ number_format(($produit->prix_vente),0, '.', '.') }} FCFA</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-md-6 col-lg-12">
                                 <div class="control">
                                     <label for="qte">Quantite : </label>
                                     <select id="qte" name="qte" style="width:50px;">
@@ -74,31 +73,28 @@
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                        <!-- informations -->
+                        <div class="row">
                             <div class="col-12">
-                                <div class="mt-3 ">
-                                    <input type="hidden" name="code_produit" value="{{$produit->code}}">
-                                    <button type="submit" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>
-                                        Ajouter au panier
-                                    </button>
-                                </div>
+                                <h5 class="mb-2">INFORMATIONS ARTICLE</h5>
+                                {!!$produit->description!!}
+                            </div>
+                        </div>
+                        <!-- bouton -->
+                        <div class="col-12">
+                            <div class="mt-3 ">
+                                <input type="hidden" name="code_produit" value="{{$produit->code}}">
+                                <button type="submit" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>
+                                    Ajouter au panier
+                                </button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-            <!-- /Product details -->
         </div>
         <!-- /row -->
-
-        <!-- description du produit -->
-        <div class="row mt-5 product-detail-bottom">
-            <div class="col-12">
-                <h5 class="mb-2">INFORMATIONS ARTICLE</h5>
-                <div>
-                    {!!$produit->description!!}
-                </div>
-            </div>
-        </div>
     </div>
     <!-- /container -->
 @endsection
@@ -139,5 +135,6 @@
                 ]
             });
         })(jQuery);
+
     </script>
 @endsection

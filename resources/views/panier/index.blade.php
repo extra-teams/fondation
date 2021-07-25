@@ -9,9 +9,7 @@
         {{-- affichage du panier pour ecran large  --}}
         <section class="section-content d-none d-lg-block bg padding-y border-top">
             <div class="container" style=" margin-top:80px;">
-                <center>
                     <p class="h3" style="color: #888;font-weight:bold;">VOTRE PANIER ( {{Cart::count()}} )</p>
-                </center>
                 <br>
 
                 <div class="row">
@@ -286,5 +284,4 @@
         }
 
     </script>
-    {{-- @include('sweetalert::alert') --}}
 @endsection

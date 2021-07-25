@@ -1,7 +1,6 @@
 .header-top {
   padding: 1.2rem 0;
   width: 100%;
-  overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -63,7 +62,6 @@
     align-content: center;
     width: 30%;
     padding-right: 10px;
-    overflow: hidden;
 
     & i {
       position: relative;

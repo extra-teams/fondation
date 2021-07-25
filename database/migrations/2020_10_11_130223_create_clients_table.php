@@ -21,6 +21,8 @@ class CreateClientsTable extends Migration
             $table->string('password');
             $table->string('remember_token')->nullable();
             $table->string('telephone')->nullable();
+            $table->string('facebook_id')->nullable();
+            $table->string('google_id')->nullable();
             $table->boolean('enabled')->default(true);
             $table->softDeletes();
             $table->timestamps();

@@ -1,14 +1,11 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use App\Jobs\SendEmailJob;
-use App\Models\Articles;
 use App\Models\Gallery;
 use App\Models\Padev;
+use App\Models\Pays;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use PragmaRX\Countries\Package\Countries;
 
 class PadevController extends Controller
 {
@@ -31,10 +28,9 @@ class PadevController extends Controller
 
     public function get_inscription()
     {
-        $countries = new Countries();
-        $allcountries = $countries->all();
+        $countries = Pays::all();
         return view('padev.inscription')->with([
-            'countries' => $allcountries
+            'countries' => $countries
         ]);
     }
 

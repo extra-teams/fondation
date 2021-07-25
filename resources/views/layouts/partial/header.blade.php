@@ -8,7 +8,7 @@
             <span id="open-menu">
                 <i class="fas fa-bars"></i>
             </span>
-            <img src="{{asset("images/fondation.jpeg")}}" alt="">
+            <a href="{{url('/')}}"><img src="{{asset("images/fondation.jpeg")}}" alt=""></a>
         </div>
         <!-- center -->
         <div class="header-top-center">
@@ -31,16 +31,13 @@
             <!-- login -->
             <div class="header-top-user">
                 <div class="dropdown">
-                    <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false">
+                    <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-user-circle"></i>
                         <i class="arrow"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item"
-                           href="{{route('login.index')}}">{{__("header.sign_in")}}</a>
-                        <a class="dropdown-item"
-                           href="{{url('/register')}}">{{__("header.sign_up")}}</a>
+                        <a class="dropdown-item" href="{{route('login.index')}}">{{__("header.sign_in")}}</a>
+                        <a class="dropdown-item" href="{{url('/register')}}">{{__("header.sign_up")}}</a>
                     </div>
                 </div>
             </div>

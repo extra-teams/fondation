@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Articles;
 use App\Models\Gallery;
 use App\Models\Produits;
 use App\Models\Sliders;
@@ -20,11 +21,15 @@ class HomeController extends Controller
         $galleries = Gallery::whereHas('tags', function ($query) {
             return $query->where('code', '=', 'actions-caritatives');
         })->where('image', '=', 1)->limit(4)->get();
+        $articles = Articles::whereHas('tags', function ($query) {
+            return $query->where('code', '=', 'padev');
+        })->limit(3)->get();
 
         return view('home')->with([
             'produits' => $Produits,
             'sliders' => $Sliders,
-            'galleries' => $galleries
+            'galleries' => $galleries,
+            'articles' => $articles
         ]);
     }
 

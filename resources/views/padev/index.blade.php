@@ -67,7 +67,7 @@
             </div>
         @if(isset($galleries) && count($galleries)>0)
             <!-- cards -->
-                <div class="row mt-5 justify-content-center">
+                <div class="row mt-5 slider">
                 @foreach($galleries as $gallerie)
                     <!-- card -->
                         <div class="col-10 col-md-3">
@@ -196,25 +196,37 @@
                     </p>
                 </div>
             </div>
-            <div class="row slider">
-            @if(isset($articles) && count($articles)>0)
-                @foreach($articles as $article)
-                    <!-- card 1 -->
-                        <a href="{{$article->slug}}">
-                            <div class="col-12 col-sm-6 col-md-3">
-                                <div class="card-prizewinner">
-                                    <img src="{{asset('storage/'.$gallerie->cover)}}"
-                                         class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">
-                                            {{$article->titre}}
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    @endforeach
-                @endif
+            <div class="row  justify-content-center">
+                <!-- Le forum des lauréats -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card-prize">
+                        <div class="card-prize-gradient"></div>
+                        <img src="{{asset('images/padev/forum_laureat.jpeg')}}" alt="">
+                        <div class="card-prize-body">
+                            <h5> Le forum des lauréats</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- LE DINER-GALA DES BÂTISSEURS AFRICAINS -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card-prize">
+                        <div class="card-prize-gradient"></div>
+                        <img src="{{asset('images/padev/DINER-GALA.png')}}" alt="">
+                        <div class="card-prize-body">
+                            <h5> LE DINER-GALA DES BÂTISSEURS AFRICAINS</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- VISITE TOURISTIQUE -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card-prize">
+                        <div class="card-prize-gradient"></div>
+                        <img src="{{asset('images/padev/visite-touriste.jpeg')}}" alt="">
+                        <div class="card-prize-body">
+                            <h5> VISITE TOURISTIQUE </h5>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -242,7 +254,7 @@
                     gutter: 30
                 },
                 900: {
-                    items: 3
+                    items: 4
                 }
             }
         });

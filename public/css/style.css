@@ -11951,7 +11951,7 @@ ul li {
   top: -16px;
 }
 
-.card-prizewinner {
+.card-news {
   height: 20rem;
   width: 100%;
   overflow: hidden;
@@ -11959,17 +11959,32 @@ ul li {
   color: #d6b40c;
 }
 
-.card-prizewinner h5,
-.card-prizewinner .h5 {
-  font-size: 1rem;
-  font-weight: light;
+.card-news .card-news-header {
+  height: 60%;
+  width: 100%;
 }
 
-.card-prizewinner img {
-  height: 60%;
+.card-news .card-news-header img {
+  height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.card-news .card-news-body {
+  padding: 5px 5px;
+  height: 40%;
+  width: 100%;
+}
+
+.card-news .card-news-body h5,
+.card-news .card-news-body .h5 {
+  font-family: "Titillium Web", serif;
+  color: #111111;
+  line-height: 1.2em;
+  font-size: 1rem;
+  text-align: left;
+  font-weight: 400;
 }
 
 .card-domaine {

@@ -23,13 +23,8 @@ class PadevController extends Controller
             return $query->where('code', '=', 'prix-padev');
         })->where('image', '=', 1)->limit(6)->get();
 
-        $articles = Articles::whereHas('tags', function ($query) {
-            return $query->where('code', '=', 'padev');
-        })->limit(6)->get();
-
         return view('padev.index')->with([
-            'galleries' => $galleries,
-            'articles' => $articles
+            'galleries' => $galleries
         ]);
     }
 

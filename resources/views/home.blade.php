@@ -145,9 +145,9 @@
                 <h2 class="main-title">Nos Actions Caritatives</h2>
             </div>
             <div class="row slider">
-                @foreach($galleries as $gallerie)
-                    <!-- slider 1 -->
-                        <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
+            @foreach($galleries as $gallerie)
+                <!-- slider 1 -->
+                    <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
                         <div class="wprock-img-zoom">
                             <a href="{{asset('storage/'.$gallerie->fichier)}}" class="fancybox" rel="ligthbox">
                                 <img src="{{asset('storage/'.$gallerie->fichier)}}" class="zoom img-fluid" alt="">
@@ -196,6 +196,34 @@
                             </div>
                         </div>
                     </div>
+                @endforeach
+            </div>
+        </div>
+    @endif
+
+    <!-- Actualites -->
+    @if(isset($articles) && count($articles)>0)
+        <div class="container mt-5">
+            <div class="row">
+                <h2 class="main-title">Dernières actualités</h2>
+            </div>
+            <div class="row justify-content-center align-content-center">
+            @foreach($articles as $article)
+                <!-- card 1 -->
+                    <a href="{{$article->slug}}">
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="card-news">
+                                <div class="card-news-header">
+                                    <img src="{{asset($article->cover)}}" alt="{{asset($article->title)}}">
+                                </div>
+                                <div class="card-news-body">
+                                    <h5 class="card-title">
+                                        {{$article->titre}}
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 @endforeach
             </div>
         </div>
@@ -291,6 +319,9 @@
 
 
 
+
+
+
     </script>
     <!-- tinyslider -->
     <script type="module">
@@ -318,6 +349,9 @@
                 }
             }
         });
+
+
+
 
 
 

@@ -35,10 +35,18 @@
                         <i class="fas fa-user-circle"></i>
                         <i class="arrow"></i>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="{{route('login.index')}}">{{__("header.sign_in")}}</a>
-                        <a class="dropdown-item" href="{{url('/register')}}">{{__("header.sign_up")}}</a>
-                    </div>
+                    @if(!Auth::check())
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{{route('login.index')}}">{{__("header.sign_in")}}</a>
+                            <a class="dropdown-item" href="{{url('/register')}}">{{__("header.sign_up")}}</a>
+                        </div>
+                    @else
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{{route('client.index')}}">mon compte</a>
+                            <a class="dropdown-item" href="{{route('client.commande')}}">mes commandes</a>
+                            <a class="dropdown-item" href="{{route('client.logout')}}">deconnexion</a>
+                        </div>
+                    @endif
                 </div>
             </div>
 

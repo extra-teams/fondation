@@ -17,7 +17,7 @@
         <!-- row -->
         <div class="row">
             <div class="col-md-7">
-                <form id="form" action="{{route('checkout.store')}}" method="post">
+                <form id="form" action="{!! URL::to('paypal') !!}" method="post">
                 @csrf
                 <!-- Billing Details -->
                     <div class="billing-details">

@@ -31,7 +31,7 @@
 @yield('content')
 
 @include('layouts.partial.footer')
-<script src="{{asset('js/jquery-1.4.3.min.js')}}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>

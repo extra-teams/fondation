@@ -2,139 +2,176 @@
 @section('title')
     {{$produit->nom}}
 @endsection
+
+@section('extra-css')
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+@endsection
+
 @section('content')
+    <form id="form" action="{{ route('cart.store') }}" method="POST" style="border:none">
+    @csrf
     <!-- breadcrumb-->
-    <div class="container mt-5">
-        <div class="row">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{URL('/')}}">Accueil</a></li>
-                    @foreach ($lien as  $item=>$i)
-                        @if ($item==$categorie->nom)
-                            <li class="breadcrumb-item"><a
-                                        href="{{route($i,['categorie'=>'yes',$categorie->code=>'on'])}}">{{$item}}</a>
-                            </li>
-                        @else
-                            <li class="breadcrumb-item"><a href="#">{{$item}}</a></li>
-                        @endif
-                    @endforeach
-                </ol>
-            </nav>
+        <div class="container mt-5">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{URL('/')}}">Accueil</a></li>
+                        @foreach ($lien as  $item=>$i)
+                            @if ($item==$categorie->nom)
+                                <li class="breadcrumb-item"><a
+                                            href="{{route($i,['categorie'=>'yes',$categorie->code=>'on'])}}">{{$item}}</a>
+                                </li>
+                            @else
+                                <li class="breadcrumb-item"><a href="#">{{$item}}</a></li>
+                            @endif
+                        @endforeach
+                    </ol>
+                </nav>
+            </div>
         </div>
-    </div>
 
-    <!-- contenu -->
-    <div class="container product">
-        <!-- row -->
-        <div class="row mt-md-5">
-            <!-- Product thumb imgs -->
-            @php $liens=$produit->image; $lien=json_decode($liens); $img="img.jpg";
-            if ($lien) { foreach($lien as $i){$img=$i;break;} }  @endphp
-            <div class="col-md-1">
-                <div id="product-imgs">
-                    @foreach ($lien as $img)
-                        <div class="product-preview">
-                            <img src="{{asset('storage/'.$img)}}" alt="">
+        <div class="pd-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        @php $liens=$produit->image; $lien=json_decode($liens); $img="img.jpg"; @endphp
+                        <div id="slider" class="owl-carousel product-slider">
+                            @foreach ($lien as $img)
+                                <div class="item">
+                                    <img src="{{asset('storage/'.$img)}}"/>
+                                </div>
+                            @endforeach
                         </div>
-                    @endforeach
-                </div>
-            </div>
-            <!-- /Product thumb imgs -->
-
-            <!-- Product main img -->
-            @php $liens=$produit->image; $lien=json_decode($liens); $img="img.jpg"; @endphp
-            <div class="col-12 col-md-4">
-                <div id="product-main-img">
-                    @foreach ($lien as $img)
-                        <div class="product-preview">
-                            <img src="{{asset('storage/'.$img)}}" alt="">
+                        <!-- Product main img -->
+                        <div id="thumb" class="owl-carousel product-thumb">
+                            @foreach ($lien as $img)
+                                <div class="item">
+                                    <img src="{{asset('storage/'.$img)}}"/>
+                                </div>
+                            @endforeach
                         </div>
-                    @endforeach
-                </div>
-            </div>
-            <!-- /Product main img -->
-            <!-- Product details -->
-            <div class="col-12 col-md-7">
-                <div class="product-details">
-                    <form id="form" action="{{ route('cart.store') }}" method="POST">
-                        @csrf
-                        <div class="row">
-                            <h2 class="product-name mt-5 mt-md-0">{{$produit->nom}}</h2>
-                            <h4 class="product-price">{{ number_format(($produit->prix_vente),0, '.', '.') }} FCFA</h4>
-                        </div>
-                        <div class="row">
-                            <div class="col-6 col-md-6 col-lg-12">
-                                <div class="control">
-                                    <label for="qte">Quantite : </label>
-                                    <select id="qte" name="qte" style="width:50px;">
-                                        @for ($i = 1; $i <= $produit->quantite; $i++)
-                                            <option value="{{$i}}">{{$i}}</option>
-                                        @endfor
-                                    </select>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="product-dtl">
+                            <div class="product-info">
+                                <div class="product-name">{{$produit->nom}}</div>
+                                <div class="product-price-discount"><span>{{ number_format(($produit->prix_vente),0, '.', '.') }} FCFA</span>
+                                </div>
+                                <p>{{$produit->description}}</p>
+                                <div class="product-count">
+                                    <label for="size">Quantite</label>
+                                    <div class="display-flex">
+                                        <div class="qtyminus">-</div>
+                                        <input type="text" name="quantity" value="1" class="qty">
+                                        <div class="qtyplus">+</div>
+                                    </div>
+                                    <input type="hidden" name="code_produit" value="{{$produit->code}}">
+                                    <button type="submit" class="round-black-btn">
+                                        Ajouter au panier
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                        <!-- informations -->
-                        <div class="row">
-                            <div class="col-12">
-                                <h5 class="mb-2">INFORMATIONS ARTICLE</h5>
-                                {!!$produit->description!!}
-                            </div>
-                        </div>
-                        <!-- bouton -->
-                        <div class="col-12">
-                            <div class="mt-3 ">
-                                <input type="hidden" name="code_produit" value="{{$produit->code}}">
-                                <button type="submit" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>
-                                    Ajouter au panier
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
+    </form>
 @endsection
 
 @section('extra-js')
-    <script>
-        (function ($) {
-            "use strict"
-            /////////////////////////////////////////
-            // Product Main img Slick
-            $('#product-main-img').slick({
-                infinite: true,
-                speed: 300,
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var slider = $("#slider");
+            var thumb = $("#thumb");
+            var slidesPerPage = 4; //globaly define number of elements per page
+            var syncedSecondary = true;
+            slider.owlCarousel({
+                items: 1,
+                slideSpeed: 2000,
+                nav: false,
+                autoplay: false,
                 dots: false,
-                arrows: true,
-                fade: true,
-                asNavFor: '#product-imgs',
+                loop: true,
+                responsiveRefreshRate: 200
+            }).on('changed.owl.carousel', syncPosition);
+            thumb
+                .on('initialized.owl.carousel', function () {
+                    thumb.find(".owl-item").eq(0).addClass("current");
+                })
+                .owlCarousel({
+                    items: slidesPerPage,
+                    dots: false,
+                    nav: true,
+                    item: 4,
+                    smartSpeed: 200,
+                    slideSpeed: 500,
+                    slideBy: slidesPerPage,
+                    navText: ['<svg width="18px" height="18px" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>', '<svg width="25px" height="25px" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
+                    responsiveRefreshRate: 100
+                }).on('changed.owl.carousel', syncPosition2);
+
+            function syncPosition(el) {
+                var count = el.item.count - 1;
+                var current = Math.round(el.item.index - (el.item.count / 2) - .5);
+                if (current < 0) {
+                    current = count;
+                }
+                if (current > count) {
+                    current = 0;
+                }
+                thumb
+                    .find(".owl-item")
+                    .removeClass("current")
+                    .eq(current)
+                    .addClass("current");
+                var onscreen = thumb.find('.owl-item.active').length - 1;
+                var start = thumb.find('.owl-item.active').first().index();
+                var end = thumb.find('.owl-item.active').last().index();
+                if (current > end) {
+                    thumb.data('owl.carousel').to(current, 100, true);
+                }
+                if (current < start) {
+                    thumb.data('owl.carousel').to(current - onscreen, 100, true);
+                }
+            }
+
+            function syncPosition2(el) {
+                if (syncedSecondary) {
+                    var number = el.item.index;
+                    slider.data('owl.carousel').to(number, 100, true);
+                }
+            }
+
+            thumb.on("click", ".owl-item", function (e) {
+                e.preventDefault();
+                var number = $(this).index();
+                slider.data('owl.carousel').to(number, 300, true);
             });
 
-            // Product imgs Slick
-            $('#product-imgs').slick({
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                arrows: true,
-                centerMode: true,
-                focusOnSelect: true,
-                centerPadding: 0,
-                vertical: true,
-                asNavFor: '#product-main-img',
-                responsive: [{
-                    breakpoint: 991,
-                    settings: {
-                        vertical: false,
-                        arrows: false,
-                        dots: true,
+
+            $(".qtyminus").on("click", function () {
+                var now = $(".qty").val();
+                if ($.isNumeric(now)) {
+                    if (parseInt(now) - 1 > 0) {
+                        now--;
                     }
-                },
-                ]
+                    $(".qty").val(now);
+                }
+            })
+            $(".qtyplus").on("click", function () {
+                var now = $(".qty").val();
+                if ($.isNumeric(now)) {
+                    $(".qty").val(parseInt(now) + 1);
+                }
             });
-        })(jQuery);
-
+        });
     </script>
 @endsection

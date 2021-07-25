@@ -12,10 +12,10 @@
     <!-- texte -->
     <div class="container mt-5" id="mot-du-president">
         <div class="row justify-content-center">
-            <div class="col-10 col-lg-4 img">
+            <div class="col-6 col-lg-4 header-mot">
                 <img src="{{asset("images/equipe/president.jpg")}}" alt="">
             </div>
-            <div class="col-11 col-lg-8">
+            <div class="col-12 col-lg-8">
                 <p class="text-justify">
                     “ La question du développement de l’Afrique se pose plus que jamais avec acuité au moment
                     où l’on entame la deuxième décennie du troisième millénaire. À ce stade de la marche <br>

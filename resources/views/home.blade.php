@@ -20,18 +20,18 @@
                 @if ($loop->first)
                     <div class="carousel-item active" style="background-image: url('{{asset($sliders->nom)}}')"
                          data-bs-interval="5000">
-                        <div class="carousel-text">
+                        <div class="carousel-caption">
                             @if(!is_null($sliders->texte))
-                                <p>{!! $sliders->texte !!}</p>
+                                {!! $sliders->texte !!}
                             @endif
                         </div>
                     </div>
                 @else
                     <div class="carousel-item " style="background-image: url('{{asset($sliders->nom)}}')"
                          data-bs-interval="5000">
-                        <div class="carousel-text">
+                        <div class="carousel-caption">
                             @if(!is_null($sliders->texte))
-                                <p>{!! $sliders->texte !!}</p>
+                                {!! $sliders->texte !!}
                             @endif
                         </div>
                     </div>
@@ -189,7 +189,6 @@
                                 <span class="name d-inline-block text-truncate">{{$produit->nom}}</span>
                                 <div class="">
                                     <span class="current-price">{{$produit->prix_vente}} FCFA</span>
-                                    <span class="old-price">{{$produit->prix_achat}} FCFA</span>
                                 </div>
                                 <a href="{{route('produits.show',$produit->code)}}">
                                     <button class="btn">Ajouter au panier</button>
@@ -307,8 +306,6 @@
 
 
 @section("extra-js")
-    <!-- carousel -->
-
     <!-- fancybox -->
     <script type="text/javascript" src="{{asset("library/fancybox/jquery.fancybox-1.3.4.pack.js")}}"></script>
     <script type="text/javascript">
@@ -348,6 +345,6 @@
     </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-    AOS.init();
+        AOS.init();
     </script>
 @endsection

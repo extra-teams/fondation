@@ -21,6 +21,7 @@ class HomeController extends Controller
         $galleries = Gallery::whereHas('tags', function ($query) {
             return $query->where('code', '=', 'actions-caritatives');
         })->where('image', '=', 1)->limit(4)->get();
+
         $articles = Articles::whereHas('tags', function ($query) {
             return $query->where('code', '=', 'padev');
         })->limit(3)->get();

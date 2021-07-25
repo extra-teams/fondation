@@ -19,29 +19,11 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $client=Auth::user();
-        $adresse_client =\App\Models\Adresse::where('id_client', $client->id)->first();
-        if($adresse_client!=null){
-            $commune = \App\Models\Communes::where('code',$adresse_client->code_commune)->first();
-         
-            $ville_client = \App\Models\Villes::where('code',$commune->code_ville)->first()->nom;
-            $commune_client=$commune->nom;
-            }
-            else {
-                $commune_client=null;
-                $ville_client = null;
-          }
-        
-        // session()->flash('alerte', 'Bienvenu '.$client->nom.' !');
-        // session()->flash('type', 'success');
-
-        return view('client.index',[
-            "adresse" => $adresse_client,
-            "client" => $client,
-            'commune' => $commune_client,
-            'ville' =>$ville_client,
+        $client = Auth::user();
+        return view('client.index', [
+            "client" => $client
         ]);
-       
+
     }
 
     /***
@@ -59,58 +41,29 @@ class ClientController extends Controller
     public function commande()
     {
         $id = Auth::User()->id;
-        $commandes = DB::table('commandes')->where('id_client',$id)
+        $commandes = DB::table('commandes')->where('id_client', $id)
             // ->join('detailcommandes', 'commandes.id', '=', 'detailcommandes.id_commande')
             // ->join('produits','produits.code','=','detailcommandes.code_prod')
             ->where('id_client', '=', $id)
             ->simplePaginate(15);
-            
+
         return view('client.order')->with([
             'commandes' => $commandes
         ]);
     }
 
-    public function detail_commande(Commande $commande){
-        $client = Auth::user();
+    public function detail_commande(Commande $commande)
+    {
         $articles = DB::table('detailcommandes')->where('id_commande', $commande->id)->get();
         $nbre_article = count($articles);
 
-        $adresse_client = \App\Models\Adresse::where('id_client', $client->id)->first();
-        $commune = \App\Models\Communes::where('code', $adresse_client->code_commune)->first();
-        $ville_client = \App\Models\Villes::where('code', $commune->code_ville)->first()->nom;
-        $commune_client = $commune->nom;
-
-
         return view(
             'client.orderdetail',
-            compact('commande', 'articles', 'nbre_article', 'adresse_client', 'ville_client', 'commune_client')
+            compact('commande', 'articles', 'nbre_article')
         );
 
     }
-    /***
-     * aller sur la page adresse
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function adresse()
-    {
-        $client=Auth::user();
-        $adresse_client =\App\Models\Adresse::where('id_client', $client->id)->first();
-        if($adresse_client!=null){
-        $commune = \App\Models\Communes::where('code',$adresse_client->code_commune)->first();
-        $ville_client = \App\Models\Villes::where('code',$commune->code_ville)->first()->nom;
-        $commune_client=$commune->nom;
-        }
-        else {
-            $commune_client=null;
-            $ville_client = null;
-        }
-        return view('client.adresse',[
-            "adresse" => $adresse_client,
-            "client" => $client,
-            'commune' => $commune_client,
-            'ville' =>$ville_client,
-        ]);
-    }
+
 
     /***
      * aller sur la page info
@@ -156,8 +109,8 @@ class ClientController extends Controller
                 'message' => 'l\'ancien mot de passe est incorrect ',
             ]);
         }
-            session()->flash('alerte', 'veillez vous connectez ');
-            session()->flash('type', 'info');
+        session()->flash('alerte', 'veillez vous connectez ');
+        session()->flash('type', 'info');
         return back()->withInput()->withErrors([
             'message' => 'veillez vous connectez  ',
         ]);
@@ -186,52 +139,10 @@ class ClientController extends Controller
             ]);
 
         }
-            session()->flash('alerte', 'veillez vous connectez ');
-            session()->flash('type', 'info');
-        return back()->withInput()->withErrors([
-            'message' => 'veuillez vous connectez  ',
-        ]);
-    }
-    /***
-     * mise à jour de l'adresse
-     * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function updateadresse()
-    {
-        if (Auth::Check()) {
-            $client=Auth::user();
-            $adresse_client =\App\Models\Adresse::where('id_client', $client->id)->first();
-            $commune_id = \App\Models\Communes::where('code',request()->input('commune'))->first()->code;
-
-            // $ville_client = \App\Models\Villes::where('code',$commune->code_ville)->first()->nom;
-
-            if($adresse_client!=null){
-                
-            DB::table('adresses')
-                ->where('id_client', $client->id)
-                ->update([
-                        'code_commune' => $commune_id,
-                        'description' => request()->input('desc'),
-                        "updated_at"=> now()
-                    ]);
-            }
-            else{
-                DB::table('adresses') ->insert([
-                        'id_client'=> $client->id,
-                        'code_commune' => $commune_id,
-                        'description' => request()->input('desc'),
-                        "created_at"=> now(),"updated_at"=> now()
-                    ]);
-            }
-            session()->flash('alerte', 'mise a jour effectuée !');
-            session()->flash('type', 'info');
-            return redirect()->route('client.index')->with('toast_success','mise a jour !');
-        }
         session()->flash('alerte', 'veillez vous connectez ');
         session()->flash('type', 'info');
         return back()->withInput()->withErrors([
-            'message' => 'veillez vous connectez  ',
+            'message' => 'veuillez vous connectez  ',
         ]);
     }
 
@@ -241,8 +152,6 @@ class ClientController extends Controller
      */
     public function deconnexion()
     {
-            session()->flash('alerte', 'deconnecté');
-            session()->flash('type', 'info');
         Auth::logout();
         return redirect('/');
     }

@@ -34,8 +34,8 @@
         </div>
         <!-- a propos -->
         <div class="about container mt-5">
-            <div class="row">
-                <div class="col-12 col-md-6 text-right">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-3">
                     <img class="about-img" src="{{@asset("images/padev/dinner_gala.jpg")}}" alt="">
                 </div>
                 <div class="col-12 col-md-6 about-text">
@@ -61,8 +61,8 @@
         <div class="container price">
             <div class="row">
                 <div class="col-12">
-                    <h5 class="text-center price-title">Le prix PADEV</h5>
-                    <h6 class="text-center price-sub-title">Prix Africain du mérite et de l'excellence</h6>
+                    <h5 class="main-title text-orange">Le prix PADEV</h5>
+                    <h6 class="main-title text-orange">Prix Africain du mérite et de l'excellence</h6>
                 </div>
             </div>
         @if(isset($galleries) && count($galleries)>0)
@@ -88,8 +88,8 @@
             <div class="row">
                 <!-- critere -->
                 <div class="row text-center">
-                    <h3>Nos critères d'attribution</h3>
-                    <p class="font-weight-light">La sélection des lauréats du Prix PADEV est le fruit d’un long
+                    <h3 class="main-title">Nos critères d'attribution</h3>
+                    <p class="main-introduction">La sélection des lauréats du Prix PADEV est le fruit d’un long
                         processus érigé sur de solides critères d’objectivité. Il part de la sélection des nominés au
                         choix des lauréats</p>
                     <h6>Comment nous procédons ?</h6>
@@ -189,8 +189,8 @@
         <div class="prizewinner container mt-5">
             <div class="row">
                 <div class="col-12">
-                    <h5 class="text-center">Cérémonie de remise de trophées</h5>
-                    <p class="text-center font-weight-light">
+                    <h5 class="main-title">Cérémonie de remise de trophées</h5>
+                    <p class="main-introduction">
                         La remise des trophées du Prix PADEV a lieu à travers une grande cérémonie annuelle unique qui
                         se tient dans une capitale africaine donnée. Elle comprend trois (3) volets principaux
                     </p>

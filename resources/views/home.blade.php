@@ -3,6 +3,7 @@
 @section("extra-css")
     <link rel="stylesheet" href="{{asset("library/fancybox/jquery.fancybox-1.3.4.css")}}" type="text/css"
           media="screen"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 @endsection
 
 @section('content')
@@ -45,7 +46,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-12">
-                <p class="main-introduction">
+                <p class="main-introduction" data-aos="fade-in">
                     La Fondation 225 est une Organisation Non Gouvernementale à but humanitaire
                     fondée le 21 NOVEMBRE 2012 à Ouagadougou sous le récépissé N°001724/MATDS/SG/DGLPAP/DAOSOC
                     du 31 DECEMBRE 2012. Elle est le fruit de l’initiative d’hommes et de femmes originaires de
@@ -65,7 +66,7 @@
             se mobilisent pour vous accompagner dans la réussite de toutes vos initiatives !</p>
         <div class="row mt-5 align-content-lg-between justify-content-around">
             <!-- card 1 -->
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up">
                 <div class="card-domaine">
                     <div class="card-domaine-header">
                         <img src="https://lanouvelletribune.info/wp-content/uploads/2017/09/medecin-docteur.jpg" alt="">
@@ -81,7 +82,7 @@
             </div>
 
             <!-- card 2 -->
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up">
                 <div class="card-domaine">
                     <div class="order-1 order-lg-0  card-domaine-body ">
                         <h3 class="main-title">L’ÉDUCATION !</h3>
@@ -100,7 +101,7 @@
 
         <div class="row  justify-content-around mt-2">
             <!-- card 1 -->
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-4" data-aos="fade-down-left">
                 <div class=" card-domaine">
                     <div class="card-domaine-header">
                         <img src="https://www.afrik21.africa/wp-content/uploads/2019/07/shutterstock_722601193-800x400.jpg"
@@ -120,7 +121,7 @@
 
 
             <!-- card 2 -->
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-4" data-aos="fade-down-right">
                 <div class="card-domaine">
                     <div class="order-1 order-lg-0 card-domaine-body">
                         <h3 class="main-title">L’IMMIGRATION CLANDESTINE</h3>
@@ -234,7 +235,7 @@
         <h2 class="main-title">NOTRE EQUIPE</h2>
         <div class="row justify-content-center">
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-5 mb-5">
+            <div class="col-md-3 mb-md-5 mb-5" data-aos="fade-down-up">
                 <div class="card-team">
                     <div class="card-team-header">
                         <img src="{{asset('images/equipe/chargerdesprojets.jpg')}}" class="img-fluid avatar" alt="">
@@ -247,7 +248,7 @@
             </div>
 
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-5 mb-5">
+            <div class="col-md-3 mb-md-5 mb-5" data-aos="fade-down-left">
                 <div class="card-team">
                     <div class="card-team-header">
                         <img src="{{asset('images/equipe/president.jpg')}}" class="img-fluid avatar" alt="">
@@ -260,7 +261,7 @@
             </div>
 
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-5 mb-5">
+            <div class="col-md-3 mb-md-5 mb-5" data-aos="fade-down-right">
                 <div class="card-team">
                     <div class="card-team-header">
                         <img src="{{asset('images/equipe/secretaire.jpg')}}" class="img-fluid avatar" alt="">
@@ -273,7 +274,7 @@
             </div>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" data-aos="fade-down-top">
             <!-- Grid column -->
             <div class="col-md-3 mb-md-5 mb-5">
                 <div class="card-team mx-auto">
@@ -316,12 +317,6 @@
             'transitionIn': 'none',
             'transitionOut': 'none'
         });
-
-
-
-
-
-
     </script>
     <!-- tinyslider -->
     <script type="module">
@@ -350,10 +345,9 @@
             }
         });
 
-
-
-
-
-
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init();
     </script>
 @endsection

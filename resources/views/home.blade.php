@@ -143,14 +143,27 @@
         </div>
         <div class="row slider">
             <!-- slider 1 -->
-            <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
-                <div class="wprock-img-zoom">
-                    <a href="{{asset('images/caritative/caritative4.jpg')}}" class="fancybox" rel="ligthbox">
-                        <img src="{{asset('images/caritative/caritative4.jpg')}}" class="zoom img-fluid" alt="">
-                    </a>
+            @foreach (\DB::table('galleries')->get() as $gal)
+            @php
+                $gt=\DB::table('gallerie_has_tags')->where('gallerie_id',$gal->id)->first();
+                // dd($gal->fichier);
+                $tag = $gt ? $gt->tag_id : false;
+            @endphp
+               
+               @if($gal->image && $tag=='actions-caritatives')
+               
+                <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
+                    <div class="wprock-img-zoom">
+                        
+                        <a href="{{asset('storage/'.$gal->fichier)}}" class="fancybox" rel="ligthbox">
+                            <img src="{{asset('storage/'.$gal->fichier)}}" class="zoom img-fluid" alt="">
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
+                @endif
+            
+            
+            {{-- <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
                 <div class="wprock-img-zoom">
                     <a href="{{asset('images/caritative/caritative1.jpeg')}}" class="fancybox" rel="ligthbox">
                         <img src="{{asset('images/caritative/caritative1.jpeg')}}" class="zoom img-fluid" alt="">
@@ -170,7 +183,8 @@
                         <img src="{{asset('images/caritative/caritative3.jpeg')}}" class="zoom img-fluid" alt="">
                     </a>
                 </div>
-            </div>
+            </div> --}}
+            @endforeach
         </div>
     </div>
 

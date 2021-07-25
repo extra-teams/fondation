@@ -46,13 +46,13 @@ class ForgetpassController extends Controller
             /* envoie du mail */
             $data = [
                 'subject' => 'demande de restauration du mot de passe',
-                'from' => 'contact@yebay.ci',
-                'from_name' => 'yebay.ci',
+                'from' => 'contact@fondation225.ci',
+                'from_name' => 'fondation225.ci',
                 'template' => 'mail.blank',
                 'info' => [
-                    'contenu' => 'vous venez de demander une restauration du mot de passe de votre compte yebay.ci,
+                    'contenu' => 'vous venez de demander une restauration du mot de passe de votre compte fondation225.ci,
                      veuillez cliquer sur le lien ci-dessous pour confirmer .',
-                    'lien' => 'http://www.yebay.ci/confirm-reset/' . $token,
+                    'lien' => 'http://www.fondation225.ci/confirm-reset/' . $token,
                     'nom_lien' => 'réinitialiser votre mot de passe'
                 ]
             ];
@@ -85,13 +85,13 @@ class ForgetpassController extends Controller
                 /* envoie du mail */
                 $data = [
                     'subject' => 'nouveau mot de passe',
-                    'from' => 'contact@yebay.ci',
-                    'from_name' => 'yebay.ci',
+                    'from' => 'contact@fondation225.ci',
+                    'from_name' => 'fondation225.ci',
                     'template' => 'mail.blank',
                     'info' => [
-                        'contenu' => 'vous venez de demander une restauration du mot de passe de votre compte yebay.ci,
+                        'contenu' => 'vous venez de demander une restauration du mot de passe de votre compte fondation225.ci,
                      votre nouveau mot de passe est :  .',
-                        'lien' => 'http://www.yebay.ci',
+                        'lien' => 'http://www.fondation225.ci',
                         'nom_lien' => "123457"
                     ]
                 ];

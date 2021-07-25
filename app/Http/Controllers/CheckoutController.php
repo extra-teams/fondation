@@ -78,9 +78,9 @@ class CheckoutController extends Controller
 
             /* envoie du mail */
             $data = [
-                'subject' => 'Nouvelle Commande sur yebay.ci',
-                'from' => 'contact@yebay.ci',
-                'from_name' => 'yebay.ci',
+                'subject' => 'Nouvelle Commande sur fondation225.ci',
+                'from' => 'contact@fondation225.ci',
+                'from_name' => 'fondation225.ci',
                 'template' => 'mail.neworder',
                 'info' => [
                     'fullname' => $client->nom . ' ' . $client->prenom,
@@ -88,13 +88,13 @@ class CheckoutController extends Controller
                     'date' => now(),
                     'quantite' => \Cart::count(),
                     'montant' => \Cart::total(),
-                    'lien' => 'http://www.yebay.ci/',
+                    'lien' => 'http://www.fondation225.ci/',
                     'nom_lien' => 'se connecter'
                 ]
             ];
 
             $details['type_email'] = 'neworder';
-            $details['email'] = "contact@yebay.ci";
+            $details['email'] = "contact@fondation225.ci";
             $details['data'] = $data;
 
             dispatch(new \App\Jobs\SendEmailJob($details));

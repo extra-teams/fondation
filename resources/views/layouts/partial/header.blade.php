@@ -19,7 +19,7 @@
         <div class="header-top-right">
             <!-- langue -->
             <div class="header-top-language">
-                <span><a href="#">LANGUE :</a></span>
+                <span><i class="fas fa-globe"></i></span>
                 <span><a class="active" href="{{url('locale/fr')}}">FR</a></span>
                 <span>/</span>
                 <span><a href="{{url('locale/en')}}">EN</a></span>

@@ -2,6 +2,7 @@
   position: relative;
   text-transform: uppercase;
   letter-spacing: .2px;
+
   &::after {
     content: " ";
     border-bottom-style: solid;
@@ -18,6 +19,16 @@
 
 .main-title {
   font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: .9375rem;
+  text-align: center;
+}
+
+.main-sub-title {
+  font-size: 1.5rem;
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: 1px;

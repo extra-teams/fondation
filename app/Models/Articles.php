@@ -7,15 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Illuminate\Support\Str;
+
 class Articles extends Model
 {
     use HasSlug;
     use CrudTrait;
 
-      /**
+    /**
      * Get the options for generating the slug.
      */
-    public function getSlugOptions() : SlugOptions
+    public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
             ->generateSlugsFrom('titre')
@@ -32,7 +33,7 @@ class Articles extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    protected $fillable = ['cover','slug','titre','contenu'];
+    protected $fillable = ['cover', 'slug', 'titre', 'contenu'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -49,7 +50,7 @@ class Articles extends Model
     */
     public function tags()
     {
-        return $this->belongsToMany('App\Models\Pays','article_has_tags','article_id','tag_id');
+        return $this->belongsToMany('App\Models\Tags', 'article_has_tags', 'article_id', 'tag_id');
     }
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +78,7 @@ class Articles extends Model
         $destination_path = "public/images/cover_article";
 
         // if the image was erased
-        if ($value==null) {
+        if ($value == null) {
             // delete the image from disk
             \Storage::disk($disk)->delete($this->{$attribute_name});
 
@@ -86,16 +87,15 @@ class Articles extends Model
         }
 
         // if a base64 was sent, store it in the db
-        if (Str::startsWith($value, 'data:image'))
-        {
+        if (Str::startsWith($value, 'data:image')) {
             // 0. Make the image
             $image = \Image::make($value)->encode('jpg', 90);
 
             // 1. Generate a filename.
-            $filename = md5($value.time()).'.jpg';
+            $filename = md5($value . time()) . '.jpg';
 
             // 2. Store the image on disk.
-            \Storage::disk($disk)->put($destination_path.'/'.$filename, $image->stream());
+            \Storage::disk($disk)->put($destination_path . '/' . $filename, $image->stream());
 
             // 3. Delete the previous image, if there was one.
             \Storage::disk($disk)->delete($this->{$attribute_name});
@@ -105,7 +105,7 @@ class Articles extends Model
             // from the root folder; that way, what gets saved in the db
             // is the public URL (everything that comes after the domain name)
             $public_destination_path = Str::replaceFirst('public/', '', $destination_path);
-            $this->attributes[$attribute_name] = $public_destination_path.'/'.$filename;
+            $this->attributes[$attribute_name] = $public_destination_path . '/' . $filename;
         }
     }
 }

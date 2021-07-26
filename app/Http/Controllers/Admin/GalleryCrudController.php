@@ -39,7 +39,36 @@ class GalleryCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        // CRUD::setFromDb(); // columns
+
+        $this->crud->addColumn(
+            [   // Browse
+                'label' => "Legende",
+                'name' => "legende",
+                'type'  => 'text'
+            ]
+        );
+
+        $this->crud->addColumn(
+            [   // Browse
+                'label' => "image",
+                'name' => "image",
+                'type'  => 'boolean'
+            ]
+        );
+
+        $this->crud->addColumn(
+            [
+                'label' => 'Tag',
+                'type' => 'relationship',
+                'name' => 'tags',
+                // optional
+                'entity' => 'tags',
+                'model' => "App\Models\Tags", // foreign key model
+                'attribute' => 'nom',
+                'pivot' => true
+            ]
+        );
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -71,6 +100,7 @@ class GalleryCrudController extends CrudController
                 ],
             ]
         );
+
         $this->crud->addField(
             [   // Browse
                 'label' => "Legende",

@@ -11082,6 +11082,16 @@ ul li {
   text-align: center;
 }
 
+.main-sub-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.9375rem;
+  text-align: center;
+}
+
 .main-introduction {
   font-size: 1.3rem;
   font-weight: 300;
@@ -12567,7 +12577,6 @@ p {
 
 #pandev .about {
   height: 30rem;
-  overflow: hidden;
 }
 
 #pandev .about .about-img {
@@ -12579,8 +12588,14 @@ p {
 }
 
 #pandev .about .about-text {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 300;
+  line-height: 1.55;
+  color: #6b6b6b;
+  text-align: justify;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: 0.2px;
 }
 
 /*

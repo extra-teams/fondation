@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title','padev')
 @section('content')
-    <div id="pandev" class="container-fluid g-0">
+    <div id="pandev">
         <!-- bg -->
         <div class="header-pandev">
             <!-- edition -->
@@ -35,10 +35,10 @@
         <!-- a propos -->
         <div class="about container mt-5">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-3">
+                <div class="col-10 col-md-3">
                     <img class="about-img" src="{{@asset("images/padev/dinner_gala.jpg")}}" alt="">
                 </div>
-                <div class="col-12 col-md-6 about-text">
+                <div class="col-10 col-md-7 about-text">
                     <h5 class="text-uppercase font-weight-lighter">A PROPOS </h5>
                     <h6 class="text-uppercase font-weight-lighter">DE COLLABORER, LA PIERRE DEVIENT TEMPLE... </h6>
                     <p class="text-left">
@@ -62,7 +62,7 @@
             <div class="row">
                 <div class="col-12">
                     <h5 class="main-title text-orange">Le prix PADEV</h5>
-                    <h6 class="main-title text-orange">Prix Africain du mérite et de l'excellence</h6>
+                    <h6 class="main-sub-title text-orange">Prix Africain du mérite et de l'excellence</h6>
                 </div>
             </div>
         @if(isset($galleries) && count($galleries)>0)
@@ -93,8 +93,7 @@
                         processus érigé sur de solides critères d’objectivité. Il part de la sélection des nominés au
                         choix des lauréats</p>
                     <h6>Comment nous procédons ?</h6>
-                    <p class="font-weight-light">La sélection des lauréats du Prix PADEV s’opère de la façon suivante
-                        :</p>
+                    <p class="font-weight-light">La sélection des lauréats du Prix PADEV s’opère de la façon suivante :</p>
                 </div>
                 <!--  -->
             </div>
@@ -186,7 +185,7 @@
             </div>
         </div>
         <!--  Cérémonie de remise de trophées -->
-        <div class="prizewinner container mt-5">
+        <div class="container mt-5">
             <div class="row">
                 <div class="col-12">
                     <h5 class="main-title">Cérémonie de remise de trophées</h5>
@@ -198,7 +197,7 @@
             </div>
             <div class="row  justify-content-center">
                 <!-- Le forum des lauréats -->
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-10 col-sm-6 col-md-3">
                     <div class="card-prize">
                         <div class="card-prize-gradient"></div>
                         <img src="{{asset('images/padev/forum_laureat.jpeg')}}" alt="">
@@ -208,7 +207,7 @@
                     </div>
                 </div>
                 <!-- LE DINER-GALA DES BÂTISSEURS AFRICAINS -->
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-10 col-sm-6 col-md-3">
                     <div class="card-prize">
                         <div class="card-prize-gradient"></div>
                         <img src="{{asset('images/padev/DINER-GALA.png')}}" alt="">
@@ -218,7 +217,7 @@
                     </div>
                 </div>
                 <!-- VISITE TOURISTIQUE -->
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-10 col-sm-6 col-md-3">
                     <div class="card-prize">
                         <div class="card-prize-gradient"></div>
                         <img src="{{asset('images/padev/visite-touriste.jpeg')}}" alt="">

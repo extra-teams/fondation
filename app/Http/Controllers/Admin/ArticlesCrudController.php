@@ -21,7 +21,7 @@ class ArticlesCrudController extends CrudController
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
-     * 
+     *
      * @return void
      */
     public function setup()
@@ -33,26 +33,47 @@ class ArticlesCrudController extends CrudController
 
     /**
      * Define what happens when the List operation is loaded.
-     * 
+     *
      * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
      * @return void
      */
     protected function setupListOperation()
     {
         // CRUD::setFromDb(); // columns
+        $this->crud->addColumn(
+            [   // Browse
+                'label' => "image",
+                'name' => "cover",
+                'type' => 'image'
+            ]
+        );
+
+
         CRUD::column('titre')->type('text');
-        CRUD::column('contenu')->type('text');
+
+        $this->crud->addColumn(
+            [
+                'label' => "tags",
+                'type' => 'relationship',
+                'name' => 'tags',
+                'entity' => 'tags', // the method that defines the relationship in your Model
+                'attribute' => 'nom', // foreign key attribute that is shown to user
+                'model' => "App\Models\Tags",
+                'pivot' => true
+            ]
+        );
+
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
-         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
+         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
          */
     }
 
     /**
      * Define what happens when the Create operation is loaded.
-     * 
+     *
      * @see https://backpackforlaravel.com/docs/crud-operation-create
      * @return void
      */
@@ -76,7 +97,7 @@ class ArticlesCrudController extends CrudController
             [   // Browse
                 'label' => "Titre",
                 'name' => "titre",
-                'type'  => 'text',
+                'type' => 'text',
                 'wrapperAttributes' => [
                     'class' => 'form-group col-md-12'
                 ],
@@ -111,7 +132,7 @@ class ArticlesCrudController extends CrudController
             [   // Browse
                 'label' => "Contenu",
                 'name' => "contenu",
-                'type'  => 'wysiwyg',
+                'type' => 'wysiwyg',
                 'wrapperAttributes' => [
                     'class' => 'form-group col-md-12'
                 ],
@@ -122,13 +143,13 @@ class ArticlesCrudController extends CrudController
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');
-         * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
+         * - CRUD::addField(['name' => 'price', 'type' => 'number']));
          */
     }
 
     /**
      * Define what happens when the Update operation is loaded.
-     * 
+     *
      * @see https://backpackforlaravel.com/docs/crud-operation-update
      * @return void
      */

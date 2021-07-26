@@ -8,10 +8,10 @@
         </div>
         <div class="mt-5">
             <p class="font-weight-normal">
-                La Politique de Confidentialité de Yebay régit la collecte, l'utilisation et la communication
-                des renseignements personnels en provenance de chacun des utilisateurs du site yebay.ci ; les
+                La Politique de Confidentialité de fondation225 régit la collecte, l'utilisation et la communication
+                des renseignements personnels en provenance de chacun des utilisateurs du site fondation225.ci ; les
                 termes « Utilisateur » et « Site » y feront référence dans la suite de ce document. Cette Politique
-                de Confidentialité s'applique au Site et à l'ensemble des produits et services offerts par Yebay.
+                de Confidentialité s'applique au Site et à l'ensemble des produits et services offerts par fondation225.
             </p>
         </div>
         <div class="mt-5">
@@ -50,7 +50,7 @@
         <div class="mt-3">
             <h3>Utilisation des informations recueillies</h3>
             <p class="font-weight-normal">
-                Yebay collecte et utilise les renseignements personnels des Utilisateurs dans le but de :
+                fondation225 collecte et utilise les renseignements personnels des Utilisateurs dans le but de :
             <ul>
                 <li>
                     <span class="font-weight-bold">Personnaliser l’expérience de l’Utilisateur</span><br>
@@ -131,7 +131,7 @@
         <div class="mt-3">
             <h3>Modification de cette politique de confidentialité</h3>
             <p class="font-weight-normal">
-                Yebay se réserve à tout moment le droit de mettre à jour cette politiquede confidentialité. Le cas
+                fondation225 se réserve à tout moment le droit de mettre à jour cette politiquede confidentialité. Le cas
                 échéant, nous modifierons la date dedernière mise à jour située en bas de cette page. Nous encourageons
                 les Utilisateurs à consulter cette page fréquemment afin de se tenir informés de la façon dont nous
                 protégeons les informations personnelles que nous recueillons. Vous reconnaissez et acceptez qu’il
@@ -151,7 +151,7 @@
             <h3>Nous contacter</h3>
             <p class="font-weight-normal">
                 Si vous avez des questions concernant cette politique de confidentialité, les pratiques de ce Site ou
-                son utilisation, veuillez nous contacter à contact@yebay.ci.
+                son utilisation, veuillez nous contacter à contact@fondation225.ci.
             </p>
         </div>
     </div>

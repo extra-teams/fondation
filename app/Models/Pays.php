@@ -1,27 +1,24 @@
 <?php
-
 namespace App\Models;
 
-use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class BonReductions extends Model
-{
-    use CrudTrait;
 
+class Pays extends Model
+{
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'bon_reductions';
-    // protected $primaryKey = 'id';
-    // public $timestamps = false;
-    protected $guarded = ['id'];
-    // protected $fillable = [];
-    // protected $hidden = [];
-    // protected $dates = [];
+    protected $table = 'pays';
+    protected $primaryKey = 'code';
+    public $incrementing = false;
+    protected $keyType = "string";
+    public $timestamps = false;
+    protected $guarded = ['code'];
+    protected $fillable = ["code", "nom"];
 
     /*
     |--------------------------------------------------------------------------
@@ -34,7 +31,6 @@ class BonReductions extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
     /*
     |--------------------------------------------------------------------------
     | SCOPES

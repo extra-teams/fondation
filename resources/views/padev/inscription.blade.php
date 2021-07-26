@@ -32,7 +32,7 @@
                             @if(isset($countries))
                                 <select id="inputCountry" name="pays" class="form-select">
                                     @foreach($countries as $country)
-                                        <option value="{{$country->name['official']}}">{{$country->name['official']}}</option>
+                                        <option value="{{$country->code}}">{{$country->nom}}</option>
                                     @endforeach
                                 </select>
                             @else

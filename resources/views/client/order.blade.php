@@ -21,7 +21,6 @@
                                 <tr class="table-dark">
                                     <th scope="col">N° commande</th>
                                     <th scope="col">Nombre d'article</th>
-                                    
                                     <td scope="col">Total</td>
                                     <th scope="col">Date</th>
                                     <th scope="col">Action</th>

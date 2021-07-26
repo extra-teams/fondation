@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddFacebookIdColumn extends Migration
+class CreateArticleHasTags extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddFacebookIdColumn extends Migration
      */
     public function up()
     {
-        Schema::table('clients', function ($table) {
-            $table->string('facebook_id')->nullable();
+        Schema::create('article_has_tags', function (Blueprint $table) {
+            $table->id();
+            $table->string("article_id");
+            $table->string("tag_id");
         });
     }
 
@@ -25,6 +27,6 @@ class AddFacebookIdColumn extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('article_has_tags');
     }
 }

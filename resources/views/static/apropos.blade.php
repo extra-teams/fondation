@@ -30,7 +30,7 @@
             </div>
             <div>
                 <p class="font-weight-normal">
-                    Créé en Novembre 2020, Yebay est un des sites émergent de e-commerce en Côte d'Ivoire.
+                    Créé en Novembre 2020, fondation225 est un des sites émergent de e-commerce en Côte d'Ivoire.
                     Nous proposons à nos clients un large assortiment de produits, des prix
                     compétitifs et des délais de livraison toujours plus réduits, dans le but d'offrir
                     une expérience client de qualité.<br>

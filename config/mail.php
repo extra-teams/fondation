@@ -84,8 +84,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'contact@yebay.ci'),
-        'name' => env('MAIL_FROM_NAME', 'yebay.ci'),
+        'address' => env('MAIL_FROM_ADDRESS', 'contact@fondation225.ci'),
+        'name' => env('MAIL_FROM_NAME', 'fondation225.ci'),
     ],
 
     /*

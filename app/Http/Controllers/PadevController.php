@@ -1,12 +1,11 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use App\Jobs\SendEmailJob;
+use App\Models\Gallery;
 use App\Models\Padev;
+use App\Models\Pays;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use PragmaRX\Countries\Package\Countries;
 
 class PadevController extends Controller
 {
@@ -17,16 +16,21 @@ class PadevController extends Controller
      */
     public function index()
     {
-        return view('padev.index');
+        $galleries = Gallery::whereHas('tags', function ($query) {
+            return $query->where('code', '=', 'prix-padev');
+        })->where('image', '=', 1)->limit(6)->get();
+
+        return view('padev.index')->with([
+            'galleries' => $galleries
+        ]);
     }
 
 
     public function get_inscription()
     {
-        $countries = new Countries();
-        $allcountries = $countries->all();
+        $countries = Pays::all();
         return view('padev.inscription')->with([
-            'countries' => $allcountries
+            'countries' => $countries
         ]);
     }
 

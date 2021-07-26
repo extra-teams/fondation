@@ -3,6 +3,7 @@
 @section("extra-css")
     <link rel="stylesheet" href="{{asset("library/fancybox/jquery.fancybox-1.3.4.css")}}" type="text/css"
           media="screen"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 @endsection
 
 @section('content')
@@ -17,18 +18,20 @@
         <div class="carousel-inner">
             @foreach (DB::table('slider')->get() as $sliders)
                 @if ($loop->first)
-                    <div class="carousel-item active" style="background-image: url('{{asset($sliders->nom)}}')" data-bs-interval="5000">
-                        <div class="carousel-text">
+                    <div class="carousel-item active" style="background-image: url('{{asset($sliders->nom)}}')"
+                         data-bs-interval="5000">
+                        <div class="carousel-caption">
                             @if(!is_null($sliders->texte))
-                                <p>{!! $sliders->texte !!}</p>
+                                {!! $sliders->texte !!}
                             @endif
                         </div>
                     </div>
                 @else
-                    <div class="carousel-item " style="background-image: url('{{asset($sliders->nom)}}')" data-bs-interval="5000">
-                        <div class="carousel-text">
+                    <div class="carousel-item " style="background-image: url('{{asset($sliders->nom)}}')"
+                         data-bs-interval="5000">
+                        <div class="carousel-caption">
                             @if(!is_null($sliders->texte))
-                                <p>{!! $sliders->texte !!}</p>
+                                {!! $sliders->texte !!}
                             @endif
                         </div>
                     </div>
@@ -43,7 +46,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-12">
-                <p class="main-introduction">
+                <p class="main-introduction" data-aos="fade-in">
                     La Fondation 225 est une Organisation Non Gouvernementale à but humanitaire
                     fondée le 21 NOVEMBRE 2012 à Ouagadougou sous le récépissé N°001724/MATDS/SG/DGLPAP/DAOSOC
                     du 31 DECEMBRE 2012. Elle est le fruit de l’initiative d’hommes et de femmes originaires de
@@ -63,7 +66,7 @@
             se mobilisent pour vous accompagner dans la réussite de toutes vos initiatives !</p>
         <div class="row mt-5 align-content-lg-between justify-content-around">
             <!-- card 1 -->
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up">
                 <div class="card-domaine">
                     <div class="card-domaine-header">
                         <img src="https://lanouvelletribune.info/wp-content/uploads/2017/09/medecin-docteur.jpg" alt="">
@@ -79,7 +82,7 @@
             </div>
 
             <!-- card 2 -->
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up">
                 <div class="card-domaine">
                     <div class="order-1 order-lg-0  card-domaine-body ">
                         <h3 class="main-title">L’ÉDUCATION !</h3>
@@ -98,7 +101,7 @@
 
         <div class="row  justify-content-around mt-2">
             <!-- card 1 -->
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-4" data-aos="fade-down-left">
                 <div class=" card-domaine">
                     <div class="card-domaine-header">
                         <img src="https://www.afrik21.africa/wp-content/uploads/2019/07/shutterstock_722601193-800x400.jpg"
@@ -118,7 +121,7 @@
 
 
             <!-- card 2 -->
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-4" data-aos="fade-down-right">
                 <div class="card-domaine">
                     <div class="order-1 order-lg-0 card-domaine-body">
                         <h3 class="main-title">L’IMMIGRATION CLANDESTINE</h3>
@@ -137,42 +140,25 @@
     </div>
 
     <!-- Nos Actions Caritatives -->
-    <div class="container mb-5">
-        <div class="text-center">
-            <h2 class="main-title">Nos Actions Caritatives</h2>
-        </div>
-        <div class="row slider">
-            <!-- slider 1 -->
-            <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
-                <div class="wprock-img-zoom">
-                    <a href="{{asset('images/caritative/caritative4.jpg')}}" class="fancybox" rel="ligthbox">
-                        <img src="{{asset('images/caritative/caritative4.jpg')}}" class="zoom img-fluid" alt="">
-                    </a>
-                </div>
+    @if(isset($galleries) && count($galleries)>0)
+        <div class="container mb-5">
+            <div class="text-center">
+                <h2 class="main-title">Nos Actions Caritatives</h2>
             </div>
-            <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
-                <div class="wprock-img-zoom">
-                    <a href="{{asset('images/caritative/caritative1.jpeg')}}" class="fancybox" rel="ligthbox">
-                        <img src="{{asset('images/caritative/caritative1.jpeg')}}" class="zoom img-fluid" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
-                <div class="wprock-img-zoom">
-                    <a href="{{asset('images/caritative/caritative2.jpeg')}}" class="fancybox" rel="ligthbox">
-                        <img src="{{asset('images/caritative/caritative2.jpeg')}}" class="zoom img-fluid" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
-                <div class="wprock-img-zoom">
-                    <a href="{{asset('images/caritative/caritative3.jpeg')}}" class="fancybox" rel="ligthbox">
-                        <img src="{{asset('images/caritative/caritative3.jpeg')}}" class="zoom img-fluid" alt="">
-                    </a>
-                </div>
+            <div class="row slider">
+            @foreach($galleries as $gallerie)
+                <!-- slider 1 -->
+                    <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
+                        <div class="wprock-img-zoom">
+                            <a href="{{asset('storage/'.$gallerie->fichier)}}" class="fancybox" rel="ligthbox">
+                                <img src="{{asset('storage/'.$gallerie->fichier)}}" class="zoom img-fluid" alt="">
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
-    </div>
+    @endif
 
     <!-- LA BOUTIQUE HUMANITAIRE -->
     @if(isset($produits) && count($produits)>0)
@@ -203,7 +189,6 @@
                                 <span class="name d-inline-block text-truncate">{{$produit->nom}}</span>
                                 <div class="">
                                     <span class="current-price">{{$produit->prix_vente}} FCFA</span>
-                                    <span class="old-price">{{$produit->prix_achat}} FCFA</span>
                                 </div>
                                 <a href="{{route('produits.show',$produit->code)}}">
                                     <button class="btn">Ajouter au panier</button>
@@ -216,12 +201,40 @@
         </div>
     @endif
 
+    <!-- Actualites -->
+    @if(isset($articles) && count($articles)>0)
+        <div class="container mt-5">
+            <div class="row">
+                <h2 class="main-title">Dernières actualités</h2>
+            </div>
+            <div class="row justify-content-center align-content-center">
+            @foreach($articles as $article)
+                <!-- card 1 -->
+                    <a href="{{$article->slug}}">
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="card-news">
+                                <div class="card-news-header">
+                                    <img src="{{asset($article->cover)}}" alt="{{asset($article->title)}}">
+                                </div>
+                                <div class="card-news-body">
+                                    <h5 class="card-title">
+                                        {{$article->titre}}
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
+        </div>
+    @endif
+
     <!-- NOTRE EQUIPE -->
     <div class="container mb-5">
         <h2 class="main-title">NOTRE EQUIPE</h2>
         <div class="row justify-content-center">
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-5 mb-5">
+            <div class="col-md-3 mb-md-5 mb-5" data-aos="fade-down-up">
                 <div class="card-team">
                     <div class="card-team-header">
                         <img src="{{asset('images/equipe/chargerdesprojets.jpg')}}" class="img-fluid avatar" alt="">
@@ -234,7 +247,7 @@
             </div>
 
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-5 mb-5">
+            <div class="col-md-3 mb-md-5 mb-5" data-aos="fade-down-left">
                 <div class="card-team">
                     <div class="card-team-header">
                         <img src="{{asset('images/equipe/president.jpg')}}" class="img-fluid avatar" alt="">
@@ -247,7 +260,7 @@
             </div>
 
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-5 mb-5">
+            <div class="col-md-3 mb-md-5 mb-5" data-aos="fade-down-right">
                 <div class="card-team">
                     <div class="card-team-header">
                         <img src="{{asset('images/equipe/secretaire.jpg')}}" class="img-fluid avatar" alt="">
@@ -260,7 +273,7 @@
             </div>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" data-aos="fade-down-top">
             <!-- Grid column -->
             <div class="col-md-3 mb-md-5 mb-5">
                 <div class="card-team mx-auto">
@@ -293,8 +306,6 @@
 
 
 @section("extra-js")
-    <!-- carousel -->
-
     <!-- fancybox -->
     <script type="text/javascript" src="{{asset("library/fancybox/jquery.fancybox-1.3.4.pack.js")}}"></script>
     <script type="text/javascript">
@@ -330,5 +341,10 @@
                 }
             }
         });
+
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
     </script>
 @endsection

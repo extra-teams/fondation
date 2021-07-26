@@ -8,14 +8,12 @@
     <div class="container-fluid mt-5">
         <div class="row">
             <div class="col-lg-3">
-                <!-- inclure la page menu.blade.php -->
                 @include('client.menu')
             </div>
-            <div class="col-lg-8">
-                <form method="POST" action="{{route('client.updateinfo')}}" style="border: none">
-
+            <div class="col-12 col-lg-8">
+                <form method="POST" action="{{route('client.updateinfo')}}">
                     @csrf
-                    <h5 class="text-uppercase">vos informations personnelles</h5>
+                    <h5 class="main-title">vos informations personnelles</h5>
                     <div class="col-12 col-lg-6 mt-3">
                         <label for="nom">nom</label>
                         <input class="w-100" name="nom" type="text" value="{{Auth::user()->nom}}" required>

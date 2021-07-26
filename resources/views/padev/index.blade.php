@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title','padev')
 @section('content')
-    <div id="pandev" class="container-fluid g-0">
+    <div id="pandev">
         <!-- bg -->
         <div class="header-pandev">
             <!-- edition -->
@@ -34,11 +34,11 @@
         </div>
         <!-- a propos -->
         <div class="about container mt-5">
-            <div class="row">
-                <div class="col-12 col-md-6 text-right">
+            <div class="row justify-content-center">
+                <div class="col-10 col-sm-5 col-md-3">
                     <img class="about-img" src="{{@asset("images/padev/dinner_gala.jpg")}}" alt="">
                 </div>
-                <div class="col-12 col-md-6 about-text">
+                <div class="col-10 col-sm-7 col-md-7 about-text">
                     <h5 class="text-uppercase font-weight-lighter">A PROPOS </h5>
                     <h6 class="text-uppercase font-weight-lighter">DE COLLABORER, LA PIERRE DEVIENT TEMPLE... </h6>
                     <p class="text-left">
@@ -61,60 +61,39 @@
         <div class="container price">
             <div class="row">
                 <div class="col-12">
-                    <h5 class="text-center price-title">Le prix PADEV</h5>
-                    <h6 class="text-center price-sub-title">Prix Africain du mérite et de l'excellence</h6>
+                    <h5 class="main-title text-orange">Le prix PADEV</h5>
+                    <h6 class="main-sub-title text-orange">Prix Africain du mérite et de l'excellence</h6>
                 </div>
             </div>
+        @if(isset($galleries) && count($galleries)>0)
             <!-- cards -->
-            <div class="row mt-5 justify-content-center">
-                <!-- card -->
-                <div class="col-10 col-md-3">
-                    <div class="card-prize">
-                        <div class="card-prize-gradient"></div>
-                        <img src="https://fondation225.org/wp-content/uploads/2021/03/1617021099949-225x300.jpg" alt="">
-                        <div class="card-prize-body">
-                            <h5>Prix des jeunes entrepreneurs Africains</h5>
+                <div class="row mt-5 slider">
+                @foreach($galleries as $gallerie)
+                    <!-- card -->
+                        <div class="col-10 col-md-3">
+                            <div class="card-prize">
+                                <div class="card-prize-gradient"></div>
+                                <img src="{{asset('storage/'.$gallerie->fichier)}}" alt="">
+                                <div class="card-prize-body">
+                                    <h5>{{$gallerie->legende}}</h5>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-
-                <!-- card -->
-                <div class="col-10 col-md-3">
-                    <div class="card-prize">
-                        <div class="card-prize-gradient"></div>
-                        <img src="https://fondation225.org/wp-content/uploads/2021/03/1617021099949-225x300.jpg" alt="">
-                        <div class="card-prize-body">
-                            <h5>Prix des jeunes entrepreneurs Africains</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card -->
-                <div class="col-10 col-md-3">
-                    <div class="card-prize">
-                        <div class="card-prize-gradient"></div>
-                        <img src="https://fondation225.org/wp-content/uploads/2021/03/1617021099949-225x300.jpg" alt="">
-                        <div class="card-prize-body">
-                            <h5>Prix des jeunes entrepreneurs Africains</h5>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
+            @endif
         </div>
 
         <div class="container mt-5">
             <div class="row">
                 <!-- critere -->
                 <div class="row text-center">
-                    <h3>Nos critères d'attribution</h3>
-                    <p class="font-weight-light">La sélection des lauréats du Prix PADEV est le fruit d’un long
+                    <h3 class="main-title">Nos critères d'attribution</h3>
+                    <p class="main-introduction">La sélection des lauréats du Prix PADEV est le fruit d’un long
                         processus érigé sur de solides critères d’objectivité. Il part de la sélection des nominés au
                         choix des lauréats</p>
                     <h6>Comment nous procédons ?</h6>
-                    <p class="font-weight-light">La sélection des lauréats du Prix PADEV s’opère de la façon suivante
-                        :</p>
+                    <p class="font-weight-light">La sélection des lauréats du Prix PADEV s’opère de la façon suivante :</p>
                 </div>
                 <!--  -->
             </div>
@@ -206,66 +185,47 @@
             </div>
         </div>
         <!--  Cérémonie de remise de trophées -->
-        <div class="prizewinner container mt-5">
+        <div class="container mt-5">
             <div class="row">
                 <div class="col-12">
-                    <h5 class="text-center">Cérémonie de remise de trophées</h5>
-                    <p class="text-center font-weight-light">
+                    <h5 class="main-title">Cérémonie de remise de trophées</h5>
+                    <p class="main-introduction">
                         La remise des trophées du Prix PADEV a lieu à travers une grande cérémonie annuelle unique qui
                         se tient dans une capitale africaine donnée. Elle comprend trois (3) volets principaux
                     </p>
                 </div>
             </div>
-            <div class="row slider">
-                <!-- card 1 -->
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="card-prizewinner">
-                        <img src="https://fondation225.org/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-14-at-08.56.18-1-2-600x450.jpeg"
-                             class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Le forum des lauréats
-                            </h5>
+            <div class="row  justify-content-center">
+                <!-- Le forum des lauréats -->
+                <div class="col-10 col-sm-6 col-md-3">
+                    <div class="card-prize">
+                        <div class="card-prize-gradient"></div>
+                        <img src="{{asset('images/padev/forum_laureat.jpeg')}}" alt="">
+                        <div class="card-prize-body">
+                            <h5> Le forum des lauréats</h5>
                         </div>
                     </div>
                 </div>
-                <!-- card 2 -->
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="card-prizewinner">
-                        <img src="https://fondation225.org/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-14-at-08.56.18-1-2-600x450.jpeg"
-                             class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Le forum des lauréats
-                            </h5>
+                <!-- LE DINER-GALA DES BÂTISSEURS AFRICAINS -->
+                <div class="col-10 col-sm-6 col-md-3">
+                    <div class="card-prize">
+                        <div class="card-prize-gradient"></div>
+                        <img src="{{asset('images/padev/DINER-GALA.png')}}" alt="">
+                        <div class="card-prize-body">
+                            <h5> LE DINER-GALA DES BÂTISSEURS AFRICAINS</h5>
                         </div>
                     </div>
                 </div>
-                <!-- card 3 -->
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="card-prizewinner">
-                        <img src="https://fondation225.org/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-14-at-08.56.18-1-2-600x450.jpeg"
-                             class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Le forum des lauréats
-                            </h5>
+                <!-- VISITE TOURISTIQUE -->
+                <div class="col-10 col-sm-6 col-md-3">
+                    <div class="card-prize">
+                        <div class="card-prize-gradient"></div>
+                        <img src="{{asset('images/padev/visite-touriste.jpeg')}}" alt="">
+                        <div class="card-prize-body">
+                            <h5> VISITE TOURISTIQUE </h5>
                         </div>
                     </div>
                 </div>
-                <!-- card 3 -->
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="card-prizewinner">
-                        <img src="https://fondation225.org/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-14-at-08.56.18-1-2-600x450.jpeg"
-                             class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Le forum des lauréats
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
@@ -276,24 +236,26 @@
     <script type="module">
         var slider = tns({
             container: '.slider',
-            items: 4,
+            items: 3,
             center: true,
             autoplay: true,
             autoplayTimeout: 5000,
             autoplayButtonOutput: false,
             nav: false,
             controls: false,
+            autoWidth:true,
             responsive: {
                 640: {
-                    edgePadding: 20,
-                    gutter: 40,
-                    items: 1
+                    items: 1,
+                    mouseDrag: true
                 },
                 700: {
-                    gutter: 30
+                    gutter: 2,
+                    mouseDrag: true
                 },
                 900: {
-                    items: 3
+                    items: 3,
+                    mouseDrag: true
                 }
             }
         });

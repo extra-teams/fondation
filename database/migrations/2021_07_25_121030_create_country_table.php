@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddGoogleIdColumn extends Migration
+class CreateCountryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddGoogleIdColumn extends Migration
      */
     public function up()
     {
-        Schema::table('clients', function ($table) {
-            $table->string('google_id')->nullable();
+        Schema::create('pays', function (Blueprint $table) {
+            $table->string('code');
+            $table->string('nom');
+            $table->boolean('afficher')->default(false);
         });
     }
 
@@ -25,6 +27,6 @@ class AddGoogleIdColumn extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('pays');
     }
 }

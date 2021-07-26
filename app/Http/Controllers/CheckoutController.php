@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendEmailJob;
 use App\Models\Adresse;
+use App\Models\Commande;
+use App\Models\CommandeDetail;
+use App\Models\Pays;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Produits;
+use Illuminate\Support\Facades\Validator;
 
 class CheckoutController extends Controller
 {
@@ -16,9 +21,13 @@ class CheckoutController extends Controller
      */
     public function index()
     {
+        $countries = Pays::all();
         /* une variable session */
         $client = Auth::user();
-        return view('checkout.index', compact('client'));
+        return view('checkout.index')->with([
+            'client' => $client,
+            'countries' => $countries
+        ]);
     }
 
 
@@ -42,10 +51,25 @@ class CheckoutController extends Controller
             }
         }
 
+        $validator = Validator::make($request->all(), [
+            'tel' => 'required|min:8|max:20',
+            'adresse' => 'required|max:50',
+            'ville' => 'required|max:30',
+            'code_bp' => 'required|max:30'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->errors());
+        }
+
         /* vars */
         $client = Auth::user();
         $numero = trim($request->get('tel'));
-        $communev = request()->input('commune');
+        $pays = trim($request->get('pays'));
+        $adresse = trim($request->get('adresse'));
+        $ville = trim($request->get('ville'));
+        $code_bp = trim($request->get('code_bp'));
+
         $clientid = $client->id;
 
         /* mise à jour du numero */
@@ -53,67 +77,36 @@ class CheckoutController extends Controller
             $client->telephone = $numero;
             $client->save();
         }
-        /* Info sur la commune */
-        $commune = \DB::table('communes')->where('nom', $communev)->first();
 
-        /* inseration d'une nouvelle adresse */
-        $adresse = new Adresse();
-        $adresse->id_client = $clientid;
-        $adresse->code_commune = $commune->code;
-        $adresse->description = $request->adresse;
-        $saved = $adresse->save();
+        /* enregistrer la commande */
+        $commande = new Commande();
+        $commande->id_client = $clientid;
+        $commande->montant = \Cart::total();
+        $commande->quantite = \Cart::count();
+        $commande->pays = $pays;
+        $commande->ville = $ville;
+        $commande->codebp = $code_bp;
+        $commande->adresse = $adresse;
+        $commande->save();
 
-        /* if insert successful */
-        if ($saved) {
-            /* enregistrer la commande */
-            $id_c = \DB::table('commandes')->insertGetId(array('id_client' => $client->id, 'id_adr' => $adresse->id, 'montant' => \Cart::total(), 'quantite' => \Cart::count(), "created_at" => now(), "updated_at" => now()));
-            /* enregistrer les details */
-            foreach (\Cart::content() as $produit) {
-                $couleur = \DB::table('couleurs')->where('nom', $produit->options->couleur)->first();
-                $code_couleur = $couleur ? $couleur->code : "#fff";
-                $taille = \DB::table('tailleproduits')->where('nom', $produit->options->taille)->first();
-                $code_taille = $taille ? $taille->code : "S/M";
-                \DB::table('detailcommandes')->insert(array('id_commande' => $id_c, 'code_prod' => $produit->model->code, 'code_couleur' => $code_couleur, 'code_taille' => $code_taille, 'quantite' => $produit->qty, 'prix_vente' => $produit->model->prix_vente, 'prix_achat' => $produit->model->prix_achat));
-            }
-
-            /* envoie du mail */
-            $data = [
-                'subject' => 'Nouvelle Commande sur yebay.ci',
-                'from' => 'contact@yebay.ci',
-                'from_name' => 'yebay.ci',
-                'template' => 'mail.neworder',
-                'info' => [
-                    'fullname' => $client->nom . ' ' . $client->prenom,
-                    'id_commande' => $id_c,
-                    'date' => now(),
-                    'quantite' => \Cart::count(),
-                    'montant' => \Cart::total(),
-                    'lien' => 'http://www.yebay.ci/',
-                    'nom_lien' => 'se connecter'
-                ]
-            ];
-
-            $details['type_email'] = 'neworder';
-            $details['email'] = "contact@yebay.ci";
-            $details['data'] = $data;
-
-            dispatch(new \App\Jobs\SendEmailJob($details));
-
-            /* modifier le stock */
-            $this->updateStock();
-
-            /* supprimer le panier */
-            \Cart::destroy();
-            /* afficher les messages */
-            $request->session()->put('num', $id_c);
-            session()->flash('alerte', 'commande effectué avec succès .');
-            session()->flash('type', 'success');
-            return redirect()->route('checkout.confirmation');
+        /* enregistrer les details de la commande */
+        foreach (\Cart::content() as $produit) {
+            $detail = new CommandeDetail();
+            $detail->id_commande = $commande->id;
+            $detail->code_prod = $produit->model->code;
+            $detail->quantite = $produit->qty;
+            $detail->prix_vente = $produit->model->prix_vente;
+            $detail->prix_achat = $produit->model->prix_achat;
+            $detail->id_commande = $commande->id;
+            $detail->save();
         }
-        /* else if */
-        session()->flash('alerte', 'une erreur est survenue pendant la validation de la commande , veuillez réessayer .');
-        session()->flash('type', 'danger');
-        return redirect()->back();
+        /* envoie du mail */
+        /* modifier le stock */
+        $this->updateStock();
+        /* supprimer le panier */
+        \Cart::destroy();
+        /* afficher les messages */
+        return redirect()->route('checkout.confirmation');
     }
 
     public function updateStock()

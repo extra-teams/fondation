@@ -8,7 +8,7 @@
             <span id="open-menu">
                 <i class="fas fa-bars"></i>
             </span>
-            <img src="{{asset("images/fondation.jpeg")}}" alt="">
+            <a href="{{url('/')}}"><img src="{{asset("images/fondation.jpeg")}}" alt=""></a>
         </div>
         <!-- center -->
         <div class="header-top-center">
@@ -19,7 +19,7 @@
         <div class="header-top-right">
             <!-- langue -->
             <div class="header-top-language">
-                <span><a href="#">LANGUE :</a></span>
+                <span><i class="fas fa-globe"></i></span>
                 <span><a class="active" href="{{url('locale/fr')}}">FR</a></span>
                 <span>/</span>
                 <span><a href="{{url('locale/en')}}">EN</a></span>
@@ -31,17 +31,22 @@
             <!-- login -->
             <div class="header-top-user">
                 <div class="dropdown">
-                    <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false">
+                    <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-user-circle"></i>
                         <i class="arrow"></i>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item"
-                           href="{{route('login.index')}}">{{__("header.sign_in")}}</a>
-                        <a class="dropdown-item"
-                           href="{{url('/register')}}">{{__("header.sign_up")}}</a>
-                    </div>
+                    @if(!Auth::check())
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{{route('login.index')}}">{{__("header.sign_in")}}</a>
+                            <a class="dropdown-item" href="{{url('/register')}}">{{__("header.sign_up")}}</a>
+                        </div>
+                    @else
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{{route('client.index')}}">mon compte</a>
+                            <a class="dropdown-item" href="{{route('client.commande')}}">mes commandes</a>
+                            <a class="dropdown-item" href="{{route('client.logout')}}">deconnexion</a>
+                        </div>
+                    @endif
                 </div>
             </div>
 

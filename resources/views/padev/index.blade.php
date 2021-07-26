@@ -35,10 +35,10 @@
         <!-- a propos -->
         <div class="about container mt-5">
             <div class="row justify-content-center">
-                <div class="col-10 col-md-3">
+                <div class="col-10 col-sm-5 col-md-3">
                     <img class="about-img" src="{{@asset("images/padev/dinner_gala.jpg")}}" alt="">
                 </div>
-                <div class="col-10 col-md-7 about-text">
+                <div class="col-10 col-sm-7 col-md-7 about-text">
                     <h5 class="text-uppercase font-weight-lighter">A PROPOS </h5>
                     <h6 class="text-uppercase font-weight-lighter">DE COLLABORER, LA PIERRE DEVIENT TEMPLE... </h6>
                     <p class="text-left">
@@ -236,24 +236,26 @@
     <script type="module">
         var slider = tns({
             container: '.slider',
-            items: 4,
+            items: 3,
             center: true,
             autoplay: true,
             autoplayTimeout: 5000,
             autoplayButtonOutput: false,
             nav: false,
             controls: false,
+            autoWidth:true,
             responsive: {
                 640: {
-                    edgePadding: 20,
-                    gutter: 40,
-                    items: 1
+                    items: 1,
+                    mouseDrag: true
                 },
                 700: {
-                    gutter: 30
+                    gutter: 2,
+                    mouseDrag: true
                 },
                 900: {
-                    items: 4
+                    items: 3,
+                    mouseDrag: true
                 }
             }
         });

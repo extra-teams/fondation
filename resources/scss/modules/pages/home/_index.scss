@@ -1,5 +1,9 @@
-@import "team";
+.logo-partenaire {
+  height: 5rem;
+  overflow: hidden;
 
-p {
-  font-family: Roboto, Sans-Serif, serif;
+  & img {
+    object-fit: contain;
+    height: 100%;
+  }
 }

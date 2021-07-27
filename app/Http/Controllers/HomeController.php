@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Articles;
 use App\Models\Gallery;
+use App\Models\Partenaires;
 use App\Models\Produits;
 use App\Models\Sliders;
 
@@ -26,11 +27,14 @@ class HomeController extends Controller
             return $query->where('code', '=', 'padev');
         })->limit(3)->get();
 
+        $partenaires = Partenaires::all();
+
         return view('home')->with([
             'produits' => $Produits,
             'sliders' => $Sliders,
             'galleries' => $galleries,
-            'articles' => $articles
+            'articles' => $articles,
+            'partenaires' => $partenaires
         ]);
     }
 

@@ -302,6 +302,24 @@
             </div>
         </div>
     </div>
+
+    <!-- partenaires -->
+    @if(isset($partenaires) && count($partenaires)>0)
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <h2 class="main-title">Nos partenaires</h2>
+            </div>
+            <div class="row slider-partenaire justify-content-center align-content-center">
+                @foreach($partenaires as $partenaire)
+                    <div class="col-2 col-md-2 logo-partenaire">
+                        <a href="{{$partenaire->url}}">
+                            <img  src="{{$partenaire->logo}}" alt="{{$partenaire->nom}}">
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    @endif
 @endsection
 
 
@@ -323,7 +341,6 @@
             center: true,
             autoplay: true,
             autoplayTimeout: 5000,
-            autoWidth: true,
             autoplayButtonOutput: false,
             nav: false,
             controls: false,
@@ -342,6 +359,29 @@
             }
         });
 
+        var slider2 = tns({
+            container: '.slider-partenaire',
+            items: 4,
+            center: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayButtonOutput: false,
+            nav: false,
+            controls: false,
+            responsive: {
+                640: {
+                    edgePadding: 20,
+                    gutter: 40,
+                    items: 1
+                },
+                700: {
+                    gutter: 30
+                },
+                900: {
+                    items: 3
+                }
+            }
+        });
     </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>

@@ -12397,8 +12397,15 @@ form .form-body .btn-register:hover {
 
 /* page accueil */
 
-p {
-  font-family: Roboto, Sans-Serif, serif;
+.logo-partenaire {
+  height: 5rem;
+  overflow: hidden;
+}
+
+.logo-partenaire img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100%;
 }
 
 /* page padev */

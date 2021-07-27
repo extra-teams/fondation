@@ -1,10 +1,13 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use App\Models\Padev;
+use App\Models\PadevAdmin;
 use App\Models\Pays;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Validator;
 
 class PadevController extends Controller
@@ -20,8 +23,17 @@ class PadevController extends Controller
             return $query->where('code', '=', 'prix-padev');
         })->where('image', '=', 1)->limit(6)->get();
 
+        $padev = PadevAdmin::OrderBy('fin', 'desc')->first();
+
+        /* pour determiner si l'inscription est tjrs ouverte */
+        $inscription = PadevAdmin::Where('debut', '<', Carbon::now()->format('Y-m-d'))
+            ->Where('fin', '>', Carbon::now()->format('Y-m-d'))
+            ->first();
+
         return view('padev.index')->with([
-            'galleries' => $galleries
+            'galleries' => $galleries,
+            'padev' => $padev,
+            'inscription' => $inscription
         ]);
     }
 

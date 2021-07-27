@@ -23,6 +23,12 @@ class ArticleHasTagsTableSeeder extends Seeder
                 'article_id' => '1',
                 'tag_id' => 'padev',
             ),
+            1 => 
+            array (
+                'id' => 5,
+                'article_id' => '2',
+                'tag_id' => 'padev',
+            ),
         ));
         
         

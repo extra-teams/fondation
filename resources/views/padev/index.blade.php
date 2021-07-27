@@ -3,36 +3,40 @@
 @section('content')
     <div id="pandev">
         <!-- bg -->
-        <div class="header-pandev">
-            <!-- edition -->
-            <div class="header-edition">
-                <p class="text-left">
-                    <span>16<sup class="text-lowercase">e</sup></span>
-                    <span>edition</span>
-                </p>
-            </div>
+        @if(isset($padev) && !empty($padev))
+            <div class="header-pandev">
+                <!-- edition -->
+                <div class="header-edition">
+                    <p class="text-left">
+                        <span>16<sup class="text-lowercase">e</sup></span>
+                        <span>edition</span>
+                    </p>
+                </div>
 
-            <!-- titre de l'evenement -->
-            <div class="header-title">
-                <p class="text-center">prix africain de developpement</p>
-            </div>
+                <!-- titre de l'evenement -->
+                <div class="header-title">
+                    <p class="text-center">{{$padev->titre}}</p>
+                </div>
 
-            <!-- Lieu -->
-            <div class="header-place">
-                <p class="city">Ville : <span>kigali</span>/ Lieu : <span>marriott hotel</span></p>
-            </div>
+                <!-- Lieu -->
+                <div class="header-place">
+                    <p class="city">Lieu : {{$padev->lieu}}</p>
+                </div>
 
-            <!-- image -->
-            <div class="header-img">
-                <img src="{{@asset("images/padev/kingali.jpeg")}}" alt="">
-            </div>
+                <!-- image -->
+                <div class="header-img">
+                    <img src="{{$padev->couverture}}" alt="{{$padev->lieu}}">
+                </div>
 
-            <!-- bouton inscripion -->
-            <div class="header-btn">
-                <a class="btn" href="{{route('padev.page_inscription')}}">Inscription</a>
+                <!-- bouton inscripion -->
+                @if(isset($inscription) && !empty($inscription))
+                    <div class="header-btn">
+                        <a class="btn" href="{{route('padev.page_inscription')}}">Inscription</a>
+                    </div>
+                @endif
             </div>
-        </div>
-        <!-- a propos -->
+    @endif
+    <!-- a propos -->
         <div class="about container mt-5">
             <div class="row justify-content-center">
                 <div class="col-10 col-sm-5 col-md-3">
@@ -93,7 +97,8 @@
                         processus érigé sur de solides critères d’objectivité. Il part de la sélection des nominés au
                         choix des lauréats</p>
                     <h6>Comment nous procédons ?</h6>
-                    <p class="font-weight-light">La sélection des lauréats du Prix PADEV s’opère de la façon suivante :</p>
+                    <p class="font-weight-light">La sélection des lauréats du Prix PADEV s’opère de la façon suivante
+                        :</p>
                 </div>
                 <!--  -->
             </div>
@@ -243,7 +248,7 @@
             autoplayButtonOutput: false,
             nav: false,
             controls: false,
-            autoWidth:true,
+            autoWidth: true,
             responsive: {
                 640: {
                     items: 1,

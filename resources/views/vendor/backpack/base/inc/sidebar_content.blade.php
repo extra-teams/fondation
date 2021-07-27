@@ -14,7 +14,7 @@
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('tags') }}'><i class='nav-icon la la-tags'></i> Tags</a>
 </li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('gallery') }}'><i class='nav-icon la la-images'></i> Galleries</a></li>
-
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('partenaires') }}'><i class='nav-icon la la-support'></i> Partenaires</a></li>
 
 <li class="nav-title">Padev</li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('padev') }}'><i class='nav-icon la la-users'></i>
@@ -49,4 +49,3 @@
 
 
 
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('partenaires') }}'><i class='nav-icon la la-question'></i> Partenaires</a></li>

@@ -361,24 +361,26 @@
 
         var slider2 = tns({
             container: '.slider-partenaire',
-            items: 4,
-            center: true,
+            items: 2,
             autoplay: true,
             autoplayTimeout: 5000,
             autoplayButtonOutput: false,
             nav: false,
             controls: false,
+            mouseDrag: true,
             responsive: {
+                350: {
+                    items: 3
+                },
                 640: {
                     edgePadding: 20,
-                    gutter: 40,
                     items: 1
                 },
                 700: {
-                    gutter: 30
+                    items: 3
                 },
                 900: {
-                    items: 3
+                    items: 5
                 }
             }
         });

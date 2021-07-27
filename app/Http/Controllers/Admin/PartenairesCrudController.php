@@ -39,13 +39,17 @@ class PartenairesCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        $this->crud->addColumn([
+            'label' => "logo",
+            'name' => 'logo',
+            'type' => 'image'
+        ]);
 
-        /**
-         * Columns can be defined using the fluent syntax or array syntax:
-         * - CRUD::column('price')->type('number');
-         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
-         */
+        $this->crud->addColumn([
+            'name' => 'nom',
+            'type' => 'text',
+            'label' => "Nom"
+        ]);
     }
 
     /**
@@ -58,13 +62,30 @@ class PartenairesCrudController extends CrudController
     {
         CRUD::setValidation(PartenairesRequest::class);
 
-        CRUD::setFromDb(); // fields
+        $this->crud->addField([
+            'label' => "logo",
+            'name' => 'logo',
+            'filename' => '',
+            'type' => 'base64_image'
+        ]);
 
-        /**
-         * Fields can be defined using the fluent syntax or array syntax:
-         * - CRUD::field('price')->type('number');
-         * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
-         */
+        $this->crud->addField([
+            'name' => 'nom',
+            'type' => 'text',
+            'label' => "Nom",
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6'
+            ],
+        ]);
+
+        $this->crud->addField([
+            'name' => 'url',
+            'type' => 'url',
+            'label' => "lien vers leur site internet'",
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6'
+            ],
+        ]);
     }
 
     /**
@@ -76,5 +97,20 @@ class PartenairesCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+
+    protected function setupShowOperation()
+    {
+        $this->crud->addColumn([
+            'label' => "logo",
+            'name' => 'logo',
+            'type' => 'image'
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'nom',
+            'type' => 'text',
+            'label' => "Nom"
+        ]);
     }
 }

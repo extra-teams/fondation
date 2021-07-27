@@ -34,5 +34,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ArticlesTableSeeder::class);
         $this->call(ArticleHasTagsTableSeeder::class);
         $this->call(GestionPadevTableSeeder::class);
+        $this->call(PartenairesTableSeeder::class);
     }
 }

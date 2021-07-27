@@ -10,13 +10,13 @@
             </div>
         <div class="col-lg-8 ">
             <div class="card p-1">
-                <p style="font-size: 20px;font-weight:bold"> Votre Adresse</p>
+                <p style="font-size: 20px;font-weight:bold">{{__("client.adresse")}}</p>
               <div class="card-body">
                 <form class="col-lg-9" style="border: none" method="POST" action="{{route('client.updateadresse')}}">
                      @csrf
                         <div class="form-row">
                             <div class="col-lg form-group">
-                                <label>Ville </label>
+                                <label>{{__("client.ville")}}</label>
                                         <select name='ville' id="inputState" class="form-control ville">
                                             @foreach (App\Models\Villes::All() as $v)
                                             @if ($v->nom==$ville)
@@ -28,7 +28,7 @@
                                         </select>    
                             </div> <!-- form-group end.// -->
                             <div class="col form-group">
-                                <label>Commune </label>
+                                <label>{{__("client.commune")}}Commune </label>
                                         <select name="commune" id="inputState" class="form-control commune">
                                             @foreach (App\Models\Communes::All() as $c)
                                             @if ($c->nom==$commune)

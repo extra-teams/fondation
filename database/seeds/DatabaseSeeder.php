@@ -33,5 +33,6 @@ class DatabaseSeeder extends Seeder
         $this->call(GallerieHasTagsTableSeeder::class);
         $this->call(ArticlesTableSeeder::class);
         $this->call(ArticleHasTagsTableSeeder::class);
+        $this->call(GestionPadevTableSeeder::class);
     }
 }

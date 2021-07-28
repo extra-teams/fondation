@@ -8,7 +8,6 @@
                     <h4 class="display-5">{{__("confirm.merci")}}</h4>
                     <p class="font-weight-light">
                         Mr/Mme <strong> {{$nom}} </strong><br>
-                        {{__("confirm.message1")}}<br>{{__("confirm.message2")}}
                     </p>
                 </div>
             </div>

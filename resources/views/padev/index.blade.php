@@ -13,29 +13,30 @@
                     </p>
                 </div>
 
-            <!-- titre de l'evenement -->
-            <div class="header-title">
-                <p class="text-center">prix africain de developpement</p>
-            </div>
+                <!-- titre de l'evenement -->
+                <div class="header-title">
+                    <p class="text-center">prix africain de developpement</p>
+                </div>
 
-            <!-- Lieu -->
-            <div class="header-place">
-                <p class="city">Ville : <span>kigali</span>/ Lieu : <span>marriott hotel</span></p>
-            </div>
+                <!-- Lieu -->
+                <div class="header-place">
+                    <p class="city">Ville : <span>kigali</span>/ Lieu : <span>marriott hotel</span></p>
+                </div>
 
-            <!-- image -->
-            <div class="header-img">
-                <img src="{{@asset("images/padev/kingali.jpeg")}}" alt="">
-            </div>
+                <!-- image -->
+                <div class="header-img">
+                    <img src="{{@asset("images/padev/kingali.jpeg")}}" alt="">
+                </div>
 
-            <!-- bouton inscripion -->
+                <!-- bouton inscripion -->
                 @if(isset($inscription) && !empty($inscription))
-            <div class="header-btn">
-                <a class="btn" href="{{route('padev.page_inscription')}}">{{__("padev.inscription")}}</a>
-            </div>
+                    <div class="header-btn">
+                        <a class="btn" href="{{route('padev.page_inscription')}}">{{__("padev.inscription")}}</a>
+                    </div>
                 @endif
-        </div>
-        <!-- a propos -->
+            </div>
+    @endif
+    <!-- a propos -->
         <div class="about container mt-5">
             <div class="row justify-content-center">
                 <div class="col-10 col-sm-5 col-md-3">
@@ -45,15 +46,19 @@
                     <h5 class="text-uppercase font-weight-lighter">A PROPOS </h5>
                     <h6 class="text-uppercase font-weight-lighter">DE COLLABORER, LA PIERRE DEVIENT TEMPLE... </h6>
                     <p class="text-left">
-                        Comment faire d’une réalité le rêve d’une Afrique développée et prospère ? Comment conjurer les
+                        Comment faire d’une réalité le rêve d’une Afrique développée et prospère ? Comment conjurer
+                        les
                         maux que sont les guerres civiles, la violence politique, la famine, les épidémies,
                         l’analphabétisme, la pauvreté, etc. qui donnent à ce continent cette identité si peu
                         valorisante, pour en faire une terre qui fait la fierté de ses fils et filles ?
                     </p>
                     <p class="text-left">
-                        Ces questions d’une prégnante actualité, et surtout les réponses à leur apporter, ont donné lieu
-                        à maintes réflexions et actions depuis les indépendances. Mais alors, comment expliquer qu’après
-                        50 ans, le désert politique, économique, social, sanitaire, éducationnel, etc. aie gagné autant
+                        Ces questions d’une prégnante actualité, et surtout les réponses à leur apporter, ont donné
+                        lieu
+                        à maintes réflexions et actions depuis les indépendances. Mais alors, comment expliquer
+                        qu’après
+                        50 ans, le désert politique, économique, social, sanitaire, éducationnel, etc. aie gagné
+                        autant
                         de terrain dans tous les pays du continent ?
                     </p>
                 </div>
@@ -108,7 +113,7 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#flush-collapseOne" aria-expanded="false"
                                         aria-controls="flush-collapseOne">
-                                        {{__("padev.etape1")}}
+                                    {{__("padev.etape1")}}
                                 </button>
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse"
@@ -124,7 +129,7 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#flush-collapseTwo" aria-expanded="false"
                                         aria-controls="flush-collapseTwo">
-                                        {{__("padev.etape2")}}
+                                    {{__("padev.etape2")}}
                                 </button>
                             </h2>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse"
@@ -140,7 +145,7 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#flush-collapseThree" aria-expanded="false"
                                         aria-controls="flush-collapseThree">
-                                        {{__("padev.etape3")}}
+                                    {{__("padev.etape3")}}
                                 </button>
                             </h2>
                             <div id="flush-collapseThree" class="accordion-collapse collapse"
@@ -156,7 +161,7 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#flush-collapseFour" aria-expanded="false"
                                         aria-controls="flush-collapseThree">
-                                        {{__("padev.etape4")}}
+                                    {{__("padev.etape4")}}
                                 </button>
                             </h2>
                             <div id="flush-collapseFour" class="accordion-collapse collapse"
@@ -171,7 +176,8 @@
                 <!-- prize -->
                 <div class="col-lg-6">
                     <div class="text-center">
-                        <img style="height: 12rem" class="img-fluid" src="{{asset("images/padev/pize.jpeg")}}" alt="">
+                        <img style="height: 12rem" class="img-fluid" src="{{asset("images/padev/pize.jpeg")}}"
+                             alt="">
                     </div>
                 </div>
             </div>
@@ -234,7 +240,7 @@
             autoplayButtonOutput: false,
             nav: false,
             controls: false,
-            autoWidth:true,
+            autoWidth: true,
             responsive: {
                 640: {
                     items: 1,

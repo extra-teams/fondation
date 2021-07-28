@@ -6,5 +6,7 @@ return[
     'abonner' => 'S\'abonner',
     'votre_email' => 'votre adresse email',
     'envoyer' => 'Envoyez-moi aussi de temps en temps des e-mails au sujet des produits et services de la fondation225.',
-    
+    'condition' => 'Conditions d’utilisation',
+    'confidence' => 'Confidentialité',
+    'cooki' => 'Cookies'
 ];

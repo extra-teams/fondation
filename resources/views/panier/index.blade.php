@@ -9,7 +9,7 @@
         {{-- affichage du panier pour ecran large  --}}
         <section class="section-content d-none d-lg-block bg padding-y border-top">
             <div class="container" style=" margin-top:80px;">
-                    <p class="h3" style="color: #888;font-weight:bold;">VOTRE PANIER ( {{Cart::count()}} )</p>
+                    <p class="h3" style="color: #888;font-weight:bold;">{{__("panier.panier")}}( {{Cart::count()}} )</p>
                 <br>
 
                 <div class="row">
@@ -19,10 +19,10 @@
                                 <thead class="text-muted">
                                 <tr>
                                     <th scope="col" width="2"></th>
-                                    <th scope="col" width="100">IMAGE</th>
-                                    <th scope="col" width="150">PRODUIT</th>
-                                    <th scope="col" width="150">PRIX</th>
-                                    <th scope="col" width="80">QUANTITE</th>
+                                    <th scope="col" width="100">{{__("panier.image")}}</th>
+                                    <th scope="col" width="150">{{__("panier.produit")}}</th>
+                                    <th scope="col" width="150">{{__("panier.prix")}}</th>
+                                    <th scope="col" width="80">{{__("panier.qte")}}</th>
                                     <th scope="col" width="150" class="text-right">TOTAL</th>
                                 </tr>
                                 </thead>
@@ -108,17 +108,15 @@
                             </table>
                             <div class="card-body border-top">
                                 <a href="{{route('checkout.index')}}" class="btn btn-light float-md-right"
-                                   style="font-weight:bold;font-size:18px"> Finaliser la commande &nbsp;<i
+                                   style="font-weight:bold;font-size:18px">{{__("panier.fin")}}&nbsp;<i
                                             class="fa fa-chevron-right" style="color: #002687"></i> </a>
                                 <a href="{{route('produits.index')}}" class="btn btn-light"
                                    style="font-weight:bold;font-size:18px"> <i class="fa fa-chevron-left"
-                                                                               style="color: #002687"></i> &nbsp;Continuer
-                                    ses achats </a>
+                                                                               style="color: #002687"></i> &nbsp;{{__("panier.continuer")}}</a>
                             </div>
                         </div> <!-- card.// -->
                         <div class="alert alert-success mt-3 p-1 pl-5 ">
-                            <p class="icontext" style="font-weight: bold"><i class="icon text-success fa fa-truck"></i>&nbsp;Livraison
-                                gratuite & rapide</p>
+                            <p class="icontext" style="font-weight: bold"><i class="icon text-success fa fa-truck"></i>&nbsp;{{__("panier.livraison")}}</p>
                         </div>
                     </main> <!-- col.// -->
                     <aside class="col-md-3">
@@ -126,7 +124,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <dl class="row row-cols-2">
-                                    <dt class="text-left">SOUS TOTAL :</dt>
+                                    <dt class="text-left">{{__("panier.sous_total")}}</dt>
                                     <dd class="text-right"
                                         style="width:55%;margin-left:-20px;font-weight:bold;color: #000">{{(Cart::subtotal())}}
                                         Fcfa
@@ -155,7 +153,7 @@
             <div class="container" style=" margin-top:50px;">
                 <a href="{{route('client.index')}}" style="color:#000;font-size:18px"><span><i class="fa fa-arrow-left float-left mt-2"></i></span></a>
 
-                <p class="h5 text-center" style="color: #888;font-weight:bold;">VOTRE PANIER ( {{Cart::count()}} )</p>
+                <p class="h5 text-center" style="color: #888;font-weight:bold;">{{__("panier.panier")}}( {{Cart::count()}} )</p>
 
                 <br>
 
@@ -231,7 +229,7 @@
             <div class="mt-3 col-sm-12" style="background: white">
 
                 <center style="font-size: 18px">
-                    <span class="text-left" style="font-weight: bold">sous total :</span>
+                    <span class="text-left" style="font-weight: bold">{{__("panier.sous_total2")}}</span>
                     <span class="text-right" style="font-weight: bold;color:black">{{(Cart::subtotal())}}</span> Fcfa
                 </center>
 
@@ -247,7 +245,7 @@
                         Finaliser la commande &nbsp;<i class="fa fa-chevron-right" style="color: red"></i> </a>
                     <a href="{{route('produits.index')}}" class="btn btn-outline-dark mt-2"
                        style="font-weight:bold;font-size:18px;">
-                        <i class="fa fa-chevron-left" style="color: red"></i> &nbsp;Continuer ses achats </a>
+                        <i class="fa fa-chevron-left" style="color: red"></i> &nbsp;{{__("panier.continuer")}}</a>
                 </center>
             </div>
         </section>
@@ -255,11 +253,11 @@
         <section class="section-content bg padding-y border-top" style="height: 60vh">
             <div class="container" style=" margin-top:100px;">
 
-                <center><p class="h3" style="font-weight:bold;">VOTRE PANIER EST VIDE</p><br>
-                    <p>ajouter des produits dans votre panier</p>
+                <center><p class="h3" style="font-weight:bold;">{{__("panier.vide")}}</p><br>
+                    <p>{{__("panier.ajout")}}</p>
                     <div class="col-md-6 mt-4 ">
                         <a href="{{route('produits.index')}}" class="btn rounded-0 btn-outline-dark btn-lg btn-block"
-                           type="button" style="">passez aux achats !</a>
+                           type="button" style="">{{__("panier.achat")}}</a>
                     </div>
                 </center>
             </div>

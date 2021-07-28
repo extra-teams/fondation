@@ -13,11 +13,15 @@
       text-transform: uppercase;
     }
 
-    & input[type=text], & input[type=number], & input[type=email] {
+    & input {
       box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.1);
       padding: 8px;
       border: 1px solid rgba(0, 0, 0, .1);
       width: 100%;
+    }
+
+    & input[type=radio] {
+      width: default;
     }
   }
 }

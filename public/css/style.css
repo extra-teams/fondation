@@ -12232,13 +12232,15 @@ form .form-body .btn-register:hover {
   text-transform: uppercase;
 }
 
-#register-pandev form input[type=text],
-#register-pandev form input[type=number],
-#register-pandev form input[type=email] {
+#register-pandev form input {
   box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.1);
   padding: 8px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   width: 100%;
+}
+
+#register-pandev form input[type=radio] {
+  width: default;
 }
 
 /* pages */

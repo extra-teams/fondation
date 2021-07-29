@@ -10945,6 +10945,29 @@ body {
   display: flex !important;
 }
 
+/* Works on Firefox */
+
+* {
+  scrollbar-width: 15px;
+  scrollbar-color: #d6b40c whitesmoke;
+}
+
+/* Works on Chrome, Edge, and Safari */
+
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #d6b40c;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: whitesmoke;
+  border-radius: 15px;
+  border: 3px solid #d6b40c;
+}
+
 a {
   color: #d6b40c;
   text-decoration: none;

@@ -32,7 +32,7 @@ class CommandeController extends Controller
     {
         /* detail d'une commande */
         $id = (int)$request->query('id');
-        $commande = Commande::with(['client']);
+        $commande = Commande::with(['client','detail.produits']);
         $data = [];
         if (is_int($id)) {
             $order = $commande->where('id', '=', $id);

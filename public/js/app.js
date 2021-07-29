@@ -3700,6 +3700,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'UtilisateurIndex',
@@ -3783,7 +3785,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
 //
 //
 //
@@ -88124,15 +88125,7 @@ var render = function() {
                         key: "default",
                         fn: function(scope) {
                           return [
-                            _c("span", [
-                              _vm._v(
-                                _vm._s(
-                                  scope.row.adresse.commune.nom +
-                                    " " +
-                                    scope.row.adresse.description
-                                )
-                              )
-                            ])
+                            _c("span", [_vm._v(_vm._s(scope.row.adresse))])
                           ]
                         }
                       }
@@ -88177,7 +88170,15 @@ var render = function() {
                                 ])
                               : parseInt(row.status) === 1
                               ? _c("el-tag", { attrs: { type: "success" } }, [
-                                  _vm._v("commande confirmée")
+                                  _vm._v("Livraison en cours")
+                                ])
+                              : parseInt(row.status) === 2
+                              ? _c("el-tag", { attrs: { type: "success" } }, [
+                                  _vm._v("commande livrée")
+                                ])
+                              : parseInt(row.status) === 3
+                              ? _c("el-tag", { attrs: { type: "success" } }, [
+                                  _vm._v("commande annulée")
                                 ])
                               : _c("el-tag", { attrs: { type: "danger" } }, [
                                   _vm._v("commande annulée")
@@ -88325,7 +88326,7 @@ var render = function() {
                             attrs: {
                               icon: "el-icon-delete",
                               type: "primary",
-                              disabled: _vm.order.status == 2
+                              disabled: _vm.order.status == 4
                             },
                             nativeOn: {
                               click: function($event) {
@@ -88351,7 +88352,27 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                Accepter la commande\n              "
+                              "\n                Marquer comme Livreur en cours\n              "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "el-dropdown-item",
+                          {
+                            attrs: {
+                              icon: "el-icon-circle-plus-outline",
+                              disabled: _vm.order.status === 1
+                            },
+                            nativeOn: {
+                              click: function($event) {
+                                return _vm.accepterCommande($event)
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                Marquer comme Livraison fait\n              "
                             )
                           ]
                         )
@@ -88389,21 +88410,10 @@ var render = function() {
                     _vm._v(" "),
                     _vm.order.adresse
                       ? [
-                          _c("b", [_vm._v("Commune ")]),
-                          _vm._v(
-                            " " +
-                              _vm._s(
-                                _vm.order.adresse.commune.nom || "non definie"
-                              )
-                          ),
-                          _c("br"),
-                          _vm._v(" "),
                           _c("b"),
                           _vm._v(
                             "Adresse de Livraison : " +
-                              _vm._s(
-                                _vm.order.adresse.description || "non definie"
-                              )
+                              _vm._s(_vm.order.adresse || "non definie")
                           ),
                           _c("br")
                         ]
@@ -88417,17 +88427,24 @@ var render = function() {
           _c("div", { staticClass: "col-md-6  text-right" }, [
             _c("h5", [_vm._v("\n          status de la commande\n        ")]),
             _vm._v(" "),
-            _vm.order.status === 1
+            _vm.order.status === 0
               ? _c("h3", { staticClass: "text-success" }, [
-                  _c("i", { staticClass: "el-icon-success" }),
-                  _vm._v("confirmé")
+                  _c("i", { staticClass: "el-icon-warning" }),
+                  _vm._v("en attente")
                 ])
               : _vm._e(),
             _vm._v(" "),
-            _vm.order.status === 0
-              ? _c("h3", { staticClass: "text-primary" }, [
-                  _c("i", { staticClass: "el-icon-loading" }),
-                  _vm._v("en attente")
+            _vm.order.status === 1
+              ? _c("h3", { staticClass: "text-success" }, [
+                  _c("i", { staticClass: "el-icon-position" }),
+                  _vm._v("Livraison en cours")
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.order.status === 2
+              ? _c("h3", { staticClass: "text-success" }, [
+                  _c("i", { staticClass: "el-icon-success" }),
+                  _vm._v("livrée")
                 ])
               : _vm._e(),
             _vm._v(" "),
@@ -88449,13 +88466,7 @@ var render = function() {
                 _c("tr", [
                   _c("th", [_vm._v("ID")]),
                   _vm._v(" "),
-                  _c("th", [_vm._v("Boutique")]),
-                  _vm._v(" "),
                   _c("th", [_vm._v("produit")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("couleur")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("taille")]),
                   _vm._v(" "),
                   _c("th", [_vm._v("quantité")]),
                   _vm._v(" "),
@@ -88468,17 +88479,11 @@ var render = function() {
                   return _c("tr", [
                     _c("td", [_vm._v(_vm._s(detail.id))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(detail.produits.owner.name))]),
-                    _vm._v(" "),
                     _c("td", [
                       _vm._v(
                         _vm._s(detail.produits.code + "-" + detail.produits.nom)
                       )
                     ]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(detail.couleur.nom))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(detail.taille.nom))]),
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(detail.quantite))]),
                     _vm._v(" "),

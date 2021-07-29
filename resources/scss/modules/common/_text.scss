@@ -48,3 +48,68 @@
   letter-spacing: .2px;
 }
 
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-title {
+    font-size: 1.4rem;
+  }
+
+  .main-introduction {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .main-title {
+    font-size: 1.4rem;
+  }
+
+  .main-introduction {
+    font-size: 1rem;
+    text-align: justify;
+  }
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .main-title {
+    font-size: 1.4rem;
+  }
+
+  .main-introduction {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .main-title {
+    font-size: 1.4rem;
+  }
+
+  .main-introduction {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+}

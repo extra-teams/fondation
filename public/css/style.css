@@ -11103,6 +11103,70 @@ ul li {
   letter-spacing: 0.2px;
 }
 
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-title {
+    font-size: 1.4rem;
+  }
+
+  .main-introduction {
+    font-size: 1rem;
+    text-align: justify;
+  }
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .main-title {
+    font-size: 1.4rem;
+  }
+
+  .main-introduction {
+    font-size: 1rem;
+    text-align: justify;
+  }
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .main-title {
+    font-size: 1.4rem;
+  }
+
+  .main-introduction {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .main-title {
+    font-size: 1.4rem;
+  }
+
+  .main-introduction {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+}
+
 /* Modules */
 
 /* header */
@@ -11579,28 +11643,14 @@ ul li {
 
 .carousel .carousel-item {
   position: relative;
-  height: 25rem;
+  height: 20rem;
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.carousel .carousel-text {
-  position: absolute;
-  top: 20%;
-  left: 10%;
-  width: 50%;
-  overflow: hidden;
-  color: white;
-}
-
-.carousel .carousel-text h3,
-.carousel .carousel-text .h3 {
-  font-size: 6rem;
-}
-
-.carousel .carousel-text p {
-  font-size: 1rem;
+.carousel .carousel-item .carousel-caption {
+  font-size: 4rem;
 }
 
 /*
@@ -12002,7 +12052,7 @@ ul li {
   height: 22rem;
   width: 100%;
   z-index: 4;
-  margin-bottom: 5rem;
+  overflow: hidden;
 }
 
 .card-domaine .card-domaine-header {

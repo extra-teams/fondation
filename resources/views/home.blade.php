@@ -29,11 +29,6 @@
                 @else
                     <div class="carousel-item " style="background-image: url('{{asset($sliders->nom)}}')"
                          data-bs-interval="5000">
-                        <div class="carousel-caption">
-                            @if(!is_null($sliders->texte))
-                                {!! $sliders->texte !!}
-                            @endif
-                        </div>
                     </div>
                 @endif
             @endforeach
@@ -72,7 +67,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- card 2 -->
             <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up">
                 <div class="card-domaine">
@@ -89,14 +83,12 @@
                 </div>
             </div>
         </div>
-
-        <div class="row  justify-content-around mt-2">
+        <div class="row  justify-content-around mt-5">
             <!-- card 1 -->
             <div class="col-12 col-sm-6 col-md-4" data-aos="fade-down-left">
                 <div class=" card-domaine">
                     <div class="card-domaine-header">
-                        <img src="https://www.afrik21.africa/wp-content/uploads/2019/07/shutterstock_722601193-800x400.jpg"
-                             alt="">
+                        <img src="https://www.afrik21.africa/wp-content/uploads/2019/07/shutterstock_722601193-800x400.jpg" alt="">
                     </div>
                     <div class="card-domaine-body">
                         <h3 class="main-title">
@@ -108,8 +100,6 @@
                     </div>
                 </div>
             </div>
-
-
             <!-- card 2 -->
             <div class="col-12 col-sm-6 col-md-4" data-aos="fade-down-right">
                 <div class="card-domaine">
@@ -120,8 +110,7 @@
                         </p>
                     </div>
                     <div class="order-0 order-lg-1 card-domaine-header">
-                        <img src="https://www.lintelligentdabidjan.info/news/wp-content/uploads/2017/04/Aeoroport_FHB19.jpg"
-                             alt="">
+                        <img src="https://www.lintelligentdabidjan.info/news/wp-content/uploads/2017/04/Aeoroport_FHB19.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -137,7 +126,7 @@
             <div class="row slider">
             @foreach($galleries as $gallerie)
                 <!-- slider 1 -->
-                    <div class="mb-2 col-lg-3 col-md-4 col-xs-6 wprock-img-zoom-hover">
+                    <div class="col-12 col-md-3 wprock-img-zoom-hover">
                         <div class="wprock-img-zoom">
                             <a href="{{asset('storage/'.$gallerie->fichier)}}" class="fancybox" rel="ligthbox">
                                 <img src="{{asset('storage/'.$gallerie->fichier)}}" class="zoom img-fluid" alt="">
@@ -155,7 +144,7 @@
             <div class="text-center">
                 <h2 class="main-title">{{__("home.boutique")}}<br>{{__("home.humanitaire")}}</h2>
             </div>
-            <div class="row col-lg-none ">
+            <div class="row">
                 @foreach ($produits as $produit)
                     <div class="col-6 col-lg-3">
                         <div class="card_product">
@@ -200,7 +189,7 @@
             @foreach($articles as $article)
                 <!-- card 1 -->
                     <a href="{{$article->slug}}">
-                        <div class="col-12 col-sm-6 col-md-3">
+                        <div class="col-12 col-sm-6 col-md-4">
                             <div class="card-news">
                                 <div class="card-news-header">
                                     <img src="{{asset($article->cover)}}" alt="{{asset($article->title)}}">
@@ -223,7 +212,7 @@
         <h2 class="main-title">{{__("home.equipe")}}</h2>
         <div class="row justify-content-center">
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-5 mb-5" data-aos="fade-down-up">
+            <div class="col-md-4  col-lg-3 mb-md-5 mb-5" data-aos="fade-down-up">
                 <div class="card-team">
                     <div class="card-team-header">
                         <img src="{{asset('images/equipe/chargerdesprojets.jpg')}}" class="img-fluid avatar" alt="">
@@ -236,7 +225,7 @@
             </div>
 
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-5 mb-5" data-aos="fade-down-left">
+            <div class="col-md-4  col-lg-3 mb-md-5 mb-5" data-aos="fade-down-left">
                 <div class="card-team">
                     <div class="card-team-header">
                         <img src="{{asset('images/equipe/president.jpg')}}" class="img-fluid avatar" alt="">
@@ -249,7 +238,7 @@
             </div>
 
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-5 mb-5" data-aos="fade-down-right">
+            <div class="col-md-4  col-lg-3 mb-md-5 mb-5" data-aos="fade-down-right">
                 <div class="card-team">
                     <div class="card-team-header">
                         <img src="{{asset('images/equipe/secretaire.jpg')}}" class="img-fluid avatar" alt="">
@@ -264,7 +253,7 @@
 
         <div class="row justify-content-center" data-aos="fade-down-top">
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-5 mb-5">
+            <div class="col-md-4  col-lg-3 mb-md-5 mb-5">
                 <div class="card-team mx-auto">
                     <div class="card-team-header">
                         <img src="{{asset('images/equipe/tresorier.jpg')}}" class="img-fluid avatar" alt="">
@@ -278,7 +267,7 @@
 
 
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-5 mb-5">
+            <div class="col-md-4 col-lg-3 mb-md-5 mb-5">
                 <div class="card-team">
                     <div class="card-team-header">
                         <img src="{{asset('images/equipe/comissaire.jpeg')}}" class="img-fluid avatar" alt="">
@@ -337,7 +326,7 @@
                 640: {
                     edgePadding: 20,
                     gutter: 40,
-                    items: 1
+                    items: 3
                 },
                 700: {
                     gutter: 30

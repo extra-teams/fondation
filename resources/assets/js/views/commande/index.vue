@@ -41,7 +41,7 @@
 
             <el-table-column align="left" label="adresse">
               <template slot-scope="scope">
-                <span>{{ scope.row.adresse.commune.nom + ' ' + scope.row.adresse.description }}</span>
+                <span>{{ scope.row.adresse }}</span>
               </template>
             </el-table-column>
 
@@ -54,7 +54,9 @@
             <el-table-column class-name="status-col" label="status de la commande" width="200">
               <template slot-scope="{row}">
                 <el-tag v-if="parseInt(row.status) === 0" type="primary">en attente</el-tag>
-                <el-tag v-else-if="parseInt(row.status) === 1" type="success">commande confirmée</el-tag>
+                <el-tag v-else-if="parseInt(row.status) === 1" type="success">Livraison en cours</el-tag>
+                <el-tag v-else-if="parseInt(row.status) === 2" type="success">commande livrée</el-tag>
+                <el-tag v-else-if="parseInt(row.status) === 3" type="success">commande annulée</el-tag>
                 <el-tag v-else type="danger">commande annulée</el-tag>
               </template>
             </el-table-column>

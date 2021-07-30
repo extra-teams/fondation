@@ -1,7 +1,6 @@
 .header-top {
   padding: 1.2rem 0;
   width: 100%;
-  overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -63,7 +62,6 @@
     align-content: center;
     width: 30%;
     padding-right: 10px;
-    overflow: hidden;
 
     & i {
       position: relative;
@@ -75,10 +73,18 @@
     }
 
     & .header-top-language {
+      display: flex;
+      align-items: center;
       margin-right: 10px;
 
       & span {
         color: $color-black;
+
+        & i {
+          margin-right: 5px;
+          font-size: 20px;
+          color: $color-orange;
+        }
 
         & a {
           color: $color-black;

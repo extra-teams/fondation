@@ -16,7 +16,10 @@ class CreateCommandesTable extends Migration
         Schema::create('commandes', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->unsignedBigInteger('id_client');
-            $table->unsignedBigInteger('id_adr');
+            $table->longText('pays');
+            $table->longText('ville');
+            $table->longText('adresse');
+            $table->longText('codebp');
             $table->integer('quantite')->default(0);
             $table->string('montant');
             $table->integer('status')->default(0);
@@ -25,9 +28,6 @@ class CreateCommandesTable extends Migration
 
             $table->foreign('id_client')
                 ->references('id')->on('clients')->onDelete('cascade');
-           
-            $table->foreign('id_adr')
-                ->references('id')->on('adresses')->onDelete('cascade');
         });
     }
 

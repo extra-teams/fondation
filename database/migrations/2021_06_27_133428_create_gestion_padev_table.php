@@ -15,12 +15,12 @@ class CreateGestionPadevTable extends Migration
     {
         Schema::create('gestion_padev', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
-            $table->string('libelle');
-            $table->text('description');
+            $table->longText("couverture")->comment("photo de couverture");
+            $table->string('titre');
+            $table->string("lieu");
             $table->date("debut");
             $table->date("fin");
-            $table->longText('images')->nullable();
-            $table->boolean("ouvert")->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

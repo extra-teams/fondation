@@ -18,12 +18,12 @@
                     </div>
                 </div>
                 <!-- le corps -->
-                
+
                 <div class="form-body">
                     <div class="row">
                         <div class="col-lg-12">
 
-                            
+
                             @if($errors->has('invalid'))
                                 <h3 class="text-warning help is-danger text-center">{{ $errors->first('invalid') }}</h3>
                             @endif
@@ -58,17 +58,28 @@
                         </div>
                     </div>
                     <div class="mt-3 mb-3">
-                    <h6 class="text-center text-uppercase mt-3 mb-3 hr">OU</h6>
-                    <style> .hr { align-items: center; display: flex; text-align: center;}.hr::before,.hr::after { border-top: .0625em solid; content: "";flex: 1;margin: 0 .5em;}</style>
-                    <div class="text-center">
-                       <a href="{{ url('auth/google') }}" class=""> <button type="button" class="btn btn-danger btn-block col-12" style="outline: none"><i class="fab fa-google text-white float-left"></i> SE CONNECTER AVEC GOOGLE</button></a>
-                    </div>
-               
+                        <h6 class="text-center text-uppercase mt-3 mb-3 hr">OU</h6>
+                        <style> .hr {
+                                align-items: center;
+                                display: flex;
+                                text-align: center;
+                            }
+
+                            .hr::before, .hr::after {
+                                border-top: .0625em solid;
+                                content: "";
+                                flex: 1;
+                                margin: 0 .5em;
+                            }</style>
+                        <div class="text-center">
+                            <a href="{{ url('auth/google') }}" class="">
+                                <button type="button" class="btn btn-outline-warning  btn-block col-12">
+                                    SE CONNECTER AVEC VOTRE GMAIL
+                                </button>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                
-                
-
             </form>
         </div>
     </div>

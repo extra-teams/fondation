@@ -107,7 +107,7 @@
                         <tbody>
                           <tr>
                             <td style="width:300px;">
-                              <img alt="" height="auto" src="{{asset('https://yebay.ci/images/logo.jpeg')}}" style="border:none;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="300" />
+                              <img alt="" height="auto" src="{{asset('https://fondation225.ci/images/logo.jpeg')}}" style="border:none;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="300" />
                             </td>
                           </tr>
                         </tbody>
@@ -157,12 +157,12 @@
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                   <tr>
                     <td align="center" style="font-size:0px;padding:10px 25px;padding-top:28px;padding-right:25px;padding-left:25px;word-break:break-word;">
-                      <div style="font-family:Helvetica;font-size:20px;line-height:1;text-align:center;color:#FFFFFF;">Nouvelle commande</div>
+                      <div style="font-family:Helvetica;font-size:20px;line-height:1;text-align:center;color:#FFFFFF;">{{__("neworder.commande")}}</div>
                     </td>
                   </tr>
                   <tr>
                     <td align="center" style="font-size:0px;padding:10px 25px;padding-top:10px;padding-right:25px;padding-bottom:28px;padding-left:25px;word-break:break-word;">
-                      <div style="font-family:Helvetica;font-size:20px;line-height:1;text-align:center;color:#FFFFFF;">du client {{ $fullname }}</div>
+                      <div style="font-family:Helvetica;font-size:20px;line-height:1;text-align:center;color:#FFFFFF;">{{__("neworder.client")}}{{ $fullname }}</div>
                     </td>
                   </tr>
                 </table>
@@ -225,23 +225,23 @@
                   </tr>
                   <tr>
                     <td align="center" style="font-size:0px;padding:10px 25px;padding-top:28px;padding-right:25px;padding-bottom:20px;padding-left:25px;word-break:break-word;">
-                      <div style="font-family:Helvetica;font-size:20px;line-height:1;text-align:center;color:#FFFFFF;">Détails de la commande</div>
+                      <div style="font-family:Helvetica;font-size:20px;line-height:1;text-align:center;color:#FFFFFF;">{{__("neworder.detail")}}</div>
                     </td>
                   </tr>
                   <tr>
                     <td align="left" style="font-size:0px;padding:10px 25px;padding-top:28px;padding-right:25px;padding-left:25px;word-break:break-word;">
-                      <div style="font-family:Helvetica;font-size:18px;line-height:1;text-align:left;color:#FFFFFF;">Commande n° {{ $id_commande }}</div>
+                      <div style="font-family:Helvetica;font-size:18px;line-height:1;text-align:left;color:#FFFFFF;">{{__("neworder.numero")}}{{ $id_commande }}</div>
                     </td>
                   </tr>
                   <tr>
                     <td align="left" style="font-size:0px;padding:10px 25px;padding-right:25px;padding-left:25px;word-break:break-word;">
-                      <div style="font-family:Helvetica;font-size:18px;line-height:1;text-align:left;color:#FFFFFF;">Date : {{ $date->format('d/m/Y') }}</div>
+                      <div style="font-family:Helvetica;font-size:18px;line-height:1;text-align:left;color:#FFFFFF;">{{__("neworder.date")}}{{ $date->format('d/m/Y') }}</div>
                     </td>
                   </tr>
                   
                   <tr>
                     <td align="left" style="font-size:0px;padding:10px 25px;padding-right:25px;padding-bottom:30px;padding-left:25px;word-break:break-word;">
-                      <div style="font-family:Helvetica;font-size:18px;line-height:1;text-align:left;color:#FFFFFF;">{{ $quantite }} produit(s) commandé(s)</div>
+                      <div style="font-family:Helvetica;font-size:18px;line-height:1;text-align:left;color:#FFFFFF;">{{ $quantite }{{__("neworder.produit")}}}</div>
                     </td>
                   </tr>
                   @php
@@ -259,7 +259,7 @@
                     @php  $fournisseur=\DB::table('users')->where('id',$k)->first(); @endphp
                     <tr>
                       <td align="left" style="font-size:0px;padding:10px 25px;padding-right:25px;padding-left:25px;word-break:break-word;">
-                        <div style="font-family:Helvetica;font-size:18px;line-height:1;text-align:left;color:#FFFFFF;">{{$f}} produit(s) du fournisseur {{$fournisseur->name}}</div>
+                        <div style="font-family:Helvetica;font-size:18px;line-height:1;text-align:left;color:#FFFFFF;">{{$f}}{{__("neworder.fournisseur")}}}{{$fournisseur->name}}</div>
                       </td>
                     </tr>
                   @endforeach
@@ -311,7 +311,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                   <tr>
                     <td align="center" style="background:#FFFFFF;font-size:0px;padding:10px 25px;padding-top:20px;padding-right:25px;padding-bottom:20px;padding-left:25px;word-break:break-word;">
-                      <div style="font-family:Helvetica;font-size:15px;line-height:1;text-align:center;color:#555555;"><a href="https://yebay.ci"> Yebay, s'habillé comme dans ses rêves</a></div>
+                      <div style="font-family:Helvetica;font-size:15px;line-height:1;text-align:center;color:#555555;"><a href="https://fondation225.ci"> fondation225</a></div>
                     </td>
                   </tr>
                 </table>

@@ -26,7 +26,11 @@ class PadevAdminRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'titre' => 'required|min:5|max:255',
+            'couverture' => 'required',
+            'lieu' => 'required|min:5|max:255',
+            'debut' => 'required',
+            'fin' => 'required'
         ];
     }
 

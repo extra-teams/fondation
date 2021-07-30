@@ -19,14 +19,21 @@ class DatabaseSeeder extends Seeder
         $this->call(ModelHasPermissionsTableSeeder::class);
         $this->call(ModelHasRolesTableSeeder::class);
 
+        $this->call(CountrySeeder::class);
         $this->call(ClientsTableSeeder::class);
         $this->call(SettingsTableSeeder::class);
-        $this->call(BonReductionsTableSeeder::class);
         $this->call(FailedJobsTableSeeder::class);
         $this->call(MigrationsTableSeeder::class);
         $this->call(PasswordResetsTableSeeder::class);
         $this->call(SliderTableSeeder::class);
         $this->call(ProduitsTableSeeder::class);
         $this->call(CategoriesTableSeeder::class);
+        $this->call(TagsTableSeeder::class);
+        $this->call(ArticlesTableSeeder::class);
+        $this->call(ArticleHasTagsTableSeeder::class);
+        $this->call(GestionPadevTableSeeder::class);
+        $this->call(PartenairesTableSeeder::class);
+        $this->call(VideoTableSeeder::class);
+        $this->call(ImageTableSeeder::class);
     }
 }

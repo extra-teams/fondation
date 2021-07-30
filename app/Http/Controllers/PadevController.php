@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Jobs\SendEmailJob;
+use App\Models\Gallery;
+use App\Models\Images;
 use App\Models\Padev;
+use App\Models\PadevAdmin;
+use App\Models\Pays;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Validator;
-use PragmaRX\Countries\Package\Countries;
 
 class PadevController extends Controller
 {
@@ -17,16 +20,30 @@ class PadevController extends Controller
      */
     public function index()
     {
-        return view('padev.index');
+        $images = Images::whereHas('tags', function ($query) {
+            return $query->where('code', '=', 'prix-padev');
+        })->get();
+
+        $padev = PadevAdmin::OrderBy('fin', 'desc')->first();
+
+        /* pour determiner si l'inscription est tjrs ouverte */
+        $inscription = PadevAdmin::Where('debut', '<', Carbon::now()->format('Y-m-d'))
+            ->Where('fin', '>', Carbon::now()->format('Y-m-d'))
+            ->first();
+
+        return view('padev.index')->with([
+            'galleries' => $images,
+            'padev' => $padev,
+            'inscription' => $inscription
+        ]);
     }
 
 
     public function get_inscription()
     {
-        $countries = new Countries();
-        $allcountries = $countries->all();
+        $countries = Pays::all();
         return view('padev.inscription')->with([
-            'countries' => $allcountries
+            'countries' => $countries
         ]);
     }
 

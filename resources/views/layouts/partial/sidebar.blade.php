@@ -1,16 +1,31 @@
-<!-- sidebar mobile -->
-<div class="sidebar-mobile" style="display: none;">
-    <span class="sidebar-close" id="close-menu"></span>
-    <span class="sidebar-logo">
-        <img src="{{asset("images/fondation.jpeg")}}" alt="logo_fondation225">
-    </span>
+<!-- sidebar -->
+<div class="sidebar-mobile hidden">
+    <!-- top -->
+    <div class="sidebar-top">
+        <div class="sidebar-logo">
+            <img src="{{asset("images/fondation.jpeg")}}" alt="logo_fondation225">
+        </div>
+        <span class="sidebar-close" id="close-menu">
+             <div class="icon">
+                 <span class="text">x</span>
+             </div>
+        </span>
+    </div>
     <!-- premier tab -->
     <ul class="sidebar-items">
-        <li><a href="{{route("accueil")}}">ACCUEIL</a></li>
-        <li><a href="{{route("home.motdupresident")}}">MOT DU PRESIDENT</a></li>
-        <li><a href="{{route("accueil")}}">ACTUALITES</a></li>
-        <li><a href="{{route("produits.index")}}">BOUTIQUE</a></li>
+        <li><a href="{{route("accueil")}}">{{__("sidebar.accueil")}}</a></li>
+        <li><a href="{{route("home.motdupresident")}}">{{__("sidebar.mot")}}</a></li>
+        <li><a href="{{route("accueil")}}">{{__("sidebar.actu")}}</a></li>
+        <li><a href="{{route("produits.index")}}">{{__("sidebar.boutique")}}</a></li>
         <li><a href="{{route("padev.index")}}">PADEV</a></li>
-        <li><a href="{{route("contact.index")}}">CONTACTEZ-NOUS</a></li>
+        <li><a href="{{route("contact.index")}}">{{__("sidebar.contact")}}</a></li>
     </ul>
+    <!-- bottom -->
+    <div class="sidebar-bottom">
+        <div class="social-ul">
+            <a class="socials-item" href="#"> <i class="fab fa-facebook"></i> </a>
+            <a class="socials-item" href="#"> <i class="fab fa-twitter"></i> </a>
+            <a class="socials-item" href="#"> <i class="fab fa-linkedin"></i> </a>
+        </div>
+    </div>
 </div>

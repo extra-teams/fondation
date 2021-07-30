@@ -41,9 +41,9 @@
             </div>
         </div>
         <div class="footer-bottom text-center">
-            <a href="#">Conditions d’utilisation</a>
-            <a href="#">Confidentialité</a>
-            <a href="#">Cookies</a>
+            <a href="#">{{__("footer.condition")}}</a>
+            <a href="#">{{__("footer.confidence")}}</a>
+            <a href="#">{{__("footer.cooki")}}</a>
             <a href="#">©fondataion225</a>
         </div>
     </div>

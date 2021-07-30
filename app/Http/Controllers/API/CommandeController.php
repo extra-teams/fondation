@@ -16,7 +16,7 @@ class CommandeController extends Controller
         /* status de la commande */
         $status = $request->input('status');
         $page = (int)$request->input('page');
-        $commande = Commande::with(['client', 'adresse.commune']);
+        $commande = Commande::with(['client']);
         if ($status !== 'null') {
             $commande->where('status', '=', (int)$status);
         }
@@ -32,7 +32,7 @@ class CommandeController extends Controller
     {
         /* detail d'une commande */
         $id = (int)$request->query('id');
-        $commande = Commande::with(['client', 'adresse','detail.produits.owner']);
+        $commande = Commande::with(['client','detail.produits']);
         $data = [];
         if (is_int($id)) {
             $order = $commande->where('id', '=', $id);

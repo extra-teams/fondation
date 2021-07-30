@@ -66,6 +66,10 @@ Route::view('/confidentialite', 'static.confidentialité')->name('confidentialit
 Route::group([
     'middleware' => 'App\Http\Middleware\Auth',
 ], function () {
+    // route for processing payment
+    Route::post('/paypal', [App\Http\Controllers\PaymentController::class, 'payWithpaypal'])->name('paypal');
+    Route::get('/status', [App\Http\Controllers\PaymentController::class, 'getPaymentStatus'])->name('status');
+
     Route::get('/mon-compte', 'ClientController@index')->name('client.index');
     Route::get('/mes-commandes', 'ClientController@commande')->name('client.commande');
     Route::get('/commande/details/{commande}', 'ClientController@detail_commande')->name('client.commande.details');

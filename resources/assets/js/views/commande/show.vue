@@ -14,12 +14,16 @@
               </el-button>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item icon="el-icon-delete" type="primary"
-                                  :disabled="order.status == 2"
+                                  :disabled="order.status ==4"
                                   @click.native="annulerCommande">annuler la commande
                 </el-dropdown-item>
                 <el-dropdown-item icon="el-icon-circle-plus-outline" :disabled="order.status === 1"
                                   @click.native="accepterCommande">
-                  Accepter la commande
+                  Marquer comme Livreur en cours
+                </el-dropdown-item>
+                <el-dropdown-item icon="el-icon-circle-plus-outline" :disabled="order.status === 1"
+                                  @click.native="accepterCommande">
+                  Marquer comme Livraison fait
                 </el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
@@ -34,8 +38,7 @@
             {{ order.client.email }}<br>
             {{ order.client.telephone }}<br>
             <template v-if="order.adresse">
-              <b>Commune </b> {{ order.adresse.commune.nom || 'non definie' }}<br>
-              <b> </b>Adresse de Livraison : {{ order.adresse.description || 'non definie' }}<br>
+              <b> </b>Adresse de Livraison : {{ order.adresse || 'non definie' }}<br>
             </template>
           </div>
         </div>
@@ -43,10 +46,12 @@
           <h5>
             status de la commande
           </h5>
+          <h3 class="text-success" v-if="order.status === 0"><i
+              class="el-icon-warning"></i>en attente</h3>
           <h3 class="text-success" v-if="order.status === 1"><i
-              class="el-icon-success"></i>confirmé</h3>
-          <h3 class="text-primary" v-if="order.status === 0"><i
-              class="el-icon-loading"></i>en attente</h3>
+              class="el-icon-position"></i>Livraison en cours</h3>
+          <h3 class="text-success" v-if="order.status === 2"><i
+              class="el-icon-success"></i>livrée</h3>
           <h3 class="text-danger" v-if="order.status ===2"><i
               class="el-icon-error"></i>annulée</h3>
         </div>
@@ -57,20 +62,14 @@
           <table class="table table-bordered w-100">
             <tr>
               <th>ID</th>
-              <th>Boutique</th>
               <th>produit</th>
-              <th>couleur</th>
-              <th>taille</th>
               <th>quantité</th>
               <th>prix de vente</th>
               <th>total</th>
             </tr>
             <tr v-for="detail in order.detail">
               <td>{{ detail.id }}</td>
-              <td>{{ detail.produits.owner.name }}</td>
               <td>{{ detail.produits.code + '-' + detail.produits.nom }}</td>
-              <td>{{ detail.couleur.nom }}</td>
-              <td>{{ detail.taille.nom }}</td>
               <td>{{ detail.quantite }}</td>
               <td>{{ detail.prix_vente | currency }}</td>
               <td>{{ (detail.quantite * detail.prix_vente) | currency }}</td>

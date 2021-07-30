@@ -6,21 +6,18 @@
         <div class="row">
             <div class="col-12">
                 <div class="row mb-5">
-                    <div class="col-lg-6 text-left text-lg-right">
+                    <div class="col-12 col-md-6">
                         <h5 class="text-uppercase">{{$titre}}</h5>
                     </div>
-
-                    <div class="col-lg-6 text-right text-lg-right">
+                    <div class="col-12 col-md-6 ">
                         @php
                             $code_categorie=request()->categorie;
                         @endphp
-                        <form style="border: none" action="{{route('produits.index')}}" method="GET">
-                            <select class="search" onchange='this.form.submit()' name='trie'
-                                    class="mr-2 custom-control custom-select">
+                        <form class="d-flex justify-content-end"  action="{{route('produits.index')}}" method="GET">
+                            <select onchange='this.form.submit()' name='trie' class="w-50 form-control">
                                 <option value="0">filtre sur le prix</option>
                                 <option value="1">prix croissant</option>
                                 <option value="2">prix decroissant</option>
-                                {{--<option value="5"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ordre alphabetique</font></font></option>--}}
                             </select>
                             <input type="hidden" name="categorie" value="{{$code_categorie}}">
                             @foreach ($categories_coches as $c)
@@ -47,8 +44,7 @@
                                         <div class="top" style="background-image: url('{{asset('storage/'.$image)}}')">
                                         </div>
                                     @else
-                                        <div class="top"
-                                             style="background-image: url('{{asset('images/articles/noavailable.png')}}')">
+                                        <div class="top" style="background-image: url('{{asset('images/articles/noavailable.png')}}')">
                                         </div>
                                     @endif
                                     <div class="bottom text-center">

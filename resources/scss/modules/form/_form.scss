@@ -51,6 +51,10 @@ form {
       border: 2px solid #767676;
     }
 
+    & input[type=radio] {
+      width: auto;
+    }
+
     & .btn-register {
       border-radius: 0;
       color: white;

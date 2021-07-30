@@ -4,18 +4,40 @@
     <div class="header-top">
         <!-- left -->
         <div class="header-top-left">
-            <!-- icon -->
-            <span id="open-menu">
-                <i class="fas fa-bars"></i>
+            <!-- pour md et plus -->
+            <span id="open-menud"  class="navigation-btn d-none d-md-block">
+                menu
             </span>
-            <a href="{{url('/')}}"><img src="{{asset("images/fondation.jpeg")}}" alt=""></a>
+            <!-- pour mobile -->
+            <span id="open-menum" class="navigation-btn d-md-none">
+                <i class="fa fa-bars"></i>
+            </span>
+            <!-- social -->
+            <div class="social">
+                <span class="text-center">nous suivre</span>
+                <div class="social-ul">
+                    <a class="socials-item" href="#"> <i class="fab fa-facebook"></i> </a>
+                    <a class="socials-item" href="#"> <i class="fab fa-twitter"></i> </a>
+                    <a class="socials-item" href="#"> <i class="fab fa-instagram"></i> </a>
+                </div>
+            </div>
+        </div>
+        <!-- searchbar -->
+        <div class="searhbar hidden">
+            <div class="close" id="hideSearchBar">
+                <span class="text">x</span>
+            </div>
+            {{-- <div class="input"> --}}
+                <form class="input" action="{{route('produits.recherche')}}" method="get">
+                <input type="text" name="q" placeholder="recherche">
+                <button>rechercher</button>
+            </form>
+            {{-- </div> --}}
         </div>
         <!-- center -->
        
         <div class="header-top-center">
-                <input type="text" name="q" placeholder="saisir une recherche">
-            <button type="submit"><i class="fa fa-search"></i></button>
-            
+            <a href="{{url('/')}}"><img src="{{asset("images/fondation.jpeg")}}" alt=""></a>
         </div>
      
         <!-- right -->
@@ -27,10 +49,6 @@
                 <span>/</span>
                 <span><a href="{{url('locale/en')}}">EN</a></span>
             </div>
-            <!-- icone search bar -->
-            <span class="header-top-searhmobile">
-                <i class="fa fa-search"></i>
-            </span>
             <!-- login -->
             <div class="header-top-user">
                 <div class="dropdown">
@@ -52,26 +70,13 @@
                     @endif
                 </div>
             </div>
-
-            <!-- carts -->
-            <div class="header-top-carts">
-                <a href="{{route('cart.index')}}" class="btn-card">
-                    <i class="fa fa-cart-plus"></i>
-                    <span class="total">{{Cart::count()}}</span>
-                </a>
+            <!-- searchbar -->
+            <div class="header-top-search" id="showSearchBar">
+                <div class="bar">
+                    <button type="button"><i class="fa fa-search"></i></button>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- bottom -->
-    <div class="row header-bottom d-none d-lg-block">
-        <ul class="list-unstyled">
-            <li><a href="{{route('accueil')}}">{{__("header.home")}}</a></li>
-            <li><a href="{{route('home.motdupresident')}}">{{__("header.president_word")}}</a></li>
-            <li><a href="{{route('accueil')}}">{{__("header.news")}}</a></li>
-            <li><a href="{{url('produits')}}">{{__("header.shop")}}</a></li>
-            <li><a href="{{route('padev.index')}}">Padev</a></li>
-            <li><a href="{{route('contact.index')}}">{{__("header.contact_us")}}</a></li>
-        </ul>
     </div>
 </header>
 

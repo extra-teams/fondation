@@ -1,8 +1,6 @@
 @extends('layouts.app')
 @section('title','Fondation 225')
 @section("extra-css")
-    <link rel="stylesheet" href="{{asset("library/fancybox/jquery.fancybox-1.3.4.css")}}" type="text/css"
-          media="screen"/>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 @endsection
 
@@ -303,15 +301,6 @@
 
 
 @section("extra-js")
-    <!-- fancybox -->
-    <script type="text/javascript" src="{{asset("library/fancybox/jquery.fancybox-1.3.4.pack.js")}}"></script>
-    <script type="text/javascript">
-        $("a[rel=ligthbox]").fancybox({
-            'titlePosition': 'inside',
-            'transitionIn': 'none',
-            'transitionOut': 'none'
-        });
-    </script>
     <!-- tinyslider -->
     <script type="module">
         var slider = tns({

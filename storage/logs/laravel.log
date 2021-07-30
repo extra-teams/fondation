@@ -8689,3 +8689,31 @@
 [stacktrace]
 #0 {main}
 "} 
+[2021-07-30 14:15:29] local.ERROR: Cannot redeclare getPrice() (previously declared in C:\Users\sminth\biscrem\Univers Coding\Projects\Www\fondation\app\Helpers.php:4) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare getPrice() (previously declared in C:\\Users\\sminth\\biscrem\\Univers Coding\\Projects\\Www\\fondation\\app\\Helpers.php:4) at C:\\Users\\sminth\\biscrem\\Univers Coding\\Projects\\Www\\fondation\\app\\Helpers.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2021-07-30 14:16:29] local.ERROR: Cannot redeclare getPrice() (previously declared in C:\Users\sminth\biscrem\Univers Coding\Projects\Www\fondation\app\Helpers.php:4) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare getPrice() (previously declared in C:\\Users\\sminth\\biscrem\\Univers Coding\\Projects\\Www\\fondation\\app\\Helpers.php:4) at C:\\Users\\sminth\\biscrem\\Univers Coding\\Projects\\Www\\fondation\\app\\Helpers.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2021-07-30 14:17:29] local.ERROR: Cannot redeclare getPrice() (previously declared in C:\Users\sminth\biscrem\Univers Coding\Projects\Www\fondation\app\Helpers.php:4) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare getPrice() (previously declared in C:\\Users\\sminth\\biscrem\\Univers Coding\\Projects\\Www\\fondation\\app\\Helpers.php:4) at C:\\Users\\sminth\\biscrem\\Univers Coding\\Projects\\Www\\fondation\\app\\Helpers.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2021-07-30 14:18:29] local.ERROR: Cannot redeclare getPrice() (previously declared in C:\Users\sminth\biscrem\Univers Coding\Projects\Www\fondation\app\Helpers.php:4) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare getPrice() (previously declared in C:\\Users\\sminth\\biscrem\\Univers Coding\\Projects\\Www\\fondation\\app\\Helpers.php:4) at C:\\Users\\sminth\\biscrem\\Univers Coding\\Projects\\Www\\fondation\\app\\Helpers.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2021-07-30 14:19:29] local.ERROR: Cannot redeclare getPrice() (previously declared in C:\Users\sminth\biscrem\Univers Coding\Projects\Www\fondation\app\Helpers.php:4) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare getPrice() (previously declared in C:\\Users\\sminth\\biscrem\\Univers Coding\\Projects\\Www\\fondation\\app\\Helpers.php:4) at C:\\Users\\sminth\\biscrem\\Univers Coding\\Projects\\Www\\fondation\\app\\Helpers.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2021-07-30 14:20:29] local.ERROR: Cannot redeclare getPrice() (previously declared in C:\Users\sminth\biscrem\Univers Coding\Projects\Www\fondation\app\Helpers.php:4) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare getPrice() (previously declared in C:\\Users\\sminth\\biscrem\\Univers Coding\\Projects\\Www\\fondation\\app\\Helpers.php:4) at C:\\Users\\sminth\\biscrem\\Univers Coding\\Projects\\Www\\fondation\\app\\Helpers.php:4)
+[stacktrace]
+#0 {main}
+"} 
+[2021-07-30 14:21:29] local.ERROR: Cannot redeclare getPrice() (previously declared in C:\Users\sminth\biscrem\Univers Coding\Projects\Www\fondation\app\Helpers.php:4) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare getPrice() (previously declared in C:\\Users\\sminth\\biscrem\\Univers Coding\\Projects\\Www\\fondation\\app\\Helpers.php:4) at C:\\Users\\sminth\\biscrem\\Univers Coding\\Projects\\Www\\fondation\\app\\Helpers.php:4)
+[stacktrace]
+#0 {main}
+"} 

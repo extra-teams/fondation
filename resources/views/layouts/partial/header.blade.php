@@ -11,10 +11,14 @@
             <a href="{{url('/')}}"><img src="{{asset("images/fondation.jpeg")}}" alt=""></a>
         </div>
         <!-- center -->
+       
         <div class="header-top-center">
-            <input type="text" placeholder="saisir une recherche">
+                <input type="text" name="q" placeholder="saisir une recherche">
             <button type="submit"><i class="fa fa-search"></i></button>
+            
         </div>
+       
+        </form>
         <!-- right -->
         <div class="header-top-right">
             <!-- langue -->

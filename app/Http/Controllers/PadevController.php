@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gallery;
+use App\Models\Images;
 use App\Models\Padev;
 use App\Models\PadevAdmin;
 use App\Models\Pays;
@@ -19,9 +20,9 @@ class PadevController extends Controller
      */
     public function index()
     {
-        $galleries = Gallery::whereHas('tags', function ($query) {
+        $images = Images::whereHas('tags', function ($query) {
             return $query->where('code', '=', 'prix-padev');
-        })->where('image', '=', 1)->limit(6)->get();
+        })->get();
 
         $padev = PadevAdmin::OrderBy('fin', 'desc')->first();
 
@@ -31,7 +32,7 @@ class PadevController extends Controller
             ->first();
 
         return view('padev.index')->with([
-            'galleries' => $galleries,
+            'galleries' => $images,
             'padev' => $padev,
             'inscription' => $inscription
         ]);

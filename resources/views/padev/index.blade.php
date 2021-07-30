@@ -81,7 +81,7 @@
                         <div class="col-10 col-md-3">
                             <div class="card-prize">
                                 <div class="card-prize-gradient"></div>
-                                <img src="{{asset('storage/'.$gallerie->fichier)}}" alt="">
+                                <img src="{{$gallerie->fichier}}" alt="{{$gallerie->legende}}">
                                 <div class="card-prize-body">
                                     <h5>{{$gallerie->legende}}</h5>
                                 </div>

@@ -12072,7 +12072,7 @@ ul li {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 22rem;
+  height: 30rem;
   width: 100%;
   z-index: 4;
   overflow: hidden;
@@ -12080,7 +12080,7 @@ ul li {
 
 .card-domaine .card-domaine-header {
   position: relative;
-  height: 50%;
+  height: 70%;
   width: 100%;
 }
 
@@ -12108,7 +12108,7 @@ ul li {
 }
 
 .card-domaine .card-domaine-body {
-  height: 50%;
+  height: 30%;
   margin-bottom: 5rem;
 }
 
@@ -12493,6 +12493,33 @@ form .form-body .btn-register:hover {
   -o-object-fit: contain;
      object-fit: contain;
   height: 100%;
+}
+
+#action-caritative {
+  position: relative;
+  display: flex;
+  height: 18rem;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 5px;
+}
+
+#action-caritative .gradient {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(185deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.4) 80%);
+}
+
+#action-caritative img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  width: 100%;
+  min-height: 18rem;
 }
 
 /* page padev */

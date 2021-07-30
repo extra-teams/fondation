@@ -88,7 +88,8 @@
             <div class="col-12 col-sm-6 col-md-4" data-aos="fade-down-left">
                 <div class=" card-domaine">
                     <div class="card-domaine-header">
-                        <img src="https://www.afrik21.africa/wp-content/uploads/2019/07/shutterstock_722601193-800x400.jpg" alt="">
+                        <img src="https://www.afrik21.africa/wp-content/uploads/2019/07/shutterstock_722601193-800x400.jpg"
+                             alt="">
                     </div>
                     <div class="card-domaine-body">
                         <h3 class="main-title">
@@ -110,7 +111,8 @@
                         </p>
                     </div>
                     <div class="order-0 order-lg-1 card-domaine-header">
-                        <img src="https://www.lintelligentdabidjan.info/news/wp-content/uploads/2017/04/Aeoroport_FHB19.jpg" alt="">
+                        <img src="https://www.lintelligentdabidjan.info/news/wp-content/uploads/2017/04/Aeoroport_FHB19.jpg"
+                             alt="">
                     </div>
                 </div>
             </div>
@@ -126,12 +128,11 @@
             <div class="row slider">
             @foreach($galleries as $gallerie)
                 <!-- slider 1 -->
-                    <div class="col-12 col-md-3 wprock-img-zoom-hover">
-                        <div class="wprock-img-zoom">
-                            <a href="{{asset('storage/'.$gallerie->fichier)}}" class="fancybox" rel="ligthbox">
-                                <img src="{{asset('storage/'.$gallerie->fichier)}}" class="zoom img-fluid" alt="">
-                            </a>
-                        </div>
+                    <div class="col-12 col-md-3 col-lg-4 mt-5" >
+                        <a id="action-caritative" href="{{asset($gallerie->fichier)}}">
+                            <div class="gradient"></div>
+                            <img src="{{$gallerie->fichier}}" class="zoom img-fluid" alt="">
+                        </a>
                     </div>
                 @endforeach
             </div>
@@ -212,7 +213,7 @@
         <h2 class="main-title">{{__("home.equipe")}}</h2>
         <div class="row justify-content-center">
             <!-- Grid column -->
-            <div class="col-md-4  col-lg-3 mb-md-5 mb-5" data-aos="fade-down-up">
+            <div class="col-sm-6 col-md-4  col-lg-3 mb-md-5 mb-5" data-aos="fade-down-up">
                 <div class="card-team">
                     <div class="card-team-header">
                         <img src="{{asset('images/equipe/chargerdesprojets.jpg')}}" class="img-fluid avatar" alt="">
@@ -225,7 +226,7 @@
             </div>
 
             <!-- Grid column -->
-            <div class="col-md-4  col-lg-3 mb-md-5 mb-5" data-aos="fade-down-left">
+            <div class="col-sm-6 col-md-4  col-lg-3 mb-md-5 mb-5" data-aos="fade-down-left">
                 <div class="card-team">
                     <div class="card-team-header">
                         <img src="{{asset('images/equipe/president.jpg')}}" class="img-fluid avatar" alt="">
@@ -238,7 +239,7 @@
             </div>
 
             <!-- Grid column -->
-            <div class="col-md-4  col-lg-3 mb-md-5 mb-5" data-aos="fade-down-right">
+            <div class="col-sm-6 col-md-4  col-lg-3 mb-md-5 mb-5" data-aos="fade-down-right">
                 <div class="card-team">
                     <div class="card-team-header">
                         <img src="{{asset('images/equipe/secretaire.jpg')}}" class="img-fluid avatar" alt="">
@@ -253,7 +254,7 @@
 
         <div class="row justify-content-center" data-aos="fade-down-top">
             <!-- Grid column -->
-            <div class="col-md-4  col-lg-3 mb-md-5 mb-5">
+            <div class="col-sm-6 col-md-4  col-lg-3 mb-md-5 mb-5">
                 <div class="card-team mx-auto">
                     <div class="card-team-header">
                         <img src="{{asset('images/equipe/tresorier.jpg')}}" class="img-fluid avatar" alt="">
@@ -267,7 +268,7 @@
 
 
             <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 mb-md-5 mb-5">
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-md-5 mb-5">
                 <div class="card-team">
                     <div class="card-team-header">
                         <img src="{{asset('images/equipe/comissaire.jpeg')}}" class="img-fluid avatar" alt="">
@@ -291,7 +292,7 @@
                 @foreach($partenaires as $partenaire)
                     <div class="col-2 col-md-2 logo-partenaire">
                         <a href="{{$partenaire->url}}">
-                            <img  src="{{$partenaire->logo}}" alt="{{$partenaire->nom}}">
+                            <img src="{{$partenaire->logo}}" alt="{{$partenaire->nom}}">
                         </a>
                     </div>
                 @endforeach
@@ -323,6 +324,9 @@
             nav: false,
             controls: false,
             responsive: {
+                350: {
+                    items: 1
+                },
                 640: {
                     edgePadding: 20,
                     gutter: 40,
@@ -348,7 +352,7 @@
             mouseDrag: true,
             responsive: {
                 350: {
-                    items: 3
+                    items: 2
                 },
                 640: {
                     edgePadding: 20,

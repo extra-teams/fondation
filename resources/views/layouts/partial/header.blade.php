@@ -17,8 +17,7 @@
             <button type="submit"><i class="fa fa-search"></i></button>
             
         </div>
-       
-        </form>
+     
         <!-- right -->
         <div class="header-top-right">
             <!-- langue -->

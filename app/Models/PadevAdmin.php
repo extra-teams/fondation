@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class PadevAdmin extends Model
 {
     use CrudTrait;
+    use SoftDeletes;
 
     /*
     |--------------------------------------------------------------------------
@@ -19,9 +21,9 @@ class PadevAdmin extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = ['couverture', 'titre','lieu', 'debut', 'fin'];
     // protected $hidden = [];
-    // protected $dates = [];
+    protected $dates = ['deleted_at', 'created_at', 'updated_at'];
 
     /*
     |--------------------------------------------------------------------------

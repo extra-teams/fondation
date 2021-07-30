@@ -6,11 +6,11 @@
     </span>
     <!-- premier tab -->
     <ul class="sidebar-items">
-        <li><a href="{{route("accueil")}}">ACCUEIL</a></li>
-        <li><a href="{{route("home.motdupresident")}}">MOT DU PRESIDENT</a></li>
-        <li><a href="{{route("accueil")}}">ACTUALITES</a></li>
-        <li><a href="{{route("produits.index")}}">BOUTIQUE</a></li>
+        <li><a href="{{route("accueil")}}">{{__("sidebar.accueil")}}</a></li>
+        <li><a href="{{route("home.motdupresident")}}">{{__("sidebar.mot")}}</a></li>
+        <li><a href="{{route("accueil")}}">{{__("sidebar.actu")}}</a></li>
+        <li><a href="{{route("produits.index")}}">{{__("sidebar.boutique")}}</a></li>
         <li><a href="{{route("padev.index")}}">PADEV</a></li>
-        <li><a href="{{route("contact.index")}}">CONTACTEZ-NOUS</a></li>
+        <li><a href="{{route("contact.index")}}">{{__("sidebar.contact")}}</a></li>
     </ul>
 </div>

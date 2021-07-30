@@ -1,11 +1,11 @@
 <?php
-
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+
 class Tags extends Model
 {
     use HasSlug;
@@ -34,8 +34,6 @@ class Tags extends Model
     public $timestamps = false;
     protected $guarded = ['code'];
     protected $fillable = ["code", "nom"];
-    // protected $hidden = [];
-    // protected $dates = [];
 
     /*
     |--------------------------------------------------------------------------

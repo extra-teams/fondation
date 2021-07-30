@@ -1,8 +1,6 @@
 <?php
-
 namespace App\Models;
 
-use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -28,11 +26,6 @@ class Commande extends Model
     public function detail()
     {
         return $this->hasMany('App\Models\CommandeDetail','id_commande','id');
-    }
-
-    public function adresse()
-    {
-        return $this->belongsTo('App\Models\Adresse','id_adr','id');
     }
 
 

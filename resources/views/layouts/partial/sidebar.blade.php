@@ -13,12 +13,19 @@
     </div>
     <!-- premier tab -->
     <ul class="sidebar-items">
-        <li><a href="{{route("accueil")}}">{{__("sidebar.accueil")}}</a></li>
-        <li><a href="{{route("home.motdupresident")}}">{{__("sidebar.mot")}}</a></li>
-        <li><a href="{{route("accueil")}}">{{__("sidebar.actu")}}</a></li>
-        <li><a href="{{route("produits.index")}}">{{__("sidebar.boutique")}}</a></li>
-        <li><a href="{{route("padev.index")}}">PADEV</a></li>
-        <li><a href="{{route("contact.index")}}">{{__("sidebar.contact")}}</a></li>
+        <li><a class="{{  request()->routeIs('accueil') ? 'active' : '' }}"
+               href="{{route("accueil")}}">{{__("sidebar.accueil")}}</a></li>
+        <li><a class="{{ request()->routeIs('home.motdupresident')  ? 'active' : '' }}"
+               href="{{route("home.motdupresident")}}">{{__("sidebar.mot")}}</a></li>
+        <li><a class="{{ request()->routeIs('accueil')  ? 'active' : '' }}"
+               href="{{route("accueil")}}">{{__("sidebar.actu")}}</a></li>
+        <li><a class="{{ request()->routeIs('produits.index')  ? 'active' : '' }}"
+               href="{{route("produits.index")}}">{{__("sidebar.boutique")}}</a></li>
+        <li><a class="{{ request()->routeIs('padev.index')  ? 'active' : '' }}"
+               href="{{route("padev.index")}}">PADEV</a>
+        </li>
+        <li><a class="{{ request()->routeIs('contact.index')  ? 'active' : '' }}"
+               href="{{route("contact.index")}}">{{__("sidebar.contact")}}</a></li>
     </ul>
     <!-- bottom -->
     <div class="sidebar-bottom">

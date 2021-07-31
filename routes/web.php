@@ -110,4 +110,3 @@ Route::group([
     Route::view('/v/{vue_capture?}', 'vue.index')->where('vue_capture', '[\/\w\.-]*');
 });
 
-Route::get('/api/categories', 'API\SousCategorieController@index');

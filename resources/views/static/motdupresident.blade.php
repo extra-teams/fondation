@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','mot du president')
+@section('title',__("motdupresident.mot"))
 @section('content')
     <!-- presentation -->
     <div class="container-fluid">

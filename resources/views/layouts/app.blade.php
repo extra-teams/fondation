@@ -15,14 +15,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon/favicon2-32x32.jpeg')}}">
     <link rel="manifest" href="{{asset('images/favicon/site.webmanifest')}}">
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('/library/splide/css/splide.min.css')}}">
     <link rel="stylesheet" href="{{mix('/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('/library/fontawesome/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('library/tiny-slider/tiny-slider.css')}}">
     <link rel="stylesheet" href="{{asset('css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('css/slick-theme.css')}}">
-    <link rel="stylesheet" href="{{asset('packages/noty/noty.css')}}">
-    <link rel="stylesheet" href="{{asset('/css/noty_theme.css')}}">
     @yield('extra-css')
 </head>
 <body>

@@ -8,10 +8,10 @@
   background: white;
   display: flex;
   flex-direction: column;
-  animation: fadeIn .2s forwards;
   overflow: hidden;
-  border-right: 20px solid $color-orange;
+  border-right: 2px solid $color-orange;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
+  transition: all .5s ease-in-out;
 
   /* top */
   & .sidebar-top {
@@ -85,7 +85,16 @@
         line-height: 50px;
         padding: 0 20px;
         font-size: .875rem;
-        font-family: 'Montserrat', sans-serif;
+        letter-spacing: .5px;
+        color: $color-black;
+
+        &:hover {
+          color: $color-orange;
+        }
+
+        &.active {
+          color: $color-orange;
+        }
       }
     }
   }

@@ -20,7 +20,8 @@
                 indiqués comme non retournables ne peuvent être ni repris, ni échangés.
                 <br>
                 4. Si vous avez reçu un article défectueux/endommagé/incorrect, veuillez contacter le service clientèle
-                fondation225 dans les 2 jours qui suivent l'achat. Nous ne traiterons aucune réclamation au-delà de ce délai.
+                fondation225 dans les 2 jours qui suivent l'achat. Nous ne traiterons aucune réclamation au-delà de ce
+                délai.
             </p>
         </div>
     </div>

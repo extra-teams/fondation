@@ -5,7 +5,7 @@
         <!-- left -->
         <div class="header-top-left">
             <!-- pour md et plus -->
-            <span id="open-menud"  class="navigation-btn d-none d-md-block">
+            <span id="open-menud" class="navigation-btn d-none d-md-block">
                 menu
             </span>
             <!-- pour mobile -->
@@ -41,9 +41,11 @@
             <!-- langue -->
             <div class="header-top-language">
                 <span><i class="fas fa-globe"></i></span>
-                <span><a class="active" href="{{url('locale/fr')}}">FR</a></span>
-                <span>/</span>
-                <span><a href="{{url('locale/en')}}">EN</a></span>
+                <span><a class="{{ (app()->getLocale() == 'fr') ? 'active' : '' }}"
+                         href="{{url('locale/fr')}}">FR</a></span>
+                <span></span>
+                <span><a class="{{ (app()->getLocale() == 'en') ? 'active' : '' }}"
+                         href="{{url('locale/en')}}">EN</a></span>
             </div>
             <!-- login -->
             <div class="header-top-user">

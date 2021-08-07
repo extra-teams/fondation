@@ -53,7 +53,7 @@ class PadevController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function store(Request $request)
     {
@@ -122,8 +122,8 @@ class PadevController extends Controller
         /* envoie du mail */
         Mail::to($email)->send(new RegistrationPadev($padev));
 
-        return redirect()->route('padev.confirmation')->with([
-            'nom' => $nom
+        return view('padev.confirm')->with([
+            'nom' => $nom . "" . $prenom,
         ]);
     }
 

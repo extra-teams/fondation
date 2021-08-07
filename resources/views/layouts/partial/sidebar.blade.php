@@ -17,8 +17,8 @@
                href="{{route("accueil")}}">{{__("sidebar.accueil")}}</a></li>
         <li><a class="{{ request()->routeIs('home.motdupresident')  ? 'active' : '' }}"
                href="{{route("home.motdupresident")}}">{{__("sidebar.mot")}}</a></li>
-        <li><a class="{{ request()->routeIs('accueil')  ? 'active' : '' }}"
-               href="{{route("accueil")}}">{{__("sidebar.actu")}}</a></li>
+        <li><a class="{{ request()->routeIs('actualite.index')  ? 'active' : '' }}"
+               href="{{route("actualite.index")}}">{{__("sidebar.actu")}}</a></li>
         <li><a class="{{ request()->routeIs('produits.index')  ? 'active' : '' }}"
                href="{{route("produits.index")}}">{{__("sidebar.boutique")}}</a></li>
         <li><a class="{{ request()->routeIs('padev.index')  ? 'active' : '' }}"

@@ -126,7 +126,7 @@
             <div class="row slider">
             @foreach($galleries as $gallerie)
                 <!-- slider 1 -->
-                    <div class="col-12 col-md-3 col-lg-4 mt-5" >
+                    <div class="col-12 col-md-3 col-lg-4 mt-5">
                         <a id="action-caritative" href="{{asset($gallerie->fichier)}}">
                             <div class="gradient"></div>
                             <img src="{{$gallerie->fichier}}" class="zoom img-fluid" alt="">
@@ -187,7 +187,7 @@
             <div class="row justify-content-center align-content-center">
             @foreach($articles as $article)
                 <!-- card 1 -->
-                    <a href="{{$article->slug}}">
+                    <a href="{{url('news/'.$article->slug)}}">
                         <div class="col-12 col-sm-6 col-md-4">
                             <div class="card-news">
                                 <div class="card-news-header">
@@ -355,9 +355,13 @@
                 }
             }
         });
+
+
     </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
+
+
     </script>
 @endsection

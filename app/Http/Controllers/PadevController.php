@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\RegistrationPadev;
 use App\Models\Gallery;
 use App\Models\Images;
 use App\Models\Padev;
@@ -9,6 +10,7 @@ use App\Models\PadevAdmin;
 use App\Models\Pays;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class PadevController extends Controller
@@ -60,7 +62,7 @@ class PadevController extends Controller
             'prenom' => 'required|min:2|max:255',
             'pays' => 'required|min:2|max:255',
             'adresse' => 'required|min:2',
-            'tel' => 'required|min:6|max:255',
+            'tel' => 'required|min:6|max:15',
             'entreprise' => 'required|min:2|max:255',
             'profession' => 'required|min:2|max:255',
             'titre' => 'required|min:2|max:255',
@@ -116,6 +118,9 @@ class PadevController extends Controller
         $padev->palmares = $palmares;
         $padev->statut = $statut;
         $padev->save();
+
+        /* envoie du mail */
+        Mail::to($email)->send(new RegistrationPadev($padev));
 
         return redirect()->route('padev.confirmation')->with([
             'nom' => $nom

@@ -9,8 +9,7 @@
             </div>
             <div class="row justify-content-center align-content-center">
             @foreach($articles as $article)
-                <!-- card 1 -->
-                    <a href="{{$article->slug}}">
+                    <a href="{{url('news/'.$article->slug)}}">
                         <div class="col-12 col-sm-6 col-md-4">
                             <div class="card-news">
                                 <div class="card-news-header">
